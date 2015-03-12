@@ -1,10 +1,9 @@
 FactoryGirl.define do
   factory :bucket_list_item do
-    name "MyString"
-description "MyText"
-city "MyString"
-state "MyString"
-zip_code 1
+    name "Test Name"
+    description "Test Description"
+    city "Test City"
+    state "Test State"
+    zip_code "29401"
   end
-
 end
