@@ -12,9 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require angular.min
+//= require angular/angular
 //= require angular-route.min
 //= require underscore.min
 //= require devise-min
 //= require app
-//= require_tree .
+//= require Nav/nav.service
+//= require Nav/nav.controller
+//= require main/main.service
+//= require main/main.controller
