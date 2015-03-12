@@ -1,8 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Basketlist</title>
+
+index page
+<br>
+<% if current_user %>
+<%= link_to 'Logout', destroy_user_session_path, method: :delete =%>
+<br>
+<%= link_to 'Update User Info', edit_user_registration_path =%>
+<% else %>
+<%= link_to 'Login', new_user_session_path =%>
+<br>
+<%= link_to 'Register', new_user_registration_path =%>
+<br>
+<% end %>
+<br>
+<br>
+<%= link_to 'Interests Index', interests_path =%>
+<br>
+<%= link_to 'Bucket List Items Index', bucket_list_items_path =%>
+
+
+<div ng-view=''>
+
 
 
 </head>
