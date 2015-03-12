@@ -11,22 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312140420) do
+ActiveRecord::Schema.define(version: 20150312185218) do
 
   create_table "bucket_list_items", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.text     "description", limit: 65535
-    t.string   "city",        limit: 255
-    t.string   "state",       limit: 255
-    t.string   "zip_code",    limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name",               limit: 255
+    t.text     "description",        limit: 65535
+    t.string   "city",               limit: 255
+    t.string   "state",              limit: 255
+    t.string   "zip_code",           limit: 255
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
   end
 
   create_table "interests", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",               limit: 255
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

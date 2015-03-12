@@ -68,7 +68,8 @@ private
       :description,
       :city,
       :state,
-      :zip_code
+      :zip_code,
+      :image
       )
   end
 
