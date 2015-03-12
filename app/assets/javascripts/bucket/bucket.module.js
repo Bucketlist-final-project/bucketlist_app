@@ -8,14 +8,16 @@
   .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
-       templateUrl: 'app/assets/javascripts/main.html',
-       controller: 'MainController as mainCtrl'
-    })
+        templateUrl: 'assets/main/views/main.html',
+        controller: 'MainController as mainCtrl'
+      })
     .when('/userBucket', {
-       templateUrl: 'app/assets/javascripts/bucket/userBucket.html',
-       controller: 'CartController as cart'
+       templateUrl: 'assets/bucket/views/userBucket.html',
+       controller: 'BucketController as bucket'
     })
 
 })
-.constant('_', _)
+// .constant('_', _)
+
+
 })();
