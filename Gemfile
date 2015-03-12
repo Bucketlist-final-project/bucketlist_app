@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 #aws sdk gem
 gem 'aws-sdk', '< 2.0'
 gem 'devise'
+gem 'cancancan', '~> 1.10'
 gem 'angular_rails_csrf'
 gem "omniauth-google-oauth2"
 #https://github.com/zquestz/omniauth-google-oauth2
