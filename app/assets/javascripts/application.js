@@ -16,5 +16,6 @@
 //= require angular-route.min
 //= require underscore.min
 //= require devise-min
+
 //= require app
-//= require_tree .
+//= require main/main.controller
