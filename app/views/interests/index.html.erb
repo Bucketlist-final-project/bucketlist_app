@@ -4,6 +4,12 @@
 <% @interests.each do |interest| %>
 <%= interest.name =%>
 <br>
+<% interest.users.each do |user| %>
+<%= user.first_name %>
+<% end %>
+<br>
+<% if interest.image == nil %>
 <%= image_tag interest.s3_url =%>
+<% end %>
 <br>
 <% end %>

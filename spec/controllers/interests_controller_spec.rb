@@ -14,13 +14,6 @@ RSpec.describe InterestsController, type: :controller do
       expect(assigns(:interests)).to include(interest)
     end
 
-    it "should return all user objects" do
-      p user
-      xhr :get, :index
-      expect(assigns(:users)).not_to eq(nil)
-      expect(assigns(:users).length).to eq(1)
-      expect(assigns(:users)).to include(user)
-    end
   end
 
   describe "GET #show" do

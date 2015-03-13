@@ -7,6 +7,10 @@
 <% if bucket_list_item.image == nil %>
   <%= image_tag bucket_list_item.s3_url =%>
 <% end %>
+<% bucket_list_item.users.each do |user| %>
+<%= user.email %>
+<br>
+<% end %>
 <br>
 <% end %>
 

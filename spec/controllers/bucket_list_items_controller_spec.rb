@@ -3,14 +3,16 @@ require 'rails_helper'
 RSpec.describe BucketListItemsController, type: :controller do
 
   let!(:bucket_list_item) { FactoryGirl.create(:bucket_list_item) }
+  let!(:user) { FactoryGirl.create(:user) }
 
   describe "GET #index" do
-    it "should return all bucket_list_items objects" do
+    it "should return all bucket_list_item objects" do
       xhr :get, :index
       expect(assigns(:bucket_list_items)).not_to eq(nil)
       expect(assigns(:bucket_list_items).length).to eq(1)
       expect(assigns(:bucket_list_items)).to include(bucket_list_item)
     end
+
   end
 
   describe "GET #show" do

@@ -8,7 +8,6 @@ class InterestsController < ApplicationController
 
   def index
     @interests = Interest.all
-    @users = User.all
     respond_to do |format|
       format.json {render json: @interests }
       format.html
