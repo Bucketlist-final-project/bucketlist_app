@@ -19,11 +19,3 @@ task create_users: :environment do
   end
 
 end
-
-task :initialize => :environment do
-    Rake::Task["db:drop"].execute
-    Rake::Task["db:create"].execute
-    Rake::Task["db:migrate"].execute
-    Rake::Task["create_users"].execute
-    Rake::Task["create_interests"].execute
-  end
