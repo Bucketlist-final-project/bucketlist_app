@@ -1,5 +1,8 @@
 class BucketListItem < ActiveRecord::Base
 
+  has_many :user_bucket_list_items
+  has_many :users, through: :user_bucket_list_items 
+
   validates :name, presence: true
   validates :description, presence: true
   validates :city, presence: true
