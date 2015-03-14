@@ -4,6 +4,8 @@
 <% @bucket_list_items.each do |bucket_list_item| %>
 <%= bucket_list_item.name =%>
 <br>
+<%= bucket_list_item.street_address =%>
+<br>
   <%= image_tag bucket_list_item.s3_url =%>
   <br>
 <% bucket_list_item.users.each do |user| %>

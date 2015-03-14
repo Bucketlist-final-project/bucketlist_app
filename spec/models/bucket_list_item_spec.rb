@@ -24,6 +24,17 @@ RSpec.describe BucketListItem, type: :model do
     expect(bucket_list_item.description).not_to eq('Test Item')
   end
 
+  it 'should have a street_address' do
+    bucket_list_item = BucketListItem.new
+    bucket_list_item.street_address = 'Test Item'
+    expect(bucket_list_item.street_address).to eq('Test Item')
+  end
+
+  it 'should NOT have a street_address' do
+    bucket_list_item = BucketListItem.new
+    expect(bucket_list_item.street_address).not_to eq('Test Item')
+  end
+
   it 'should have a city' do
     bucket_list_item = BucketListItem.new
     bucket_list_item.city = 'Test Item'
