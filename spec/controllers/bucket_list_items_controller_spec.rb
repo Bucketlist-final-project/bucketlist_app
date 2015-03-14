@@ -32,7 +32,7 @@ RSpec.describe BucketListItemsController, type: :controller do
 
   describe "POST #create" do
     it "should create an bucket_list_item object successfully" do
-      xhr :post, :create, bucket_list_item: { name: 'test', description: 'test', city: 'test', state: 'test', zip_code: '22222' }
+      xhr :post, :create, bucket_list_item: { name: 'test', description: 'test', street_address: 'test', city: 'test', state: 'test', zip_code: '22222' }
       expect(assigns(:bucket_list_item).class).to eq(BucketListItem)
       expect(assigns(:bucket_list_item)).not_to be_new_record
       expect(assigns(:bucket_list_item).persisted?).to eq(true)

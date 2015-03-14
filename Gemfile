@@ -14,7 +14,7 @@ gem 'faker'
 #remove unneeded assets
 gem 'quiet_assets'
 #add post gres for heroku deployment
-gem 'pg', group: :production
+# gem 'pg', group: :production
 #set ruby version for heroku deployment
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -70,6 +70,7 @@ private
     params.require(:bucket_list_item).permit(
       :name,
       :description,
+      :street_address,
       :city,
       :state,
       :zip_code,
