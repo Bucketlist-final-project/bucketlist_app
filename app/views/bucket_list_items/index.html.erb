@@ -4,9 +4,8 @@
 <% @bucket_list_items.each do |bucket_list_item| %>
 <%= bucket_list_item.name =%>
 <br>
-<% if bucket_list_item.image == nil %>
   <%= image_tag bucket_list_item.s3_url =%>
-<% end %>
+  <br>
 <% bucket_list_item.users.each do |user| %>
 <%= user.email %>
 <br>
