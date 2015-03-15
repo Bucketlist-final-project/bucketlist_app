@@ -1,0 +1,30 @@
+<div class="interestPage">
+    <h1> This is the interests page. Choose a few you're interested in. </h1>
+</div>
+
+<div class="wrapper">
+    <ul>
+       <li class="list" ng-repeat="interest in interestCtrl.interests">
+         <div class="second">
+            <br>
+            <p class = "title">{{interest.title}}
+            </p>
+            <p class = "title">{{interest.description}}
+            </p>
+            <button ng-click="interestCtrl.deleteInterest(interest)">Delete
+            </button>
+
+             <div class="addInterest" ng-controller="BucketController as bucket">
+                <button ng-click="bucket.addBucketInterest(interests)">Add
+                </button>
+
+             </div>
+         </div>
+       </li>
+    </ul>
+</div>
+
+<div class="submitButton">
+    <a href="" ng-click="interestCtrl.goToItemPage(interest)">Submit
+    </a>
+</div>

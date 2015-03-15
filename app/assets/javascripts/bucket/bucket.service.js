@@ -1,8 +1,11 @@
 (function () {
   "use strict";
   angular.module('charlestonBucketList')
-    .factory('InterestService', function(_) {
-        var cart = [];
+    .factory('BucketService', function(_) {
+
+        var url = 'http://tiy-fee-rest.herokuapp.com/collections/dummyserver';
+
+        var bucket = [];
 
         var addBucketInterest=function (newBucketInterest) {
             bucket.push(newBucketInterest);
@@ -21,4 +24,40 @@
             removeBucketInterest: removeBucketInterest,
         };
     });
+
+    .factory('InterestService', function(_) {
+
+        var postInterest = function (newInterest) {
+        $http.post(url, newInterest).success(function(){
+
+        })
+        .error(function(){
+          console.log('ERROR NewsService/postArticle');
+        });
+      };
+
+      var getInterests = function () {
+        return $http.get(url);
+      };
+
+      var getOneInterest = function (interestId) {
+        return $http.get(url + '/' + interestId);
+      };
+
+      var deleteInterest = function (interestId) {
+        $http.delete(url + '/' + interestId);
+      };
+
+      return {
+        postInterest: postInterest,
+        getInterests: getInterests,
+        getOneInterest: getOneInterest,
+        deleteInterest: deleteInterest,
+      };
+
+    });
+
+    })
+
+
 })();

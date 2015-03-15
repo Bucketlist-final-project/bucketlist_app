@@ -9,10 +9,7 @@ var charlestonBucketList = angular.module('charlestonBucketList', ['ngRoute'])
        templateUrl: 'assets/main/views/main.html',
        controller: 'MainController as mainCtrl'
      })
-     .when('/', {
-         templateUrl: 'assets/Nav/views/index.html',
-         controller: 'NavController as navCtrl'
-     })
+     
 
     });
 

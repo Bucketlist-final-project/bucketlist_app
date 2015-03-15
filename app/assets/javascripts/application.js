@@ -17,7 +17,8 @@
 //= require underscore.min
 //= require devise-min
 //= require app
-//= require Nav/nav.service
-//= require Nav/nav.controller
 //= require main/main.service
 //= require main/main.controller
+//= require bucket/bucket.service
+//= require bucket/bucket.controller
+//= require bucket/bucket.module
