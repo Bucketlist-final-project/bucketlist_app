@@ -1,8 +1,10 @@
-<%= form_for @interest do |f| %>
+<%= form_for @bucket_list_item do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :description %>
   <%= f.text_field :description %>
+  <%= f.label :street_address %> 
+  <%= f.text_field :street_address %> 
   <%= f.label :city %> 
   <%= f.text_field :city %> 
   <%= f.label :state %>
@@ -11,6 +13,14 @@
   <%= f.text_field :zip_code %>
   <%= f.label :image %>
   <%= f.file_field :image, class: 'button' %>
+  <checkbox>
+  <% @users.each do |user| %>
+      <%= check_box_tag 'bucket_list_item[user_ids][]', user.id, @bucket_list_item.users.include?(user) %>
+      <%= user.first_name %>
+  <% end %>
+</checkbox>
+<br>
   <%= f.submit %>
   <% end %>
-  <%= link_to 'Cancel', items_path %>
+  <br>
+  <%= link_to 'Cancel', bucket_list_items_path %>

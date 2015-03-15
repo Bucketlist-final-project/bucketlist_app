@@ -15,6 +15,7 @@ class BucketListItemsController < ApplicationController
   end
 
   def show
+    @users = @bucket_list_item.users
     respond_to do |format|
       format.json {render json: @bucket_list_item }
       format.html
@@ -23,6 +24,7 @@ class BucketListItemsController < ApplicationController
 
   def new
     @bucket_list_item = BucketListItem.new
+    @users = User.all
     respond_to do |format|
       format.json {render json: @bucket_list_item }
       format.html
@@ -39,6 +41,7 @@ class BucketListItemsController < ApplicationController
   end
 
   def edit
+    @users = User.all
     respond_to do |format|
       format.json {render json: @bucket_list_item }
       format.html
@@ -46,6 +49,7 @@ class BucketListItemsController < ApplicationController
   end
 
   def update
+    @users = @bucket_list_item.users
     @bucket_list_item.update bucket_list_item_params
     respond_to do |format|
       format.json { render json: @bucket_list_item }
@@ -66,10 +70,12 @@ private
     params.require(:bucket_list_item).permit(
       :name,
       :description,
+      :street_address,
       :city,
       :state,
       :zip_code,
-      :image
+      :image,
+      user_ids: []
       )
   end
 

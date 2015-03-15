@@ -15,6 +15,7 @@ class InterestsController < ApplicationController
   end
 
   def show
+    @users = @interest.users
     respond_to do |format|
       format.json {render json: @interest }
       format.html
@@ -23,6 +24,7 @@ class InterestsController < ApplicationController
 
   def new
     @interest = Interest.new
+    @users = User.all
     respond_to do |format|
       format.json {render json: @interest }
       format.html
@@ -39,6 +41,7 @@ class InterestsController < ApplicationController
   end
 
   def edit
+    @users = User.all
     respond_to do |format|
       format.json {render json: @interest }
       format.html
@@ -65,7 +68,8 @@ private
   def interest_params
     params.require(:interest).permit(
       :name,
-      :image
+      :image,
+      user_ids: []
       )
   end
 

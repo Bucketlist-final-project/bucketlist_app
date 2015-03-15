@@ -3,14 +3,16 @@ require 'rails_helper'
 RSpec.describe BucketListItemsController, type: :controller do
 
   let!(:bucket_list_item) { FactoryGirl.create(:bucket_list_item) }
+  let!(:user) { FactoryGirl.create(:user) }
 
   describe "GET #index" do
-    it "should return all bucket_list_items objects" do
+    it "should return all bucket_list_item objects" do
       xhr :get, :index
       expect(assigns(:bucket_list_items)).not_to eq(nil)
       expect(assigns(:bucket_list_items).length).to eq(1)
       expect(assigns(:bucket_list_items)).to include(bucket_list_item)
     end
+
   end
 
   describe "GET #show" do
@@ -30,7 +32,7 @@ RSpec.describe BucketListItemsController, type: :controller do
 
   describe "POST #create" do
     it "should create an bucket_list_item object successfully" do
-      xhr :post, :create, bucket_list_item: { name: 'test', description: 'test', city: 'test', state: 'test', zip_code: '22222' }
+      xhr :post, :create, bucket_list_item: { name: 'test', description: 'test', street_address: 'test', city: 'test', state: 'test', zip_code: '22222' }
       expect(assigns(:bucket_list_item).class).to eq(BucketListItem)
       expect(assigns(:bucket_list_item)).not_to be_new_record
       expect(assigns(:bucket_list_item).persisted?).to eq(true)
