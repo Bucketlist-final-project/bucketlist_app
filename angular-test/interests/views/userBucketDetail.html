@@ -4,11 +4,19 @@
     <ul>
         <li class="list5" ng-repeat="bucketDtl in bucketDtl.items track by $index">
           <div class="second5">
-            <img class="picture1" ng-src="{{bucketDtl.picture}}">
+            <img class="picture1" ng-src="{{bucketDtl.s3_url}}">
             <br>
-            <p class = "title">{{bucketDtl.title}}
+            <p class = "name">{{bucketDtl.name}}
             </p>
             <p class = "description">{{bucketDtl.description}}
+            </p>
+            <p class = "city">{{bucketDtl.city}}
+            </p>
+            <p class = "state">{{bucketDtl.state}}
+            </p>
+            <p class = "zipcode">{{bucketDtl.zipcode}}
+            </p>
+            <p class = "streetadd">{{bucketDtl.street_address}}
             </p>
             <button ng-click="bucketDtl.removeBucketDetail(item)">delete
             </button>
