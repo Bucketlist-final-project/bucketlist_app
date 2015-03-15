@@ -17,8 +17,14 @@
 //= require underscore/underscore
 //= require devise-min
 //= require app
-//= require main/main.service
-//= require main/main.controller
-//= require bucket/bucket.service
-//= require bucket/bucket.controller
-//= require bucket/bucket.module
+//= require controller
+//= require interests/interestsModule
+//= require interests/interestsController
+//= require interests/interestsService
+//= require interests/bucketController
+//= require interests/bucketService
+//= require interests/userController
+//= require interests/userService
+//= require interests/bucketDetail.controller
+//= require interests/bucketDetail.service
+
