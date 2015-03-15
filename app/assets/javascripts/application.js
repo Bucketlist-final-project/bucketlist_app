@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular/angular
-//= require angular-route.min
-//= require underscore.min
+//= require angular-route/angular-route
+//= require underscore/underscore
 //= require devise-min
 //= require app
 //= require main/main.service
