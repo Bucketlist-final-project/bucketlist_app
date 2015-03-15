@@ -6,6 +6,11 @@
 
   <%= csrf_meta_tags %>
 </head>
+
+<header>
+    <%= render 'navBar' %>
+</header>
+
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
@@ -23,6 +28,8 @@
 
 
 <%= javascript_include_tag 'application' %>
+
+
 
 </body>
 </html>

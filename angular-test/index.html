@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="assets/style.css">
+  <title>Basketlist</title>
+</head>
+<body ng-app="testApp">
+
+<div class="header">
+   <div class="header-center">
+       <a href="#/">Home</a>
+       <a href="#/interestDetail" class ="interestDetail">InterestDetail</a>
+       <a href="#/interests" class ="interestPage">Interests</a>
+       <a href="#/addInterest" class ="addInterest">Admin</a>
+       <a href="#/userBucket" class ="userBucket">Bucket</a>
+       <a href="#/userBucketDetail" class ="userBucketDetail">Bucket Detail</a>
+       <a href="#/bucketlistitem" class ="bucketlistitem">Bucket list items</a>
+   </div>
+</div>
+
+
+
+
+<!-- <div class="view-animate-container">
+  <ng-view class="view-animate">
+  Angular app sits here
+  </ng-view>
+</div>  -->
+
+
+<ng-view>
+</ng-view>
+
+
+
+
+
+<!--vendor scripts -->
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+
+
+<!--main app scripts -->
+
+<script src ="app.js"></script>
+<script src ="controller.js"></script>
+
+
+<script src ="interests/interests.module.js"></script>
+<script src ="interests/interests.controller.js"></script>
+<script src ="interests/interests.service.js"></script>
+<script src ="interests/bucket.controller.js"></script>
+<script src ="interests/bucket.service.js"></script>
+<script src ="interests/user.controller.js"></script>
+<script src ="interests/user.service.js"></script>
+<script src ="interests/bucketDetail.controller.js"></script>
+<script src ="interests/bucketDetail.service.js"></script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

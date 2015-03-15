@@ -1,0 +1,20 @@
+<h1> this is the bucket detail </h1>
+
+<div class="wrapper" ng-controller="DetailController as bucketDtl">
+    <ul>
+        <li class="list5" ng-repeat="bucketDtl in bucketDtl.items track by $index">
+          <div class="second5">
+            <img class="picture1" ng-src="{{bucketDtl.picture}}">
+            <br>
+            <p class = "title">{{bucketDtl.title}}
+            </p>
+            <p class = "description">{{bucketDtl.description}}
+            </p>
+            <button ng-click="bucketDtl.removeBucketDetail(item)">delete
+            </button>
+          </div>
+        </li>
+    </ul>
+
+<div class="maps"></div>
+</div>
