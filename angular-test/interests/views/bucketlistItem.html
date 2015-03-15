@@ -6,18 +6,16 @@
     <ul>
       <li class="list3" ng-repeat="bucket in bucket.items track by $index">
         <div class="second3">
-            <img class="picture" ng-src="{{bucket.picture}}">
+            <img class="picture" ng-src="{{bucket.s3_url}}">
             <br>
-            <p class = "title">{{bucket.title}}
-            </p>
-            <p class = "description">{{bucket.description}}
+            <p class = "name">{{bucket.name}}
             </p>
             <button ng-click="bucket.removeBucketInterest(item)">delete
             </button>
-        <div ng-controller="UserController as user">
-            <button ng-click="user.addUserBucket(items)">Add
-            </button>
-        </div>
+            <div ng-controller="UserController as user">
+                <button ng-click="user.addUserBucket(items)">Add
+                </button>
+            </div>
         </div>
       </li>
     </ul>
