@@ -9,7 +9,7 @@ var charlestonBucketList = angular.module('charlestonBucketList', ['ngRoute'])
        templateUrl: 'assets/main/views/main.html',
        controller: 'MainController as mainCtrl'
      })
-     
+
 
     });
 

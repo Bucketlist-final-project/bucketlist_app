@@ -5,11 +5,15 @@
     <ul>
         <li class="list4" ng-repeat="user in user.items track by $index">
         <div class="second4">
-            <img class="picture" ng-src="{{user.picture}}">
+            <img class="picture" ng-src="{{user.s3_url}}">
             <br>
-            <p class = "title">{{user.title}}
+            <p class = "name">{{user.name}}
             </p>
-            <p class = "description">{{user.description}}
+            <p class= "city">{{user.city}}
+            </p>
+            <p class= "state">{{user.state}}
+            </p>
+            <p class= "zipcode">{{user.zipcode}}
             </p>
             <button ng-click="user.removeUserBucket(item)">delete
             </button>

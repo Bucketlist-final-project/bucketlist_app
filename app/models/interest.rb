@@ -2,7 +2,7 @@ class Interest < ActiveRecord::Base
 
   validates :name, presence: true
   has_many :user_interests
-  has_many :users, through: :user_interests 
+  has_many :users, through: :user_interests
 
   aws_keys = if ['development', 'test'].include?(Rails.env)
     "#{Rails.root}/config/aws-keys.yml"
