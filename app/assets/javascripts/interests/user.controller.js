@@ -13,7 +13,7 @@
 
            console.log(user);
        };
-       
+
        user.removeUserBucket = function (item) {
            UserService.removeuserBucket(item);
        };
