@@ -1,16 +1,18 @@
-var charlestonBucketList = angular.module('charlestonBucketList', ['ngRoute'])
-    .config(['$httpProvider', function($httpProvider){
-        $httpProvider.defaults.headers.common['X-CSRF-Token'] = $("meta[name=csrf-token]").attr("content");
-    }])
+(function () {
+  "use strict";
 
-   .config(function($routeProvider){
+  angular.module('testApp', [
+    'ngRoute',
+    'interests'
+  ])
+   .config(['$httpProvider', function($httpProvider) {
+     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $("meta[name=csrf-token]").attr("content");
+   }])
+   .config(['$routeProvider', function ($routeProvider) {
      $routeProvider
-     .when('/', {
-       templateUrl: 'assets/main/views/main.html',
+      .when('/', {
+       templateUrl: 'assets/views/main.html',
        controller: 'MainController as mainCtrl'
-     })
-
-
-    });
-
-      // .constant('_', _)
+   })
+    }]);
+})();

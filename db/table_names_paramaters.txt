@@ -1,0 +1,50 @@
+Table: bucket_list_items
+name          
+description
+city         
+state         
+zip_code      
+image_file_name
+street_address
+
+so in rails you can use 'bucket_list_item.street address', etc.
+
+
+Table: interests
+name
+image_file_name 
+
+
+
+These tables probably do NOT need incorporation at this time:
+
+  create_table "user_bucket_list_items", force: :cascade do |t|
+    t.integer  "user_id",             limit: 4
+    t.integer  "bucket_list_item_id", limit: 4
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  create_table "user_interests", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.integer  "interest_id", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  Table: users
+    t.string   "email",                  limit: 255, default: "",    null: false
+    t.string   "encrypted_password",     limit: 255, default: "",    null: false
+    t.string   "reset_password_token",   limit: 255
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          limit: 4,   default: 0,     null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "first_name",             limit: 255
+    t.string   "last_name",              limit: 255
+    t.boolean  "admin",                  limit: 1,   default: false
