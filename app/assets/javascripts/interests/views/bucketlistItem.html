@@ -1,0 +1,28 @@
+<div class="interestItemPage">
+    <h1> This is where the interest Items will go</h1>
+</div>
+
+<div class="wrapper" ng-controller="BucketController as bucket">
+    <ul>
+      <li class="list3" ng-repeat="bucket in bucket.items track by $index">
+        <div class="second3">
+            <img class="picture" ng-src="{{bucket.s3_url}}">
+            <br>
+            <p class = "name">{{bucket.name}}
+            </p>
+            <button ng-click="bucket.removeBucketInterest(item)">delete
+            </button>
+            <div ng-controller="UserController as user">
+                <button ng-click="user.addUserBucket(items)">Add
+                </button>
+            </div>
+        </div>
+      </li>
+    </ul>
+</div>
+
+<div ng-controller="BucketController as bucket">
+    <div class="submitButton">
+        <a href="" ng-click="bucket.goToBucketPage(bucket)">Submit</a>
+    </div>
+</div>

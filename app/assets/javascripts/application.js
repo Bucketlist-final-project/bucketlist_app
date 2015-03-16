@@ -13,12 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular/angular
-//= require angular-route.min
-//= require underscore.min
+//= require angular-route/angular-route
+//= require underscore/underscore
 //= require devise-min
 //= require app
-//= require main/main.service
-//= require main/main.controller
-//= require bucket/bucket.service
-//= require bucket/bucket.controller
-//= require bucket/bucket.module
+//= require controller
+//= require interests/interests.module
+//= require interests/interests.controller
+//= require interests/interests.service
+//= require interests/bucket.controller
+//= require interests/bucket.service
+//= require interests/user.controller
+//= require interests/user.service
+//= require interests/bucketDetail.controller
+//= require interests/bucketDetail.service
+
