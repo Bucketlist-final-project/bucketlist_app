@@ -11,6 +11,8 @@ gem "omniauth-google-oauth2"
 #allows upload of files
 gem "paperclip", "~> 4.2"
 gem 'faker' 
+#Sass library
+gem 'bourbon'
 #remove unneeded assets
 gem 'quiet_assets'
 #add post gres for heroku deployment
