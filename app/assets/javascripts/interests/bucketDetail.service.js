@@ -12,7 +12,7 @@
             return bucketDtl;
         };
         var getSingleDetail= function(id) {
-          return $http.get(url + '/' + id);
+          return $http.get('/bucket_list_items/' + id + '.json');
       };
         var removeBucketDetail = function (item) {
             var index = bucketDtl.indexOf(item);
@@ -23,6 +23,7 @@
             getBucketDetail: getBucketDetail,
             addBucketDetail: addBucketDetail,
             removeBucketDetail: removeBucketDetail,
+            getSingleDetail: getSingleDetail
         };
     });
 
