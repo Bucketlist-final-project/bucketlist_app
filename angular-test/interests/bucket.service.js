@@ -5,21 +5,23 @@
 
         var bucket = [];
 
-        var addBucketInterest=function (newBucketInterest) {
+        var addBucketItems=function (newBucketItems) {
             bucket.push(newBucketInterest);
         };
-        var getBucketInterest= function () {
-            return bucket;
+        var getBucketItems= function () {
+            return $http.get('/bucket_list_items.json');
+
+            // return bucket;
         };
-        var removeBucketInterest = function (item) {
+        var removeBucketItems = function (item) {
             var index = bucket.indexOf(item);
             bucket.splice(index,1);
         };
 
         return {
-            getBucketInterest: getBucketInterest,
-            addBucketInterest: addBucketInterest,
-            removeBucketInterest: removeBucketInterest,
+            getBucketItems: getBucketItems,
+            addBucketItems: addBucketItems,
+            removeBucketItems: removeBucketItems,
         };
     });
 
