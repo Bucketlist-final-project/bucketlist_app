@@ -5,16 +5,18 @@
 
        var bucket = this;
 
-       bucket.items = BucketService.getBucketInterest();
+       BucketService.getBucketItems().success(
+           function(data) {
+               bucket.items= data;
+           });
+    //    bucket.addBucketItems = function (item) {
+    //        BucketService.addBucketItems(item);
+           //$location.path('/bucketlistitem');
 
-       bucket.addBucketInterest = function (item) {
-           BucketService.addBucketInterest(item);
-        //    $location.path('/bucketlistitem');
-
-           console.log(bucket);
-       };
-       bucket.removeBucketInterest = function (item) {
-           BucketService.removeBucketInterest(item);
+          console.log(bucket);
+       
+       bucket.removeBucketItems = function (item) {
+           BucketService.removeBucketItems(item);
        };
        bucket.goToBucketPage =function () {
            $location.path('/userBucket');
