@@ -5,6 +5,14 @@
 
        var bucketDtl = this;
 
+    //    $scope.map = {
+    //       center: {
+    //         latitude: 30.8654,
+    //         longitude: -43.6532
+    //       },
+    //       zoom: 8
+    //     };
+
        bucketDtl.items = DetailService.getBucketDetail();
 
        bucketDtl.addBucketDetail = function (item) {

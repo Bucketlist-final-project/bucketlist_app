@@ -1,3 +1,5 @@
+@import "bourbon/bourbon";
+
 .header {
     border: 2px solid black;
 }
@@ -16,4 +18,8 @@
 .picture1 {
     width: 500px;
     height:200px;
+}
+#map_canvas {
+    width: 50%;
+    height:50%;
 }
