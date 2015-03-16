@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   angular.module('interests')
-    .factory('DetailService', function() {
+    .factory('DetailService', function($http) {
 
         var bucketDtl = [];
 
@@ -11,6 +11,9 @@
         var getBucketDetail= function () {
             return bucketDtl;
         };
+        var getSingleDetail= function(id) {
+          return $http.get(url + '/' + id);
+      };
         var removeBucketDetail = function (item) {
             var index = bucketDtl.indexOf(item);
             bucketDtl.splice(index,1);

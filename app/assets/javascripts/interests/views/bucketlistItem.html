@@ -1,5 +1,5 @@
 <div class="interestItemPage">
-    <h1> This is where the Bucket List Items will go</h1>
+    <h1> This is where the interest Items will go</h1>
 </div>
 
 <div class="wrapper" ng-controller="BucketController as bucket">
@@ -8,7 +8,9 @@
         <div class="second3">
             <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucket.image_file_name}}">
             <br>
-            <p class = "name" ng-click=''>{{bucket.name}}
+            <div ng-controller="DetailController as bucketDtl">
+            <a href = "#/userBucketDetail" ng-click="bucketDtl.addBucketDetail(bucketDtl)">{{bucket.name}}
+            </div>
             </p>
             <button ng-click="bucket.removeBucketItems(item)">delete
             </button>
