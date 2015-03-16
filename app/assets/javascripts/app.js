@@ -4,16 +4,15 @@
   angular.module('testApp', [
     'ngRoute',
     'interests'
-
-
   ])
-
-   .config(function ($routeProvider) {
+   .config(['$httpProvider', function($httpProvider) {
+     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $("meta[name=csrf-token]").attr("content");
+   }])
+   .config(['$routeProvider', function ($routeProvider) {
      $routeProvider
-     .when('/', {
-       templateUrl: 'views/main.html',
+      .when('/', {
+       templateUrl: 'assets/views/main.html',
        controller: 'MainController as mainCtrl'
    })
-
-    });
+    }]);
 })();

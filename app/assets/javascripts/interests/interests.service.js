@@ -11,7 +11,7 @@
       };
 
       var getInterests = function () {
-        return $http.get(url);
+        return $http.get('/interests.json');
       };
 
 

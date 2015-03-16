@@ -18,13 +18,13 @@
 //= require devise-min
 //= require app
 //= require controller
-//= require interests/interestsModule
-//= require interests/interestsController
-//= require interests/interestsService
-//= require interests/bucketController
-//= require interests/bucketService
-//= require interests/userController
-//= require interests/userService
+//= require interests/interests.module
+//= require interests/interests.controller
+//= require interests/interests.service
+//= require interests/bucket.controller
+//= require interests/bucket.service
+//= require interests/user.controller
+//= require interests/user.service
 //= require interests/bucketDetail.controller
 //= require interests/bucketDetail.service
 

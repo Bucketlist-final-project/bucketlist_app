@@ -8,36 +8,34 @@
   .config(function ($routeProvider) {
     $routeProvider
     .when('/interests', {
-      templateUrl: 'interests/views/interests.html',
+      templateUrl: 'assets/interests/views/interests.html',
       controller: 'InterestController as interestCtrl'
     })
 
     .when('/interestDetail', {
-      templateUrl: '/interests/views/interestDetail.html',
+      templateUrl: 'assets/interests/views/interestDetail.html',
       controller: 'InterestController as interestCtrl'
     })
 
     .when('/bucketlistitem', {
-       templateUrl: '/interests/views/bucketlistitem.html',
+       templateUrl: 'assets/interests/views/bucketlistItem.html',
        controller: 'InterestController as interestCtrl'
     })
 
     .when('/addInterest', {
-       templateUrl: '/interests/views/addInterest.html',
+       templateUrl: 'assets/interests/views/addInterest.html',
        controller: 'InterestController as interestCtrl'
     })
 
     .when('/userBucketDetail', {
-       templateUrl: '/interests/views/userBucketDetail.html',
+       templateUrl: 'assets/interests/views/userBucketDetail.html',
        controller: 'DetailController as bucketDtl',
    })
 
    .when('/userBucket', {
-      templateUrl: '/interests/views/userBucket.html',
+      templateUrl: 'assets/interests/views/userBucket.html',
       controller: 'UserController as user',
   });
 })
-
-    .constant('_', _);
 
 })();
