@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :users
   resources :interests
   resources :bucket_list_items do
     resources :comments

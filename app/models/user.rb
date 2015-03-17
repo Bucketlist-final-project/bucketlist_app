@@ -11,4 +11,15 @@ class User < ActiveRecord::Base
   has_many :interests, through: :user_interests
 
   has_many :comments
+
+  def as_json(options={})
+  super(:only => [:first_name,:last_name],
+        :include => {
+          :bucket_list_items => {:only => [:id, :name]}
+        }
+  )
+end
+
+
+
 end
