@@ -23,7 +23,6 @@ RSpec.describe InterestsController, type: :controller do
     end
 
     it "should return all user objects under the interest" do
-      p interest.users
       xhr :get, :show, id: interest
       expect(assigns(:users).class).to eq(User::ActiveRecord_Associations_CollectionProxy)
     end

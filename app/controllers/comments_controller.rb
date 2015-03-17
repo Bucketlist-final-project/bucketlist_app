@@ -98,3 +98,20 @@ private
 
 
 end
+
+# def show
+#  @riff = Riff.find params[:id]
+#  riffjson = @riff.to_json
+#  riffjson.merge(s3_url: @riff.s3_url)
+#  respond_to do |format|
+#    format.json { render riffjson }
+#  end
+# end
+
+
+
+
+
+
+
+
