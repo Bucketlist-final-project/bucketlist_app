@@ -1,9 +1,14 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('UserController', function (UserService, $location, $routeParams, $scope) {
+    .controller('UserController', function (UserService, $location, $routeParams, $scope, Auth) {
 
        var user = this;
+
+       Auth.currentUser().then(function(user) {
+        console.log(user.id);
+        $scope.currentUser = user
+      });
 
        user.items = UserService.getUserBucket();
 
@@ -25,8 +30,7 @@
        };
 
        user.goToBucket = function(id){
-        $location.path('/users/' + id);
-        console.log(id)
+        $location.path('/users/' + $scope.currentUser.id);
        }
 
     });

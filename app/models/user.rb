@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_many :comments
 
   def as_json(options={})
-  super(:only => [:first_name,:last_name],
+  super(:only => [:first_name,:last_name, :id],
         :include => {
           :bucket_list_items => {:only => [:id, :name]}
         }

@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-
+  devise_for :users, controllers: { sessions: "users/sessions" }
   resources :users
   resources :interests
   resources :bucket_list_items do
     resources :comments
   end
 
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
