@@ -19,7 +19,7 @@
             </p>
 
             <div ng-controller="UserController as user">
-                <button ng-click="user.addUserBucket(user.id)">Add
+                <button ng-click="user.addUserBucket(bucketDtl.singleItem)">Add
                 </button>
             </div>
 
@@ -29,6 +29,6 @@
 
     <div ng-controller="UserController as user">
         <div class="submitButton3">
-            <a href="" ng-click="user.goToBucket(user.id)">Submit</a>
+            <a href="" ng-click="user.submitBucket()">Submit</a>
         </div>
     </div>

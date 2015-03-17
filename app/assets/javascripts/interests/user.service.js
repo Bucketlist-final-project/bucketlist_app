@@ -6,7 +6,9 @@
         var user = [];
 
         var addUserBucket=function (newUserBucket) {
-            user.push(newUserBucket);
+            // user.push(newUserBucket);
+
+            $http.put('/users/' + newUserBucket.id + '.json', newUserBucket);
         };
         var getUserBucket= function () {
             return user;

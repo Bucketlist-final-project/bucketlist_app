@@ -18,16 +18,19 @@
          });
 
        user.addUserBucket = function (item) {
-           UserService.addUserBucket(item);
-        //    $location.path('/userBucket');
-
-           console.log(user);
+           $scope.currentUser.bucket_list_items.push(item);
+        //    UserService.addUserBucket(item);
            console.log("this user add works");
+           console.log(item);
        };
 
        user.removeUserBucket = function (item) {
            UserService.removeuserBucket(item);
        };
+       user.submitBucket = function (item) {
+           UserService.addUserBucket($scope.currentUser);
+           console.log('submit button works')
+       }
 
        user.goToBucket = function(id){
         $location.path('/users/' + $scope.currentUser.id);
