@@ -15,7 +15,7 @@
 //= require angular/angular
 //= require angular-route/angular-route
 //= require underscore/underscore
-//= require devise-min
+//= require devise
 //= require app
 //= require controller
 //= require interests/interests.module
