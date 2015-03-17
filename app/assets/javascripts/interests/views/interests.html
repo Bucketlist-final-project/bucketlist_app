@@ -1,33 +1,22 @@
 <div class="interestPage">
-    <h1> This is the interests page. Choose a few you're interested in. </h1>
+    <h1> Choose a few you are interested in...</h1>
 </div>
 
 <div class="wrapper">
-    <ul>
-       <li class="list" ng-repeat="interest in interestCtrl.interests">
-         <div class="second">
-            <br>
-            <p class = "name">{{interest.name}}
-            </p>
-            <br>
-            <p>
-            <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{interest.image_file_name}}">
-            </p>
-            <br>
-            <button ng-click="interestCtrl.deleteInterest(interest)">Delete
-            </button>
-            <br>
-             <div class="addInterest" ng-controller="BucketController as bucket">
-                <button ng-click="bucket.addBucketItems(bucket)">Add
-                </button>
-
-             </div>
-         </div>
-       </li>
-    </ul>
+  <ul>
+    <li class="list" ng-repeat="interest in interestCtrl.interests">
+      <div class="addInterest" ng-controller="BucketController as bucket">
+        <br>
+      <p class = "name">{{interest.name}}
+        <input type="checkbox" class="check" ng-click="bucket.addBucketItems(bucket)">
+      </p>
+      </div>
+    </li>
+   </ul>
 </div>
 
 <div class="submitButton">
-    <a href="" ng-click="interestCtrl.goToItemPage(interest)">Submit
+    <a href="" ng-click="interestCtrl.goToItemPage(interest)">
+        SUBMIT
     </a>
 </div>

@@ -32,7 +32,7 @@
        controller: 'DetailController as bucketDtl',
    })
 
-   .when('/userBucket', {
+   .when('/users/:userId', {
       templateUrl: 'assets/interests/views/userBucket.html',
       controller: 'UserController as user',
   });

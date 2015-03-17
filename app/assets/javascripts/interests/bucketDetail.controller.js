@@ -16,8 +16,6 @@
         bucketDtl.singleItem = data;
         });
 
-
-
        bucketDtl.addBucketDetail = function (item) {
            DetailService.addBucketDetail(item);
            $location.path('/userBucketDetail');
