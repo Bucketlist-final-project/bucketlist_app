@@ -3,17 +3,17 @@
 
 <div class="wrapper" ng-controller="UserController as user">
     <ul>
-        <li class="list4" ng-repeat="user in user.items track by $index">
+        <li class="list4">
         <div class="second4">
-            <img class="picture" ng-src="{{user.s3_url}}">
+            <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{user.singleitem.image_file_name}}">
             <br>
-            <p class = "name">{{user.name}}
+            <p class = "name">{{user.singleItem.name}}
             </p>
-            <p class= "city">{{user.city}}
+            <p class= "city">{{user.singleItem.city}}
             </p>
-            <p class= "state">{{user.state}}
+            <p class= "state">{{user.singleItem.state}}
             </p>
-            <p class= "zipcode">{{user.zipcode}}
+            <p class= "zipcode">{{user.singleItem.zipcode}}
             </p>
             <button ng-click="user.removeUserBucket(item)">delete
             </button>
@@ -26,3 +26,6 @@
         </li>
     </ul>
 </div>
+
+
+<!-- <li class="list4" ng-repeat="user in user.items track by $index" -->

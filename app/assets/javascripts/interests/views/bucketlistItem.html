@@ -1,22 +1,22 @@
 <div class="interestItemPage">
-    <h1> This is where the interest Items will go</h1>
+    <h1 class="bucketItems"> Choose the items you'd like to add to your bucket..</h1>
 </div>
 
-<div class="wrapper" ng-controller="BucketController as bucket">
+<div class="ItemsWrapper" ng-controller="BucketController as bucket">
     <ul>
       <li class="list3" ng-repeat="bucket in bucket.items track by $index">
         <div class="second3">
-            <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucket.image_file_name}}">
-            <br>
             <div ng-controller="DetailController as bucketDtl">
-            <a href="" ng-click="bucketDtl.goToBucketDetail(bucket.id)">{{bucket.name}}</a>
+            <a href="" ng-click="bucketDtl.goToBucketDetail(bucket.id)">
+                <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucket.image_file_name}}">
+            </a>
             </div>
-            </p>
-            <button ng-click="bucket.removeBucketItems(item)">delete
-            </button>
+            <br>
+            <p class ="name2">{{bucket.name}}</p>
+            </div>
+
             <div ng-controller="UserController as user">
-                <button ng-click="user.addUserBucket(items)">Add
-                </button>
+                <input type="checkbox" ng-click="user.addUserBucket(user.id)">
             </div>
         </div>
       </li>
@@ -24,7 +24,7 @@
 </div>
 
 <div ng-controller="BucketController as bucket">
-    <div class="submitButton">
+    <div class="submitButton2">
         <a href="" ng-click="bucket.goToBucketPage(bucket)">Submit</a>
     </div>
 </div>

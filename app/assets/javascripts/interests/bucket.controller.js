@@ -14,7 +14,7 @@
            //$location.path('/bucketlistitem');
 
           console.log(bucket);
-       
+
        bucket.removeBucketItems = function (item) {
            BucketService.removeBucketItems(item);
        };

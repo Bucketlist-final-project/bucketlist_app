@@ -1,11 +1,11 @@
-<h1> this is the bucket list item detail </h1>
-<div class="wrapper" ng-controller="DetailController as bucketDtl">
+<h1 class="itemDetail"> this is the bucket list item detail </h1>
+<div class="wrapperDetail" ng-controller="DetailController as bucketDtl">
     <ul>
         <li class="list5">
           <div class="second5">
               <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucketDtl.singleItem.image_file_name}}">
             <br>
-            <p>{{bucketDtl.singleItem.name}}
+            <p class="name3">{{bucketDtl.singleItem.name}}
             </p>
             <p class = "description">{{bucketDtl.singleItem.description}}
             </p>
@@ -18,11 +18,17 @@
             <p class = "zipcode">{{bucketDtl.singleItem.zipcode}}
             </p>
 
-            <button ng-click="bucketDtl.removeBucketDetail(bucketDtl.singleItem)">delete
-            </button>
+            <div ng-controller="UserController as user">
+                <button ng-click="user.addUserBucket(user.id)">Add
+                </button>
+            </div>
+
           </div>
         </li>
     </ul>
 
-<div class="maps"></div>
-</div>
+    <div ng-controller="UserController as user">
+        <div class="submitButton3">
+            <a href="" ng-click="user.goToBucket(user.id)">Submit</a>
+        </div>
+    </div>
