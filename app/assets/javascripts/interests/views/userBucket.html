@@ -3,17 +3,11 @@
 
 <div class="wrapper" ng-controller="UserController as user">
     <ul>
-        <li class="list4">
+        <li class="list4" ng-repeat='item in currentUser.bucket_list_items'>
         <div class="second4">
-            <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{user.singleitem.image_file_name}}">
+            <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{item.image_file_name}}">
             <br>
-            <p class = "name">{{currentUser.bucket_list_items[0].name}}
-            </p>
-            <p class= "city">{{user.singleItem.city}}
-            </p>
-            <p class= "state">{{user.singleItem.state}}
-            </p>
-            <p class= "zipcode">{{user.singleItem.zipcode}}
+            <p class = "name">{{item.name}}
             </p>
             <button ng-click="user.removeUserBucket(item)">delete
             </button>
