@@ -44,8 +44,11 @@ class CommentsController < ApplicationController
     @comment = Comment.new comment_params
     @comment.save
     respond_to do |format|
-      format.json { render json: @comment }
-      format.html {redirect_to bucket_list_item_path}
+      format.json do
+        @comment.user = current_user
+        render json: @comment
+      end
+      format.html { redirect_to bucket_list_item_path }
     end
   end
 
@@ -59,7 +62,10 @@ class CommentsController < ApplicationController
   def update
     @comment.update_attributes comment_params
     respond_to do |format|
-      format.json { render json: @comment }
+      format.json do
+        @comment.user = current_user
+        render json: @comment
+     end
       format.html {redirect_to bucket_list_item_path}
     end
   end
