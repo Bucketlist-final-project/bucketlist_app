@@ -1,4 +1,5 @@
 class BucketListItemsController < ApplicationController
+  # User.where(id: [1,2,3]).map(&:projects).flatten
   before_action :set_bucket_list_item, only:[
     :show,
     :edit,
@@ -9,15 +10,14 @@ class BucketListItemsController < ApplicationController
   def index
     @bucket_list_items = BucketListItem.all
     respond_to do |format|
-      format.json {render json: @bucket_list_items }
+      format.json { render json: @bucket_list_items }
       format.html
     end
   end
 
   def show
-    @users = @bucket_list_item.users
     respond_to do |format|
-      format.json {render json: @bucket_list_item }
+      format.json { render json: @bucket_list_item }
       format.html
     end
   end
@@ -35,7 +35,10 @@ class BucketListItemsController < ApplicationController
     @bucket_list_item = BucketListItem.new bucket_list_item_params
     @bucket_list_item.save
     respond_to do |format|
-      format.json { render json: @bucket_list_item }
+      format.json do
+        @bucket_list_item.user = current_user 
+        render json: @bucket_list_item
+      end
       format.html {redirect_to bucket_list_items_path}
     end
   end
@@ -52,7 +55,10 @@ class BucketListItemsController < ApplicationController
     @users = @bucket_list_item.users
     @bucket_list_item.update bucket_list_item_params
     respond_to do |format|
-      format.json { render json: @bucket_list_item }
+      format.json do
+        @bucket_list_item.user = current_user
+        render json: @bucket_list_item
+      end
       format.html {redirect_to bucket_list_items_path}
     end
   end

@@ -5,4 +5,5 @@ task :initialize => :environment do
   Rake::Task["create_users"].execute
   Rake::Task["create_interests"].execute
   Rake::Task["create_bucket_list_items"].execute
+  Rake::Task["create_comments"].execute
 end

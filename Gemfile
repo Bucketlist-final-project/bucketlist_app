@@ -54,6 +54,8 @@ group :development, :test do
 
     #rspec testing framework
   gem 'rspec-rails', '~> 3.0'
+  #checks testing immediately
+  gem 'guard'
   #feature testing
   gem 'capybara'
   #launch applications - used for launching screenshots in capybara
