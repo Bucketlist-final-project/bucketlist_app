@@ -8,7 +8,7 @@
        Auth.currentUser().then(function(user) {
         console.log(user.id);
         $scope.currentUser = user
-      });
+       });
 
        user.items = UserService.getUserBucket();
 
@@ -19,9 +19,8 @@
 
        user.addUserBucket = function (item) {
            $scope.currentUser.bucket_list_items.push(item);
-        //    UserService.addUserBucket(item);
-           console.log("this user add works");
-           console.log(item);
+           $location.path('/users/' + $scope.currentUser.id);
+           console.log(user);
        };
 
        user.removeUserBucket = function (item) {

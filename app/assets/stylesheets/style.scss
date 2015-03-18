@@ -95,7 +95,7 @@ body {
     }
 }
 
-img {
+.bucketCard {
     border-top-left-radius: 10px;
     @include filter(grayscale(50%));
     box-shadow: 5px 5px 3px #E6E600;

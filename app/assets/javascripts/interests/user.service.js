@@ -5,19 +5,18 @@
 
         var user = [];
 
-        var addUserBucket=function (newUserBucket) {
-            // user.push(newUserBucket);
-
-            $http.put('/users/' + newUserBucket.id + '.json', newUserBucket);
+        var addUserBucket=function (id) {
+            $http.put('/users/' + id + '.json');
         };
+
         var getUserBucket= function () {
             return user;
         };
 
         var getSingleItem= function(id) {
-          return $http.get('/users/' + id + '.json');
+          return $http.get('/users/' + id + '.json')
           console.log(user);
-      };
+        };
 
         var removeUserBucket = function (item) {
             var index = user.indexOf(item);
