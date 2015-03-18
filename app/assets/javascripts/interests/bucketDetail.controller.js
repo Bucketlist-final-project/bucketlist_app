@@ -29,7 +29,7 @@
        bucketDtl.goToBucketDetail = function(id){
         $location.path('/bucket_list_items/' + id);
         console.log(id)
-       }
+    };
 
     });
 

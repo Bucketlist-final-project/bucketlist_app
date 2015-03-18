@@ -23,7 +23,8 @@
             getBucketDetail: getBucketDetail,
             addBucketDetail: addBucketDetail,
             removeBucketDetail: removeBucketDetail,
-            getSingleDetail: getSingleDetail
+            getSingleDetail: getSingleDetail,
+            // postComment: postComment
         };
     });
 

@@ -1,100 +1,100 @@
 class CommentsController < ApplicationController
-  
-  before_action :set_bucket_list_item, only:[
-    :index,
-    :show,
-    :new,
-    :create,
-    :edit,
-    :update,
-    :destroy
-  ]
 
-  before_action :set_comment, only:[
-    :show,
-    :edit,
-    :update,
-    :destroy
-  ]
+ before_action :set_bucket_list_item, only:[
+   :index,
+   :show,
+   :new,
+   :create,
+   :edit,
+   :update,
+   :destroy
+ ]
 
-  def index
-    @comments = Comment.all
-    respond_to do |format|
-      format.json {render json: @comments }
-      format.html
-    end
-  end
+ before_action :set_comment, only:[
+   :show,
+   :edit,
+   :update,
+   :destroy
+ ]
 
-  def show
-    respond_to do |format|
-      format.json {render json: @comment }
-      format.html
-    end
-  end
+ def index
+   @comments = @bucket_list_item.comments
+   respond_to do |format|
+     format.json {render json: @comments }
+     format.html
+   end
+ end
 
-  def new
-    @comment = Comment.new
-    respond_to do |format|
-      format.json {render json: @comment }
-      format.html
-    end    
-  end
+ def show
+   respond_to do |format|
+     format.json {render json: @comment }
+     format.html
+   end
+ end
 
-  def create
-    @comment = Comment.new comment_params
-    @comment.save
-    respond_to do |format|
-      format.json do
-        @comment.user = current_user
-        render json: @comment
-      end
-      format.html { redirect_to bucket_list_item_path }
-    end
-  end
+ def new
+   @comment = Comment.new
+   respond_to do |format|
+     format.json {render json: @comment }
+     format.html
+   end
+ end
 
-  def edit
-    respond_to do |format|
-      format.json {render json: @comment }
-      format.html
-    end
-  end
-
-  def update
-    @comment.update_attributes comment_params
-    respond_to do |format|
-      format.json do
-        @comment.user = current_user
-        render json: @comment
+ def create
+   @comment = Comment.new comment_params
+   @comment.save
+   respond_to do |format|
+     format.json do
+       @comment.user = current_user
+       render json: @comment
      end
-      format.html {redirect_to bucket_list_item_path}
-    end
-  end
+     format.html { redirect_to bucket_list_item_path }
+   end
+ end
 
-  def destroy
-    @comment.destroy
-    respond_to do |format|
-      format.json { head :no_content }
-      format.html {redirect_to interests_path}
+ def edit
+   respond_to do |format|
+     format.json {render json: @comment }
+     format.html
+   end
+ end
+
+ def update
+   @comment.update_attributes comment_params
+   respond_to do |format|
+     format.json do
+       @comment.user = current_user
+       render json: @comment
     end
-  end
+     format.html {redirect_to bucket_list_item_path}
+   end
+ end
+
+ def destroy
+   @comment.destroy
+   respond_to do |format|
+     format.json { head :no_content }
+     format.html {redirect_to interests_path}
+   end
+ end
 
 private
 
-  def comment_params
-    params.require(:comment).permit(
-      :content,
-      :user_id,
-      :bucket_list_id
-      )
-  end
+ def comment_params
+   params.require(:comment).permit(
+     :content,
+     :user_id,
+     :bucket_list_id
+     )
+ end
 
-  def set_bucket_list_item
-    @bucket_list_item = BucketListItem.find params[:id]
-  end
+ def set_bucket_list_item
+   @bucket_list_item = BucketListItem.find params[:bucket_list_item_id]
+ end
 
-  def set_comment
-    @comment = Comment.find params[:id]
-  end
+ def set_comment
+   @comment = Comment.find params[:id]
+ end
 
 
 end
@@ -107,11 +107,3 @@ end
 #    format.json { render riffjson }
 #  end
 # end
-
-
-
-
-
-
-
-

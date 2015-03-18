@@ -27,3 +27,5 @@
 //= require interests/user.service
 //= require interests/bucketDetail.controller
 //= require interests/bucketDetail.service
+//= require interests/comment.service
+//= require interests/comment.controller
