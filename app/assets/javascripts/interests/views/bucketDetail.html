@@ -32,3 +32,25 @@
             <a href="" ng-click="user.submitBucket()">Submit</a>
         </div>
     </div>
+
+    <div class="commentforms" ng-controller="CommentController as comment">
+        <h2 class="comments">Comments
+        </h2>
+        <form class='commentform'>
+            <textarea cols="50" rows="4" ng-model="Comment.content" placeholder="Add comment here">
+            </textarea>
+            <button class= "submitComment" ng-click= "comment.addComment(comment.getOneComment)">Post Comment
+            </button>
+        </form>
+
+
+     <div class="comments">
+       <ul>
+            <li ng-repeat="comment in comment.getOneComment.comment">
+                </p>
+                <p>{{comment.content}}
+                </p>
+            </li>
+       </ul>
+     </div>
+     </div>

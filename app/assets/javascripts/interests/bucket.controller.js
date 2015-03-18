@@ -9,9 +9,6 @@
            function(data) {
                bucket.items= data;
            });
-    //    bucket.addBucketItems = function (item) {
-    //        BucketService.addBucketItems(item);
-           //$location.path('/bucketlistitem');
 
           console.log(bucket);
 
