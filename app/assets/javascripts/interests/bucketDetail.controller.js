@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('DetailController', function (DetailService, $location, $routeParams, $scope) {
+    .controller('DetailController', function (DetailService, $location, $routeParams, $scope, Auth) {
 
        var bucketDtl = this;
 

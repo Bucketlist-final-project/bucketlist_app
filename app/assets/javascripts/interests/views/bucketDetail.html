@@ -3,7 +3,7 @@
     <ul>
         <li class="list5">
           <div class="second5">
-              <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucketDtl.singleItem.image_file_name}}">
+              <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucketDtl.singleItem.image_file_name}}"class= "bucketCard">
             <br>
             <p class="name3">{{bucketDtl.singleItem.name}}
             </p>
@@ -19,7 +19,7 @@
             </p>
 
             <div ng-controller="UserController as user">
-                <button ng-click="user.addUserBucket(user.id)">Add
+                <button ng-click="user.addUserBucket(bucketDtl.singleItem)">Add
                 </button>
             </div>
 
@@ -29,6 +29,6 @@
 
     <div ng-controller="UserController as user">
         <div class="submitButton3">
-            <a href="" ng-click="user.goToBucket(user.id)">Submit</a>
+            <a href="" ng-click="user.submitBucket()">Submit</a>
         </div>
     </div>

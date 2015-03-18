@@ -6,6 +6,7 @@ task create_users: :environment do
     admin: 1,
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
+    bucket_list_item_ids: [1, 2, 3, 4, 5]
   })
 
   20.times do

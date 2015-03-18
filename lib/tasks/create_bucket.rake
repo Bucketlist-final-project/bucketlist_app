@@ -8,8 +8,7 @@ task create_bucket_list_items: :environment do
     city: Faker::Address.city,
     state: Faker::Address.state,
     zip_code: Faker::Address.zip_code,
-    image_file_name: x.to_s + '.jpg',
-    user_ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    image_file_name: x.to_s + '.jpg'
     })
   x +=1
   end

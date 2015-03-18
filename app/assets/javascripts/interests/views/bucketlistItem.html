@@ -8,7 +8,7 @@
         <div class="second3">
             <div ng-controller="DetailController as bucketDtl">
             <a href="" ng-click="bucketDtl.goToBucketDetail(bucket.id)">
-                <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucket.image_file_name}}">
+                <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucket.image_file_name}}" class="bucketCard">
             </a>
             </div>
             <br>
@@ -16,7 +16,7 @@
             </div>
 
             <div ng-controller="UserController as user">
-                <input type="checkbox" ng-click="user.addUserBucket(user.id)">
+                <input type="checkbox" ng-click="user.addUserBucket(user.currentUser.id)">
             </div>
         </div>
       </li>
