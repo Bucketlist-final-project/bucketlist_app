@@ -46,6 +46,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    params[:bucket_list_items].each do |item|
+      p "bucket list item id: #{item[:id]}"
+      bli = BucketListItem.find(item[:id])
+      if @user.bucket_list_items.exclude?(bli)
+        @user.bucket_list_items << bli 
+      end
+    end
     @user.update_attributes user_params
     respond_to do |format|
       format.json {render json: @user }
