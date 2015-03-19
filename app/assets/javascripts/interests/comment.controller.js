@@ -19,7 +19,7 @@
            $scope.newComment= {};
 
 
-           console.log('this works add comment');
+           console.log('this works, add comment');
      };
 
  });

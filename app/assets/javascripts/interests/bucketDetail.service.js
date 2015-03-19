@@ -24,7 +24,7 @@
             addBucketDetail: addBucketDetail,
             removeBucketDetail: removeBucketDetail,
             getSingleDetail: getSingleDetail,
-            // postComment: postComment
+            
         };
     });
 
