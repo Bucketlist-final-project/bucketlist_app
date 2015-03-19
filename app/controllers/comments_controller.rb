@@ -41,12 +41,14 @@ class CommentsController < ApplicationController
  end
 
  def create
-   @comment = Comment.new comment_params
-   @comment.save
-   respond_to do |format|
-     format.json do
-       @comment.user = current_user
-       render json: @comment
+  @comment = Comment.new comment_params
+  @comment.bucket_list_item_id = params[:bucket_list_item_id]
+  @comment.user = current_user
+  @comment.save
+  respond_to do |format|
+    format.json do
+      @comment.user = current_user
+      render json: @comment
      end
      format.html { redirect_to bucket_list_item_path }
    end
