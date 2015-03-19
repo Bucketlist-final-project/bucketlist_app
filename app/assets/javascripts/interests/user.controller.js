@@ -42,14 +42,9 @@
 
        };
 
-
-        user.addUserBucketArray = function () {
-          UserSevice.addArrayToUserBucket($scope.currentUser);
-       //  //    $scope.currentUser.bucket_list_items.push(item);
-       //  //    UserService.addUserBucket($scope.currentUser);
-       //     $location.path('/users/' + $scope.currentUser.id);
-       //  //    console.log("this user add works");
-       //  //    console.log(item);
+        user.addUserBucketArray = function (){
+          UserService.addArrayToUserBucket($scope.currentUser);
+          $location.path('/users/' + $scope.currentUser.id);
        };
 
     });
