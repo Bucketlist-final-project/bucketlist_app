@@ -1,10 +1,13 @@
 <div class="interestItemPage">
     <h1 class="bucketItems"> Choose the items you'd like to add to your bucket..</h1>
 </div>
+<div class="searchFilter">
+    <input ng-model="query" type="text" name="searchbox" placeholder="search interests...">
+</div>
 
 <div class="ItemsWrapper" ng-controller="BucketController as bucket">
     <ul>
-      <li class="list3" ng-repeat="bucket in bucket.items track by $index">
+      <li class="list3" ng-repeat="bucket in bucket.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
         <div class="second3">
             <div ng-controller="DetailController as bucketDtl">
             <a href="" ng-click="bucketDtl.goToBucketDetail(bucket.id)">

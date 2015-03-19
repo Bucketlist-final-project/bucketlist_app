@@ -15,13 +15,13 @@
      });
 
        comment.addComment = function (commentsPushed, newComment) {
-           CommentService.postComment(commentsPushed, newComment);
+           CommentService.postComment(commentsPushed, newComment, $scope.currentUser.id);
            $scope.newComment= {};
 
 
-           console.log('this works add comment');
+           console.log('this works, add comment');
      };
 
- });
+  });
 
 })();
