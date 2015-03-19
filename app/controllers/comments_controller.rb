@@ -1,14 +1,14 @@
 class CommentsController < ApplicationController
 
- before_action :set_bucket_list_item, only:[
-   :index,
-   :show,
-   :new,
-   :create,
-   :edit,
-   :update,
-   :destroy
- ]
+ # before_action :set_bucket_list_item, only:[
+ #   :index,
+ #   :show,
+ #   :new,
+ #   :create,
+ #   :edit,
+ #   :update,
+ #   :destroy
+ # ]
 
  before_action :set_comment, only:[
    :show,
@@ -62,7 +62,9 @@ class CommentsController < ApplicationController
  end
 
  def update
-   @comment.update_attributes comment_params
+  @comment.update_attributes comment_params
+  @comment.bucket_list_item_id = params[:bucket_list_item_id]
+  @comment.user = current_user   
    respond_to do |format|
      format.json do
        @comment.user = current_user
@@ -88,10 +90,6 @@ private
      :user_id,
      :bucket_list_id
      )
- end
-
- def set_bucket_list_item
-   @bucket_list_item = BucketListItem.find params[:bucket_list_item_id]
  end
 
  def set_comment
