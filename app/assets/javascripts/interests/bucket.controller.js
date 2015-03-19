@@ -3,21 +3,27 @@
     angular.module('interests')
     .controller('BucketController', function (BucketService, $location, $routeParams, Auth) {
 
-       var bucket = this;
+       var bucketCtrl = this;
 
        BucketService.getBucketItems().success(
            function(data) {
-               bucket.items= data;
+               bucketCtrl.items= data;
            });
 
-          console.log(bucket);
+          console.log(bucketCtrl);
 
-       bucket.removeBucketItems = function (item) {
+       bucketCtrl.removeBucketItems = function (item) {
            BucketService.removeBucketItems(item);
        };
-       bucket.goToBucketPage =function () {
+       bucketCtrl.goToBucketPage =function () {
            $location.path('/userBucket');
            console.log('userBucket works');
+       };
+
+      bucketCtrl.addItemToUserBucket = function(bucketCtrl){
+        console.log('addItemToUserBucket firing ' + bucketCtrl)
+        // UserService.addToUserBucket(bucket);
+
        };
 
     });

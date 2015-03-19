@@ -4,6 +4,7 @@
     .factory('UserService', function($http) {
 
         var user = [];
+        var addBucket = []
 
         var addUserBucket=function (newUserBucket) {
             // user.push(newUserBucket);
@@ -23,6 +24,14 @@
         var removeUserBucket = function (item) {
             var index = user.indexOf(item);
             user.splice(index,1);
+        };
+
+        var addToUserBucket = function(bucketItem){
+            var alreadyInBucket = _.where(addBucket, { name: bucketItem.name });
+            if (alreadyInBucket <= 1) {
+                addBucket.push(bucketItem)
+            }
+            console.log('bucketItem')
         };
 
         return {
