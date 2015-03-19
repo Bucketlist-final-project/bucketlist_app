@@ -41,10 +41,12 @@ class CommentsController < ApplicationController
  end
 
  def create
-  @comment = Comment.new comment_params
-  @comment.bucket_list_item_id = params[:bucket_list_item_id]
+     @bucket_list_item = BucketListItem.find params[:bucket_list_item_id]
+  @comment = @bucket_list_item.create comment_params
   @comment.user = current_user
-  @comment.save
+  # @comment.bucket_list_item_id = params[:bucket_list_item_id]
+  # @comment.user = current_user
+  # @comment.save
   respond_to do |format|
     format.json do
       @comment.user = current_user
@@ -62,9 +64,9 @@ class CommentsController < ApplicationController
  end
 
  def update
-  @comment.update_attributes comment_params
   @comment.bucket_list_item_id = params[:bucket_list_item_id]
-  @comment.user = current_user   
+  @comment.user = current_user
+  @comment.update_attributes comment_params
    respond_to do |format|
      format.json do
        @comment.user = current_user
@@ -88,7 +90,7 @@ private
    params.require(:comment).permit(
      :content,
      :user_id,
-     :bucket_list_id
+     :bucket_list_item_id
      )
  end
 
