@@ -5,12 +5,11 @@
 
         var user = [];
         var addBucket = []
+        var user_bucket = []
 
         var addUserBucket=function (newUserBucket) {
-            // user.push(newUserBucket);
-            console.log('this is the NUB ' + newUserBucket.bucket_list_items[1].id);
             $http.patch('/users/' + newUserBucket.id + '.json', newUserBucket ).success(function() {
-    });
+        });
         };
         var getUserBucket= function () {
             return user;
@@ -26,12 +25,22 @@
             user.splice(index,1);
         };
 
-        var addToUserBucket = function(bucketItem){
-            var alreadyInBucket = _.where(addBucket, { name: bucketItem.name });
-            if (alreadyInBucket <= 1) {
-                addBucket.push(bucketItem)
+        var addToUserBucket = function(bucket){
+            console.log('addToUserBucket firing ' + bucket);
+            var alreadyInBucket = _.where(user_bucket, { name: bucket.name });
+            if (alreadyInBucket <= 0) {
+                user_bucket.push(bucket)
             }
-            console.log('bucketItem')
+            console.log(user_bucket)
+        };
+
+        var addArrayToUserBucket = function(){
+            console.log('addArrayToUserBucket firing ');
+        //     var alreadyInBucket = _.where(user_bucket, { name: bucket.name });
+        //     if (alreadyInBucket <= 0) {
+        //         user_bucket.push(bucket)
+        //     }
+        //     console.log(user_bucket)
         };
 
         return {
@@ -39,6 +48,8 @@
             addUserBucket: addUserBucket,
             removeUserBucket: removeUserBucket,
             getSingleItem: getSingleItem,
+            addToUserBucket: addToUserBucket,
+            addArrayToUserBucket: addArrayToUserBucket
         };
     });
 

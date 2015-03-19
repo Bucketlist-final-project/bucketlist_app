@@ -20,11 +20,11 @@
            console.log('userBucket works');
        };
 
-      bucketCtrl.addItemToUserBucket = function(bucketCtrl){
-        console.log('addItemToUserBucket firing ' + bucketCtrl)
-        // UserService.addToUserBucket(bucket);
+      // bucketCtrl.addItemToUserBucket = function(bucket){
+      //   BucketService.addToUserBucket(bucket);
 
-       };
+      //  };
+
 
     });
 

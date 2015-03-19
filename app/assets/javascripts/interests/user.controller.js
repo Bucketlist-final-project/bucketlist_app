@@ -21,9 +21,7 @@
            $scope.currentUser.bucket_list_items.push(item);
            UserService.addUserBucket($scope.currentUser);
            $location.path('/users/' + $scope.currentUser.id);
-        //    UserService.addUserBucket(item);
-           console.log("this user add works");
-           console.log(item);
+           // UserService.addUserBucket(item);
        };
 
        user.removeUserBucket = function (item) {
@@ -37,6 +35,22 @@
        user.goToBucket = function(id){
         $location.path('/users/' + $scope.currentUser.id);
        }
+
+        user.addItemToUserBucket = function(bucket){
+          console.log(bucket)
+          UserService.addToUserBucket(bucket);
+
+       };
+
+
+        user.addUserBucketArray = function () {
+          UserSevice.addArrayToUserBucket($scope.currentUser);
+       //  //    $scope.currentUser.bucket_list_items.push(item);
+       //  //    UserService.addUserBucket($scope.currentUser);
+       //     $location.path('/users/' + $scope.currentUser.id);
+       //  //    console.log("this user add works");
+       //  //    console.log(item);
+       };
 
     });
 

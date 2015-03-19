@@ -15,16 +15,16 @@
             <p class ="name2">{{bucket.name}}</p>
             </div>
 
-<!--             <div ng-controller="UserController as user"> -->
-                <input type="checkbox" ng-click="bucketCtrl.addItemToUserBucket(bucket)">
-            <!-- </div> -->
+            <div ng-controller="UserController as userCtrl">
+                <input type="checkbox" ng-click="userCtrl.addItemToUserBucket(bucket)">
+            </div>
         </div>
       </li>
     </ul>
 </div>
 
-<div ng-controller="BucketController as bucketCtrl">
+<div ng-controller="UserController as user">
     <div class="submitButton2">
-        <a href="" ng-click="bucketCtrl.goToBucketPage(bucket)">Submit</a>
+        <a href="" ng-click="user.addUserBucketArray()">Submit</a>
     </div>
 </div>
