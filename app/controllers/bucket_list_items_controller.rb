@@ -17,7 +17,7 @@ class BucketListItemsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.json { render :json => @bucket_list_item }
+      format.json { render json: @bucket_list_item }
       format.html
     end
   end
@@ -35,10 +35,7 @@ class BucketListItemsController < ApplicationController
     @bucket_list_item = BucketListItem.new bucket_list_item_params
     @bucket_list_item.save
     respond_to do |format|
-      format.json do
-        @bucket_list_item.user = current_user
-        render json: @bucket_list_item
-      end
+      format.json { render :json => @user }
       format.html {redirect_to bucket_list_items_path}
     end
   end
@@ -48,7 +45,7 @@ class BucketListItemsController < ApplicationController
     respond_to do |format|
       format.json {render json: @bucket_list_item }
       format.html
-    end
+    end 
   end
 
   def update
