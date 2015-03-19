@@ -34,4 +34,13 @@ class BucketListItem < ActiveRecord::Base
     image.s3_object(style).url_for(:read, secure: true, expires: expires_in).to_s
   end
 
+  def as_json(options={})
+      super(:only => [:name, :description, :city, :state, :zip_code, :image_file_name, :id, :user_id, :bucket_list_item_id],
+            :include => {
+              :comments => {:only => [:id, :content, :user_id, :bucket_list_item_id] }
+      })
+  end
+
+
+
 end

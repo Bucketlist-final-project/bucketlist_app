@@ -35,20 +35,20 @@
     </div>
 
 
-    <div class="commentforms" ng-controller="CommentController as comment">
+    <div class="commentforms" ng-controller="CommentController as commentCtrl">
         <h2 class="comments">Comments
         </h2>
         <form class='commentform'>
-            <textarea cols="50" rows="4" ng-model="comment.content" placeholder="Add comment here">
+            <textarea cols="50" rows="4" ng-model="commentCtrl.content" placeholder="Add comment here">
             </textarea>
-            <button class= "submitComment" ng-click= "comment.addComment(bucketDtl.singleItem, comment)">Post Comment
+            <button class= "submitComment" ng-click= "commentCtrl.addComment(bucketDtl.singleItem, comment)">Post Comment
             </button>
         </form>
 
 
      <div class="comments">
        <ul>
-            <li ng-repeat="comment in comment.getOneComment.comment">
+            <li ng-repeat="comment in commentCtrl.getOneItem.comments">
                 <p>{{comment.user_id}}
                 </p>
                 <p>{{comment.content}}
