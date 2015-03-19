@@ -26,6 +26,7 @@
           </div>
         </li>
     </ul>
+</div>
 
     <div ng-controller="UserController as user">
         <div class="submitButton3">
@@ -33,11 +34,12 @@
         </div>
     </div>
 
+
     <div class="commentforms" ng-controller="CommentController as comment">
         <h2 class="comments">Comments
         </h2>
         <form class='commentform'>
-            <textarea cols="50" rows="4" ng-model="Comment.content" placeholder="Add comment here">
+            <textarea cols="50" rows="4" ng-model="comment.content" placeholder="Add comment here">
             </textarea>
             <button class= "submitComment" ng-click= "comment.addComment(bucketDtl.singleItem, comment)">Post Comment
             </button>
@@ -47,10 +49,10 @@
      <div class="comments">
        <ul>
             <li ng-repeat="comment in comment.getOneComment.comment">
+                <p>{{comment.user_id}}
                 </p>
                 <p>{{comment.content}}
                 </p>
             </li>
-       </ul>
      </div>
      </div>

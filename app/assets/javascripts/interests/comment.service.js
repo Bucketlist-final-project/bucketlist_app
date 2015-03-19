@@ -12,17 +12,17 @@
         var postComment = function (commentsPushed, newComment, id) {
             if(commentsPushed){
             commentsPushed.push(newComment);
-            $http.post('/bucket_list_items/' + id + '/comments.json');
+            $http.post('/bucket_list_items/' + id + '/comments.json', commentsPushed);
             }else{
             commentsPushed = [newComment];
-            $http.post('/bucket_list_items/' + id  + '/comments.json');
+            $http.post('/bucket_list_items/' + id  + '/comments.json', commentsPushed);
             console.log('postcomment');
             };
         };
 
-        var addComment=function (newComment, id) {
+        var addComment=function (newComment, currentUser) {
             // user.push(newUserBucket);
-            $http.post('/bucket_list_items/' + id  + '/comments.json').success(function() {
+            $http.post('/bucket_list_items/comments' + id  + '/comments.json').success(function() {
                 console.log('addComment');
             });
         };
