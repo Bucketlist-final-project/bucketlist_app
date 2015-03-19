@@ -4,12 +4,12 @@
     .factory('UserService', function($http) {
 
         var user = [];
+        var addBucket = []
+        var user_bucket = []
 
         var addUserBucket=function (newUserBucket) {
-            // user.push(newUserBucket);
-            console.log('this is the NUB ' + newUserBucket.bucket_list_items[1].id);
             $http.patch('/users/' + newUserBucket.id + '.json', newUserBucket ).success(function() {
-    });
+        });
         };
         var getUserBucket= function () {
             return user;
@@ -25,11 +25,34 @@
             user.splice(index,1);
         };
 
+        var addToUserBucket = function(bucket){
+            console.log('addToUserBucket firing ' + bucket);
+            var alreadyInBucket = _.where(user_bucket, { name: bucket.name });
+            if (alreadyInBucket <= 0) {
+                user_bucket.push(bucket)
+            }
+            console.log(user_bucket)
+        };
+
+        var addArrayToUserBucket = function(currentUser){
+            console.log('addArrayToUserBucket firing ' + currentUser.first_name);
+            console.log('this is the current user bucket ' + user_bucket)
+            currentUser.bucket_list_items.push(user_bucket);
+            currentUser.bucket_list_items = _.flatten(currentUser.bucket_list_items)
+            var added_data = currentUser
+            console.log('this is the array to the server' + added_data);
+            return $http.patch('/users/' + currentUser.id + '.json', added_data).success(function(){
+
+            });
+        };
+
         return {
             getUserBucket: getUserBucket,
             addUserBucket: addUserBucket,
             removeUserBucket: removeUserBucket,
             getSingleItem: getSingleItem,
+            addToUserBucket: addToUserBucket,
+            addArrayToUserBucket: addArrayToUserBucket
         };
     });
 

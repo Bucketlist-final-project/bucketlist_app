@@ -9,16 +9,15 @@
             return $http.get('/bucket_list_items/' + id  + '/comments.json');
         };
 
-        var postComment = function (commentsPushed, newComment, id) {
-            if(commentsPushed){
-            commentsPushed.push(newComment);
-            $http.post('/bucket_list_items/' + id + '/comments.json', commentsPushed);
-            }else{
-            commentsPushed = [newComment];
-            $http.post('/bucket_list_items/' + id  + '/comments.json', commentsPushed);
-            console.log('postcomment');
+        var postComment = function (userCommentHash) {
+        //      if(commentsPushed){
+            $http.post('/bucket_list_items/' + userCommentHash.bucket_list_item_id.id + '/comments.json', userCommentHash);
+        //     }else{
+        //     commentsPushed = [newComment];
+        //     $http.post('/bucket_list_items/' + id  + '/comments.json', commentsPushed);
+        //     console.log('postcomment');
             };
-        };
+        // };
 
         var addComment=function (newComment, currentUser) {
             // user.push(newUserBucket);

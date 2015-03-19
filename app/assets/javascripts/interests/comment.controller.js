@@ -14,12 +14,23 @@
          comment.getOneComment = data;
      });
 
-       comment.addComment = function (commentsPushed, newComment) {
-           CommentService.postComment(commentsPushed, newComment, $scope.currentUser.id);
-           $scope.newComment= {};
+       comment.addComment = function (bucketListItem, userComment) {
+           
+          console.log('this is the bucket object ' + bucketListItem.id)
+          console.log('this is the users comment ' + userComment)
+          console.log('this is the users id ' + $scope.currentUser.id )
+          var commentHash = {};
+          commentHash.bucket_list_item_id = bucketListItem;
+          commentHash.comment = userComment;
+          commentHash.user_id = $scope.currentUser;
+          // params[:bucket_list_item]
+          // params[:comment]
+          // params[:currentUser]
+           CommentService.postComment(commentHash);
+           // $scope.newComment= {};
 
 
-           console.log('this works, add comment');
+           // console.log(comment.content);
      };
 
   });

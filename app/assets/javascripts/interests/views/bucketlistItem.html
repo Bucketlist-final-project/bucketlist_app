@@ -5,9 +5,10 @@
     <input ng-model="query" type="text" name="searchbox" placeholder="search interests...">
 </div>
 
-<div class="ItemsWrapper" ng-controller="BucketController as bucket">
+<div class="ItemsWrapper" ng-controller="BucketController as bucketCtrl">
     <ul>
-      <li class="list3" ng-repeat="bucket in bucket.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
+      <li class="list3" ng-repeat="bucket in bucketCtrl.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
+
         <div class="second3">
             <div ng-controller="DetailController as bucketDtl">
             <a href="" ng-click="bucketDtl.goToBucketDetail(bucket.id)">
@@ -18,16 +19,16 @@
             <p class ="name2">{{bucket.name}}</p>
             </div>
 
-            <div ng-controller="UserController as user">
-                <input type="checkbox" ng-click="user.addUserBucket(user.currentUser.id)">
+            <div ng-controller="UserController as userCtrl">
+                <input type="checkbox" ng-click="userCtrl.addItemToUserBucket(bucket)">
             </div>
         </div>
       </li>
     </ul>
 </div>
 
-<div ng-controller="BucketController as bucket">
+<div ng-controller="UserController as user">
     <div class="submitButton2">
-        <a href="" ng-click="bucket.goToBucketPage(bucket)">Submit</a>
+        <a href="" ng-click="user.addUserBucketArray()">Submit</a>
     </div>
 </div>

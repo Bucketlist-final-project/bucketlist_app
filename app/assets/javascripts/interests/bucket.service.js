@@ -3,11 +3,13 @@
   angular.module('interests')
     .factory('BucketService', function($http) {
 
-        var bucket = [];
+        var user_bucket = [];
 
         var addBucketItems=function (newBucketItems) {
             bucket.push(newBucketItems);
         };
+
+
         var getBucketItems= function () {
             return $http.get('/bucket_list_items.json');
 
@@ -18,10 +20,21 @@
             bucket.splice(index,1);
         };
 
+        // var addToUserBucket = function(bucket){
+        //     console.log('addToUserBucket firing ' + bucket);
+        //     var alreadyInBucket = _.where(user_bucket, { name: bucket.name });
+        //     if (alreadyInBucket <= 0) {
+        //         user_bucket.push(bucket)
+        //     }
+        //   };
+
+          
+
         return {
             getBucketItems: getBucketItems,
             addBucketItems: addBucketItems,
             removeBucketItems: removeBucketItems,
+            // addToUserBucket: addToUserBucket
         };
     });
 
