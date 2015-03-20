@@ -9,6 +9,10 @@
             <br>
             <p class = "name">{{item.name}}
             </p>
+            <p class = "check">{{item.item_completes[0].completed}}
+            </p>
+            <p class = "completed" ng-if="item.item_completes[0].completed">I did it!
+            </p>
             <button ng-click="user.userItemCompleted(item)">completed
             </button>
             <button ng-click="user.removeUserBucket(item)">delete
