@@ -1,9 +1,22 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('DetailController', function (DetailService, $location, $routeParams, $scope, Auth) {
+    .controller('DetailController', function (DetailService, $location, $routeParams, $scope, uiGmapGoogleMapApi) {
 
        var bucketDtl = this;
+
+       uiGmapGoogleMapApi.then(function(maps){
+
+       });
+
+       $scope.map = {
+           center: {
+               latitude: 32.8433,
+               longitude: -79.9333,
+           },
+
+               zoom: 12
+       };
 
        bucketDtl.items = DetailService.getBucketDetail();
 
@@ -26,6 +39,8 @@
         $location.path('/bucket_list_items/' + id);
         console.log(id)
        };
+
+
 
     });
 
