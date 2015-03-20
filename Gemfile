@@ -19,8 +19,12 @@ gem 'quiet_assets'
 gem 'pg', group: :production
 #set ruby version for heroku deployment
 
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
+#Rails ERD for diagrams
+gem "rails-erd"
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use SCSS for stylesheets
