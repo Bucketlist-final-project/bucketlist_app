@@ -11,14 +11,14 @@
             $http.patch('/users/' + newUserBucket.id + '.json', newUserBucket ).success(function() {
         });
         };
-        var getUserBucket= function () {
-            return user;
+        var getUserBucket = function (id) {
+            return $http.get('/users/' + id + '.json');
         };
 
-        var getSingleItem= function(id) {
-          return $http.get('/users/' + id + '.json');
-          console.log(user);
-      };
+      //   var getSingleItem = function(id) {
+      //     return $http.get('/users/' + id + '.json');
+      //     console.log(user);
+      // };
 
         var removeUserBucket = function (item) {
             var index = user.indexOf(item);
@@ -46,13 +46,18 @@
             });
         };
 
+        var itemComplete = function(itemCompleteHash, currentUser){
+            return $http.post('/users/' + currentUser.id + '/item_completes.json', itemCompleteHash);
+        };
+
         return {
             getUserBucket: getUserBucket,
             addUserBucket: addUserBucket,
             removeUserBucket: removeUserBucket,
-            getSingleItem: getSingleItem,
+            // getSingleItem: getSingleItem,
             addToUserBucket: addToUserBucket,
-            addArrayToUserBucket: addArrayToUserBucket
+            addArrayToUserBucket: addArrayToUserBucket,
+            itemComplete: itemComplete
         };
     });
 

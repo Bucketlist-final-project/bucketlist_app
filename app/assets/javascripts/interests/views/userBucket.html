@@ -9,13 +9,15 @@
             <br>
             <p class = "name">{{item.name}}
             </p>
+            <button ng-click="user.userItemCompleted(item)">completed
+            </button>
             <button ng-click="user.removeUserBucket(item)">delete
             </button>
 
-            <div ng-controller="DetailController as bucketDtl">
+<!--             <div ng-controller="DetailController as bucketDtl">
                 <button ng-click="bucketDtl.addBucketDetail(bucketdtl)">Add
                 </button>
-            </div>
+            </div> -->
         </div>
         </li>
     </ul>

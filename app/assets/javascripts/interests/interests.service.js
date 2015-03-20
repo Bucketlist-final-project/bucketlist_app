@@ -2,12 +2,12 @@
   "use strict";
   angular.module('interests')
   .factory('InterestService', function($http) {
-      var url = 'http://tiy-fee-rest.herokuapp.com/collections/dummytesting';
+      // var url = 'http://tiy-fee-rest.herokuapp.com/collections/dummytesting';
 
       var interest = [];
 
       var addNewInterest = function (interest) {
-        $http.post(url, interest);
+        $http.post(interest);
       };
 
       var getInterests = function () {
@@ -16,11 +16,11 @@
 
 
       var getOneInterest = function (id) {
-        return $http.get(url + '/' + id);
+        return $http.get('/' + id);
       };
 
       var deleteInterest = function (id) {
-        $http.delete(url + '/' + id);
+        $http.delete('/' + id);
       };
 
       return {

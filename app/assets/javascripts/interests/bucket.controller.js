@@ -7,15 +7,15 @@
 
        BucketService.getBucketItems().success(
            function(data) {
-               bucketCtrl.items= data;
+               bucketCtrl.items = data;
            });
 
-          console.log(bucketCtrl);
+          // console.log(bucketCtrl);
 
        bucketCtrl.removeBucketItems = function (item) {
            BucketService.removeBucketItems(item);
        };
-       bucketCtrl.goToBucketPage =function () {
+       bucketCtrl.goToBucketPage = function () {
            $location.path('/userBucket');
            console.log('userBucket works');
        };
@@ -24,6 +24,11 @@
       //   BucketService.addToUserBucket(bucket);
 
       //  };
+
+      bucketCtrl.goToBucketDetail = function(id){
+        $location.path('/bucket_list_items/' + id);
+        console.log(id)
+       };
 
 
     });

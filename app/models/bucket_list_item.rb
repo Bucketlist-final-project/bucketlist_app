@@ -3,6 +3,7 @@ class BucketListItem < ActiveRecord::Base
   has_many :user_bucket_list_items
   has_many :users, through: :user_bucket_list_items
   has_many :comments
+  has_many :item_completes
 
   validates :name, presence: true
   validates :description, presence: true
