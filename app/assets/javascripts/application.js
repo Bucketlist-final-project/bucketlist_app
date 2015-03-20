@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require angular/angular
 //= require angular-route/angular-route
+//= require angular-google-maps/dist/angular-google-maps
+//= require lodash/lodash
 //= require underscore/underscore
 //= require devise
 //= require app

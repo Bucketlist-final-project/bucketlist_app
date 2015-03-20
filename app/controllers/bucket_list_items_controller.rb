@@ -45,7 +45,7 @@ class BucketListItemsController < ApplicationController
     respond_to do |format|
       format.json {render json: @bucket_list_item }
       format.html
-    end 
+    end
   end
 
   def update

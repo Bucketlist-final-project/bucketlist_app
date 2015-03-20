@@ -50,7 +50,7 @@ class UsersController < ApplicationController
       p "bucket list item id: #{item[:id]}"
       bli = BucketListItem.find(item[:id])
       if @user.bucket_list_items.exclude?(bli)
-        @user.bucket_list_items << bli 
+        @user.bucket_list_items << bli
       end
     end
     @user.update_attributes user_params
@@ -77,7 +77,7 @@ private
       bucket_list_item_ids: []
       )
   end
-  
+
   def set_user
     @user = User.find params[:id]
   end

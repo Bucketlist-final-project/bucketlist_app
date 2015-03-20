@@ -64,7 +64,7 @@ class CommentsController < ApplicationController
  def update
   @comment.update_attributes comment_params
   @comment.bucket_list_item_id = params[:bucket_list_item_id]
-  @comment.user = current_user   
+  @comment.user = current_user
    respond_to do |format|
      format.json do
        @comment.user = current_user
