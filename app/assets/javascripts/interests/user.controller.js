@@ -50,6 +50,18 @@
           $location.path('/users/' + $scope.currentUser.id);
        };
 
+       user.userItemCompleted = function(bucket){
+          var itemCompleteHash = {};
+          var itemComplete = {}
+          itemComplete.completed = true
+          itemCompleteHash.bucket_list_item_id = bucket.id;
+          itemCompleteHash.item_complete = itemComplete;
+          itemCompleteHash.user_id = $scope.currentUser;
+          console.log('completeHash ' + itemCompleteHash)
+          UserService.itemComplete(itemCompleteHash, $scope.currentUser);
+
+       };
+
     });
 
 })();

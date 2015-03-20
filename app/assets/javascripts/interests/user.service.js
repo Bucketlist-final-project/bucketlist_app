@@ -46,13 +46,18 @@
             });
         };
 
+        var itemComplete = function(itemCompleteHash, currentUser){
+            return $http.post('/users/' + currentUser.id + '/item_completes.json', itemCompleteHash);
+        };
+
         return {
             getUserBucket: getUserBucket,
             addUserBucket: addUserBucket,
             removeUserBucket: removeUserBucket,
             // getSingleItem: getSingleItem,
             addToUserBucket: addToUserBucket,
-            addArrayToUserBucket: addArrayToUserBucket
+            addArrayToUserBucket: addArrayToUserBucket,
+            itemComplete: itemComplete
         };
     });
 
