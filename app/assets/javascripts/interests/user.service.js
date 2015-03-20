@@ -11,14 +11,14 @@
             $http.patch('/users/' + newUserBucket.id + '.json', newUserBucket ).success(function() {
         });
         };
-        var getUserBucket= function () {
-            return user;
+        var getUserBucket = function (id) {
+            return $http.get('/users/' + id + '.json');
         };
 
-        var getSingleItem= function(id) {
-          return $http.get('/users/' + id + '.json');
-          console.log(user);
-      };
+      //   var getSingleItem = function(id) {
+      //     return $http.get('/users/' + id + '.json');
+      //     console.log(user);
+      // };
 
         var removeUserBucket = function (item) {
             var index = user.indexOf(item);
@@ -50,7 +50,7 @@
             getUserBucket: getUserBucket,
             addUserBucket: addUserBucket,
             removeUserBucket: removeUserBucket,
-            getSingleItem: getSingleItem,
+            // getSingleItem: getSingleItem,
             addToUserBucket: addToUserBucket,
             addArrayToUserBucket: addArrayToUserBucket
         };

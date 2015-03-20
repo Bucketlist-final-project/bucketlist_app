@@ -6,16 +6,19 @@
        var user = this;
 
        Auth.currentUser().then(function(user) {
-        console.log(user.id);
+        // console.log(user.id);
         $scope.currentUser = user
       });
 
-       user.items = UserService.getUserBucket();
+       // UserService.getUserBucket($routeParams.userId).success(function(data){
+       //  user.items = data
+       // })
+       // user.items = UserService.getUserBucket($scope.currentUser);
 
-       UserService.getSingleItem($routeParams.userId).success(function(data) {
-         console.log('supposed data ', data);
-         user.singleItem = data;
-         });
+       // UserService.getSingleItem($routeParams.userId).success(function(data) {
+       //   console.log('supposed data ', data);
+       //   user.singleItem = data;
+       //   });
 
        user.addUserBucket = function (item) {
            $scope.currentUser.bucket_list_items.push(item);
@@ -29,7 +32,7 @@
        };
        user.submitBucket = function (item) {
            UserService.addUserBucket($scope.currentUser);
-           console.log('submit button works')
+           // console.log('submit button works')
        }
 
        user.goToBucket = function(id){
@@ -37,7 +40,7 @@
        }
 
         user.addItemToUserBucket = function(bucket){
-          console.log(bucket)
+          // console.log(bucket)
           UserService.addToUserBucket(bucket);
 
        };
