@@ -21,7 +21,6 @@
        bucketDtl.items = DetailService.getBucketDetail();
 
        DetailService.getSingleDetail($routeParams.bucketId).success(function(data) {
-           console.log('supposed data ', data);
            bucketDtl.singleItem = data;
        });
 

@@ -15,19 +15,35 @@
         commentCtrl.getOneItem = data;
       });
 
-      commentCtrl.addComment = function (bucketListItem, userComment) {
+      commentCtrl.submitComment = function (bucketListItem, userComment) {
+        if($scope.newComment){
         var commentHash = {};
         commentHash.bucket_list_item_id = bucketListItem;
         commentHash.comment = {};
-        commentHash.comment.content = userComment;
+        commentHash.comment.content = userComment.content;
         commentHash.user_id = $scope.currentUser.id;
         CommentService.postComment(commentHash, bucketListItem, userComment);
         commentCtrl.content = '';
+      }
+        else{
+          var commentHash = {};
+          var commentId = $scope.currentCommentId
+          commentHash.bucket_list_item_id = bucketListItem;
+          commentHash.comment = {};
+          commentHash.comment.content = userComment.content;
+          // commentHash.comment.id = commentId
+          commentHash.user_id = $scope.currentUser.id;
+          CommentService.editComment(commentHash, bucketListItem, userComment, commentId);
+          $scope.newComment = true
+          commentCtrl.content = '';
+        }
     };
 
       commentCtrl.editComment = function(comment){
         $scope.commentCtrl.content = comment.content
         $scope.newComment = false
+        console.log(comment.id)
+        $scope.currentCommentId = comment.id
        }
 
 
