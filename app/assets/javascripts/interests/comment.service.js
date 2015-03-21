@@ -20,11 +20,12 @@
       };
 
       var editComment = function(userCommentHash, bucketListItem, userComment, commentId){
-        // var comment = {};
-        // comment.content = userComment;
-        // comment.id = userId
-        // console.log(comment);
-        // bucketListItem.comments.push(comment);
+        var comment = {};
+        comment.content = userComment.content;
+        comment.id = commentId
+        console.log(comment.id);
+        var found_comment = _.findWhere(bucketListItem.comments, {id: parseInt(commentId)})
+        found_comment.content = comment.content;
         $http.patch('/bucket_list_items/' + userCommentHash.bucket_list_item_id.id + '/comments/' + commentId + '.json', userCommentHash).success(function(data){
         });
         console.log('in editComment')

@@ -31,7 +31,6 @@
           commentHash.bucket_list_item_id = bucketListItem;
           commentHash.comment = {};
           commentHash.comment.content = userComment.content;
-          // commentHash.comment.id = commentId
           commentHash.user_id = $scope.currentUser.id;
           CommentService.editComment(commentHash, bucketListItem, userComment, commentId);
           $scope.newComment = true
@@ -42,7 +41,6 @@
       commentCtrl.editComment = function(comment){
         $scope.commentCtrl.content = comment.content
         $scope.newComment = false
-        console.log(comment.id)
         $scope.currentCommentId = comment.id
        }
 
