@@ -45,7 +45,7 @@
         <form class='commentform'>
             <textarea cols="50" rows="4" ng-model="commentCtrl.content" placeholder="Add comment here">
             </textarea>
-            <button class= "submitComment" ng-click= "commentCtrl.addComment(bucketDtl.singleItem, commentCtrl)">Post Comment
+            <button class= "submitComment" ng-click= "commentCtrl.addComment(bucketDtl.singleItem, commentCtrl.content)">Post Comment
             </button>
         </form>
 
@@ -57,6 +57,7 @@
                 </p>
                 <p>{{comment.content}}
                 </p>
+                <button ng-click='commentCtrl.editComment(comment)'>edit</button>
             </li>
      </div>
      </div>

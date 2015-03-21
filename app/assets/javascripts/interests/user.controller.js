@@ -62,6 +62,11 @@
 
        };
 
+       user.completedBucketItems = function(){
+        UserService.getCompletedItems($scope.currentUser);
+
+       };
+
     });
 
 })();
