@@ -12,9 +12,7 @@
       });
 
       CommentService.getOneItem($routeParams.bucketId).success(function(data){
-        console.log('hellloooo');
         commentCtrl.getOneItem = data;
-        console.log('heres an item' + commentCtrl.getOneItem.comments)
       });
 
       commentCtrl.addComment = function (bucketListItem, userComment) {
@@ -23,7 +21,7 @@
         commentHash.comment = {};
         commentHash.comment.content = userComment;
         commentHash.user_id = $scope.currentUser.id;
-        CommentService.postComment(commentHash);
+        CommentService.postComment(commentHash, bucketListItem, userComment);
         commentCtrl.content = '';
     };
 
