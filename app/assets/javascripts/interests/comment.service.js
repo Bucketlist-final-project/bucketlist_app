@@ -31,10 +31,17 @@
         console.log('in editComment')
       };
 
+      var deleteComment = function(userCommentHash, bucketListItem, userComment){
+        console.log('userCommentId: ' + userComment.id)
+        // $http.delete('/bucket_list_items/' + userCommentHash.bucket_list_item_id.id + '/comments/' + commentId + '.json', userCommentHash).success(function(){
+        // });
+      };
+
        return {
            getOneItem: getOneItem,
            postComment: postComment,
-           editComment: editComment
+           editComment: editComment,
+           deleteComment: deleteComment
        };
 
    });
