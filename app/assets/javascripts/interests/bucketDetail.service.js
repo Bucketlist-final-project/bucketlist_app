@@ -19,11 +19,13 @@
             bucketDtl.splice(index,1);
         };
 
+
         return {
             getBucketDetail: getBucketDetail,
             addBucketDetail: addBucketDetail,
             removeBucketDetail: removeBucketDetail,
             getSingleDetail: getSingleDetail,
+
 
         };
     });

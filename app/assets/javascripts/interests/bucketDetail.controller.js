@@ -5,24 +5,21 @@
 
        var bucketDtl = this;
 
-       uiGmapGoogleMapApi.then(function(maps){
+       var longitude = '';
 
-       });
-
-       $scope.map = {
-           center: {
-               latitude: 32.8433,
-               longitude: -79.9333,
-           },
-
-               zoom: 12
-       };
+       var latitude = '';
 
        bucketDtl.items = DetailService.getBucketDetail();
 
        DetailService.getSingleDetail($routeParams.bucketId).success(function(data) {
            console.log('supposed data ', data);
            bucketDtl.singleItem = data;
+
+           longitude= bucketDtl.singleItem.longitude
+           bucketDtl.executeMap(longitude);
+
+           latitude= bucketDtl.singleItem.latitude
+           bucketDtl.executeMap(latitude);
        });
 
        bucketDtl.addBucketDetail = function (item) {
@@ -40,6 +37,30 @@
         console.log(id)
        };
 
+       bucketDtl.executeMap = function(longitude){
+       console.log('this is the data' + longitude);
+
+
+       $scope.map = {
+           center: {
+               latitude: bucketDtl.singleItem.latitude,
+               longitude: bucketDtl.singleItem.longitude
+           },
+
+           zoom: 12
+       }
+
+       $scope.marker= {
+           id: 0,
+           coords: {
+               latitude: bucketDtl.singleItem.latitude,
+               longitude: bucketDtl.singleItem.longitude
+
+           }
+      }
+
+
+    };
 
 
     });
