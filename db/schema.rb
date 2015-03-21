@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320150917) do
+ActiveRecord::Schema.define(version: 20150320201822) do
 
   create_table "bucket_list_items", force: :cascade do |t|
     t.string   "name",               limit: 255
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20150320150917) do
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
     t.string   "street_address",     limit: 255
+    t.float    "latitude",           limit: 24
+    t.float    "longitude",          limit: 24
   end
 
   create_table "comments", force: :cascade do |t|
