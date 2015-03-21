@@ -45,18 +45,19 @@
         <form class='commentform'>
             <textarea cols="50" rows="4" ng-model="commentCtrl.content" placeholder="Add comment here">
             </textarea>
-            <button class= "submitComment" ng-click= "commentCtrl.addComment(bucketDtl.singleItem, commentCtrl)">Post Comment
+            <button class= "submitComment" ng-click= "commentCtrl.submitComment(bucketDtl.singleItem, commentCtrl)">Post Comment
             </button>
         </form>
 
 
      <div class="comments">
        <ul>
-            <li ng-repeat="comment in commentCtrl.getOneItem.comments">
+            <li ng-repeat="comment in bucketDtl.singleItem.comments">
                 <p>{{comment.user_id}}
                 </p>
                 <p>{{comment.content}}
                 </p>
+                <button ng-click='commentCtrl.editComment(comment)'>edit</button>
             </li>
      </div>
      </div>

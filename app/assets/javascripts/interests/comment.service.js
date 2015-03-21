@@ -9,27 +9,32 @@
            return $http.get('/bucket_list_items/' + id  + '.json');
        };
 
-       var postComment = function (userCommentHash) {
+      var postComment = function (userCommentHash, bucketListItem, userComment) {
         //   if(commentsPushed){
-           $http.post('/bucket_list_items/' + userCommentHash.bucket_list_item_id.id + '/comments.json', userCommentHash);
-        //    }else{
-        //    commentsPushed = [newComment];
-        //    $http.post('/bucket_list_items/' + userCommentHash.bucket_list_item_id.id  + '/comments.json', commentsPushed);
-        //    console.log('postcomment');
-        //    };
-        };
+        var comment = {};
+        comment.content = userComment.content;
+        console.log(comment);
+        bucketListItem.comments.push(comment);
+        $http.post('/bucket_list_items/' + userCommentHash.bucket_list_item_id.id + '/comments.json', userCommentHash).success(function(data){
+        });
+      };
 
-       var addComment=function (currentUser) {
-           // user.push(newUserBucket);
-           $http.post('/bucket_list_items/comments' + id  + '/comments.json').success(function() {
-               console.log('addComment');
-           });
-       };
+      var editComment = function(userCommentHash, bucketListItem, userComment, commentId){
+        var comment = {};
+        comment.content = userComment.content;
+        comment.id = commentId
+        console.log(comment.id);
+        var found_comment = _.findWhere(bucketListItem.comments, {id: parseInt(commentId)})
+        found_comment.content = comment.content;
+        $http.patch('/bucket_list_items/' + userCommentHash.bucket_list_item_id.id + '/comments/' + commentId + '.json', userCommentHash).success(function(data){
+        });
+        console.log('in editComment')
+      };
 
        return {
            getOneItem: getOneItem,
            postComment: postComment,
-           addComment: addComment
+           editComment: editComment
        };
 
    });

@@ -6,6 +6,7 @@
         var user = [];
         var addBucket = []
         var user_bucket = []
+        var completedItems = []
 
         var addUserBucket=function (newUserBucket) {
             $http.patch('/users/' + newUserBucket.id + '.json', newUserBucket ).success(function() {
@@ -50,6 +51,14 @@
             return $http.post('/users/' + currentUser.id + '/item_completes.json', itemCompleteHash);
         };
 
+        var getCompletedItems = function(currentUser){
+            $http.get('/users/' + currentUser.id + '.json').success(function(serverData){
+                completedItems.push(serverData);
+                console.log(completedItems);
+
+            });
+        }
+
         return {
             getUserBucket: getUserBucket,
             addUserBucket: addUserBucket,
@@ -57,7 +66,8 @@
             // getSingleItem: getSingleItem,
             addToUserBucket: addToUserBucket,
             addArrayToUserBucket: addArrayToUserBucket,
-            itemComplete: itemComplete
+            itemComplete: itemComplete,
+            getCompletedItems: getCompletedItems
         };
     });
 
