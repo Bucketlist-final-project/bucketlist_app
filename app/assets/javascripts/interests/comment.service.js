@@ -31,10 +31,9 @@
         console.log('in editComment')
       };
 
-      var deleteComment = function(userCommentHash, bucketListItem, userComment){
-        console.log('userCommentId: ' + userComment.id)
-        // $http.delete('/bucket_list_items/' + userCommentHash.bucket_list_item_id.id + '/comments/' + commentId + '.json', userCommentHash).success(function(){
-        // });
+      var deleteComment = function(userComment){
+        $http.delete('/bucket_list_items/' + userComment.bucket_list_item_id + '/comments/' + userComment.id + '.json', userComment).success(function(){
+        });
       };
 
        return {
