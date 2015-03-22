@@ -9,8 +9,10 @@
             <br>
             <p class = "name">{{item.name}}
             </p>
-            <p class = "completed" ng-if="item.item_completes[0].completed">I did it!
-            </p>
+            <div ng-if="currentUser.id==item.item_completes[0].user_id">
+                <p class = "completed" ng-if="item.item_completes[0].completed">I did it!
+                </p>
+            </div>
             <button ng-click="user.completedBucketItems()">get completed
             </button>
             <button ng-click="user.userItemCompleted(item)">Set complete
