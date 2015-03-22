@@ -51,9 +51,10 @@
      <div class="comments">
        <ul>
             <li ng-repeat="comment in bucketDtl.singleItem.comments">
-                <p>{{comment.user.first_name}}
+                <p>{{comment.user.first_name}} {{comment.user.last_name}}
                 </p>
-                <p>{{comment.content}}
+
+                <p>comment: {{comment.content}}
                 </p>
                 <div ng-if="currentUser.id==comment.user_id">
                 <button ng-click='commentCtrl.editComment(comment)'>edit</button>
