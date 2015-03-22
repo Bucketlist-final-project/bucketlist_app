@@ -38,7 +38,8 @@ class BucketListItem < ActiveRecord::Base
   def as_json(options={})
       super(:only => [:name, :description, :city, :state, :zip_code, :image_file_name, :id, :user_id, :bucket_list_item_id, :latitude, :longitude],
             :include => {
-              :comments => {:only => [:id, :content, :user_id, :bucket_list_item_id] }
+              :comments => {:only => [:id, :content, :user_id, :bucket_list_item_id,],
+              :include => {:user => {:only => [:first_name, :last_name, :email]}} }
       })
   end
 

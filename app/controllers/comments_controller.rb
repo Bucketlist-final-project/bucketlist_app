@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-
+  before_action :authenticate_user!
+  load_and_authorize_resource param_method: :comment_params
  # before_action :set_bucket_list_item, only:[
  #   :index,
  #   :show,
