@@ -49,7 +49,7 @@
 
        };
 
-        user.addItemUserBucket = function (){
+        user.addUserBucketArray = function (){
           UserService.addArrayToUserBucket($scope.currentUser);
           $location.path('/users/' + $scope.currentUser.id);
        };

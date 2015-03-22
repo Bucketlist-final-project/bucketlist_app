@@ -44,6 +44,7 @@
         var addArrayToUserBucket = function(currentUser){
             currentUser.bucket_list_items.push(user_bucket);
             currentUser.bucket_list_items = _.flatten(currentUser.bucket_list_items)
+            currentUser.update = true;
             var added_data = currentUser
             console.log('this is the array to the server' + added_data);
             return $http.patch('/users/' + currentUser.id + '.json', added_data).success(function(){
