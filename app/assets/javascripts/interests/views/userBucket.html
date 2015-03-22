@@ -9,15 +9,16 @@
             <br>
             <p class = "name">{{item.name}}
             </p>
-            <div ng-if="currentUser.id==item.item_completes[0].user_id">
+            <!-- <div ng-if="currentUser.id==item.item_completes[0].user_id"> -->
+<!--             <div ng-if="_.some(item.item_completes, function(x){return x.user_id ==currentUser.id})"> -->
                 <p class = "completed" ng-if="item.item_completes[0].completed">I did it!
                 </p>
-            </div>
+            <!-- </div> -->
             <button ng-click="user.completedBucketItems()">get completed
             </button>
             <button ng-click="user.userItemCompleted(item)">Set complete
             </button>
-            <button ng-click="user.removeUserBucket(item)">delete
+            <button ng-click="user.removeBucketItem(item)">delete
             </button>
 
 <!--             <div ng-controller="DetailController as bucketDtl">

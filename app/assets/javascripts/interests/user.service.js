@@ -8,8 +8,9 @@
         var user_bucket = []
         var completedItems = []
 
-        var addUserBucket=function (newUserBucket) {
-            $http.patch('/users/' + newUserBucket.id + '.json', newUserBucket ).success(function() {
+        var addUserBucket = function (newUserBucket) {
+            newUserBucket.update = true
+            $http.patch('/users/' + newUserBucket.id + '.json', newUserBucket).success(function() {
         });
         };
         var getUserBucket = function (id) {
@@ -21,9 +22,14 @@
       //     console.log(user);
       // };
 
-        var removeUserBucket = function (item) {
-            var index = user.indexOf(item);
-            user.splice(index,1);
+        var removeBucketItem = function (item, currentUser) {
+            var removeItemHash ={};
+            removeItemHash.id = currentUser.id;
+            removeItemHash.bucket_list_item_id = item.id;
+            removeItemHash.update = false;
+            var removedItem = _.findWhere(currentUser.bucket_list_items, {id: parseInt(item.id)});
+            currentUser.bucket_list_items = _.without(currentUser.bucket_list_items, removedItem);
+            $http.patch('/users/' + currentUser.id + '.json', removeItemHash)
         };
 
         var addToUserBucket = function(bucket){
@@ -36,8 +42,6 @@
         };
 
         var addArrayToUserBucket = function(currentUser){
-            console.log('addArrayToUserBucket firing ' + currentUser.first_name);
-            console.log('this is the current user bucket ' + user_bucket)
             currentUser.bucket_list_items.push(user_bucket);
             currentUser.bucket_list_items = _.flatten(currentUser.bucket_list_items)
             var added_data = currentUser
@@ -51,24 +55,41 @@
             return $http.post('/users/' + currentUser.id + '/item_completes.json', itemCompleteHash);
         };
 
-        var getCompletedItems = function(currentUser){
-            $http.get('/users/' + currentUser.id + '.json').success(function(serverData){
-                completedItems.push(serverData);
-                console.log(completedItems);
+        // var getCompletedItems = function(currentUser){
+        //     $http.get('/users/' + currentUser.id + '.json').success(function(serverData){
+        //         completedItems.push(serverData);
+        //         console.log(completedItems);
 
-            });
-        }
+        //     });
+        // }
+
+        // var findUserCompletes = function(currentUser){
+        //     $http.get('/users/' + currentUser + '.json').success(function(serverData){
+        //         console.log(serverData.bucket_list_items)
+        //         // var 
+        //         // var completeHash = _.some()
+        //     });
+        // }
 
         return {
             getUserBucket: getUserBucket,
             addUserBucket: addUserBucket,
-            removeUserBucket: removeUserBucket,
+            removeBucketItem: removeBucketItem,
             // getSingleItem: getSingleItem,
             addToUserBucket: addToUserBucket,
             addArrayToUserBucket: addArrayToUserBucket,
             itemComplete: itemComplete,
-            getCompletedItems: getCompletedItems
+            // getCompletedItems: getCompletedItems,
+            // findUserCompletes: findUserCompletes
         };
     });
 
 })();
+
+
+// var y = _.some(cars, function(c) {
+//     return c.id == '506'; 
+// });
+
+
+
