@@ -5,10 +5,12 @@
 
        var user = this;
 
-       Auth.currentUser().then(function(user) {
+      Auth.currentUser().then(function(user) {
         // console.log(user.id);
         $scope.currentUser = user
       });
+
+       // UserService.findUserCompletes($routeParams.userId);
 
        // UserService.getUserBucket($routeParams.userId).success(function(data){
        //  user.items = data
@@ -20,16 +22,18 @@
        //   user.singleItem = data;
        //   });
 
+      
+
        user.addUserBucket = function (item) {
            $scope.currentUser.bucket_list_items.push(item);
            UserService.addUserBucket($scope.currentUser);
            $location.path('/users/' + $scope.currentUser.id);
-           // UserService.addUserBucket(item);
        };
 
-       user.removeUserBucket = function (item) {
-           UserService.removeuserBucket(item);
+       user.removeBucketItem = function (item) {
+           UserService.removeBucketItem(item, $scope.currentUser);
        };
+       
        user.submitBucket = function (item) {
            UserService.addUserBucket($scope.currentUser);
            // console.log('submit button works')
@@ -64,8 +68,11 @@
 
        user.completedBucketItems = function(){
         UserService.getCompletedItems($scope.currentUser);
-
+        var completes = $scope.currentUser.bucket_list_items.item_completes;
+        console.log(completes)
        };
+
+
 
     });
 

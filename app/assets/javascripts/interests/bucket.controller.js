@@ -8,6 +8,7 @@
        BucketService.getBucketItems().success(
            function(data) {
                bucketCtrl.items = data;
+
            });
 
           // console.log(bucketCtrl);
@@ -29,6 +30,10 @@
         $location.path('/bucket_list_items/' + id);
         console.log(id)
        };
+
+
+
+
 
 
     });

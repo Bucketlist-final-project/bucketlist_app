@@ -11,11 +11,13 @@
 
       var postComment = function (userCommentHash, bucketListItem, userComment) {
         //   if(commentsPushed){
-        var comment = {};
-        comment.content = userComment.content;
-        console.log(comment);
-        bucketListItem.comments.push(comment);
+        // var comment = {};
+        // comment.content = userComment.content;
+        // console.log(comment);
+        // bucketListItem.comments.push(comment);
         $http.post('/bucket_list_items/' + userCommentHash.bucket_list_item_id.id + '/comments.json', userCommentHash).success(function(data){
+          // console.log('this comes from server' + data.id)
+          bucketListItem.comments.push(data);
         });
       };
 

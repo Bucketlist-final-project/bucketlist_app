@@ -32,13 +32,6 @@
     </ul>
 </div>
 
-    <div ng-controller="UserController as user">
-        <div class="submitButton3">
-            <a href="" ng-click="user.submitBucket()">Submit</a>
-        </div>
-    </div>
-
-
     <div class="commentforms" ng-controller="CommentController as commentCtrl">
         <h2 class="comments">Comments
         </h2>
@@ -48,17 +41,17 @@
             <button class= "submitComment" ng-click= "commentCtrl.submitComment(bucketDtl.singleItem, commentCtrl)">Post Comment
             </button>
         </form>
-
-
      <div class="comments">
        <ul>
             <li ng-repeat="comment in bucketDtl.singleItem.comments">
-                <p>{{comment.user_id}}
+                <p>{{comment.user.first_name}} {{comment.user.last_name}}
                 </p>
-                <p>{{comment.content}}
+                <p>comment: {{comment.content}}
                 </p>
+                <div ng-if="currentUser.id==comment.user_id">
                 <button ng-click='commentCtrl.editComment(comment)'>edit</button>
                 <button ng-click='commentCtrl.deleteComment(bucketDtl.singleItem, comment)'>delete</button>
+            </div>
             </li>
      </div>
      </div>

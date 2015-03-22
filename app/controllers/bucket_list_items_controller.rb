@@ -1,5 +1,6 @@
 class BucketListItemsController < ApplicationController
   # User.where(id: [1,2,3]).map(&:projects).flatten
+  before_action :authenticate_user!
   before_action :set_bucket_list_item, only:[
     :show,
     :edit,
