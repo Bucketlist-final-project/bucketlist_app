@@ -6,8 +6,8 @@
 
       var interest = [];
 
-      var addNewInterest = function (interest) {
-        $http.post(interest);
+      var addNewInterest = function (newInterest) {
+        $http.post('/bucket_list_item');
       };
 
       var getInterests = function () {

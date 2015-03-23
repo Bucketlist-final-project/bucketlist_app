@@ -17,7 +17,8 @@
 
     interestCtrl.addNewInterest = function(newInterest) {
         InterestService.addNewInterst(newInterest);
-        // $location.path('/interests');
+        $location.path('/bucketlistitem');
+        console.log(interestCtrl);
     };
 
     interestCtrl.deleteInterest= function (id) {

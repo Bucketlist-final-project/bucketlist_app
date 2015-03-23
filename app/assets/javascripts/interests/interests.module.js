@@ -7,13 +7,8 @@
 
   .config(function ($routeProvider) {
     $routeProvider
-    .when('/interests', {
-      templateUrl: 'assets/interests/views/interests.html',
-      controller: 'InterestController as interestCtrl'
-    })
-
-    .when('/interestDetail', {
-      templateUrl: 'assets/interests/views/interestDetail.html',
+    .when('/addInterest', {
+      templateUrl: 'assets/interests/views/addInterest.html',
       controller: 'InterestController as interestCtrl'
     })
 

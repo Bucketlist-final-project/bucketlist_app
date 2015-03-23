@@ -79,6 +79,7 @@ private
       :state,
       :zip_code,
       :image,
+      :image_file_name,
       user_ids: []
       )
   end

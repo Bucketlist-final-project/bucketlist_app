@@ -17,11 +17,6 @@
             return $http.get('/users/' + id + '.json');
         };
 
-      //   var getSingleItem = function(id) {
-      //     return $http.get('/users/' + id + '.json');
-      //     console.log(user);
-      // };
-
         var removeBucketItem = function (item, currentUser) {
             var removeItemHash ={};
             removeItemHash.id = currentUser.id;
@@ -67,7 +62,7 @@
         // var findUserCompletes = function(currentUser){
         //     $http.get('/users/' + currentUser + '.json').success(function(serverData){
         //         console.log(serverData.bucket_list_items)
-        //         // var 
+        //         // var
         //         // var completeHash = _.some()
         //     });
         // }
@@ -89,8 +84,5 @@
 
 
 // var y = _.some(cars, function(c) {
-//     return c.id == '506'; 
+//     return c.id == '506';
 // });
-
-
-

@@ -2,7 +2,7 @@ task create_bucket_list_items: :environment do
   x = 1
   10.times do
   BucketListItem.create!({
-    name: Faker::Hacker.noun,
+    name: Faker::Hacker.noun, #'' + name
     description: Faker::Lorem.sentence(3, true),
     street_address: '510 Mill Street',
     city: 'Mount Pleasant',
