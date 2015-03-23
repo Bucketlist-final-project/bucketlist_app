@@ -1,11 +1,10 @@
-<div class="interestItemPage">
-    <h1 class="bucketItems"> Choose the items you'd like to add to your bucket..</h1>
-</div>
-<div class="searchFilter">
-    <input ng-model="query" type="text" name="searchbox" placeholder="search interests...">
-</div>
-
 <div class="ItemsWrapper" ng-controller="BucketController as bucketCtrl">
+    <div class="interestItemPage">
+        <h1 class="bucketItems"> Choose the items you'd like to add to your bucket..</h1>
+    </div>
+    <div class="searchFilter">
+        <input ng-model="query" type="text" name="searchbox" placeholder="search interests..." height="40">
+    </div>
     <ul>
       <li class="list3" ng-repeat="bucket in bucketCtrl.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
 
@@ -20,15 +19,13 @@
             </div>
 
             <div ng-controller="UserController as userCtrl">
-                <input type="checkbox" ng-click="userCtrl.addItemToUserBucket(bucket)">
+                <input type="checkbox" class="checkbox" ng-click="userCtrl.addItemToUserBucket(bucket)">
             </div>
         </div>
       </li>
     </ul>
-</div>
-
-<div ng-controller="UserController as user">
-    <div class="submitButton2">
-        <a href="" ng-click="user.addUserBucketArray()">Submit</a>
+    <div ng-controller="UserController as user">
+        <div class="submitButton2">
+            <a href="" ng-click="user.addUserBucketArray()"><img src="/assets/submitbutton.gif"></a>
+        </div>
     </div>
-</div>

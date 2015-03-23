@@ -4,7 +4,7 @@
    .controller('CommentController', function (CommentService, $location, $routeParams, $scope, Auth) {
 
       var commentCtrl = this;
-      
+
       $scope.newComment = true
 
       Auth.currentUser().then(function(user) {
@@ -45,11 +45,6 @@
        };
 
        commentCtrl.deleteComment = function(bucketListItem, userComment){
-          // var commentHash = {};
-          // commentHash.bucket_list_item_id = bucketListItem;
-          // commentHash.comment = {};
-          // commentHash.comment.content = userComment.content;
-          // commentHash.user_id = $scope.currentUser.id;
           console.log(userComment)
           CommentService.deleteComment(bucketListItem, userComment);
        };

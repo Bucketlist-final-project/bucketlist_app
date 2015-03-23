@@ -5,13 +5,14 @@
 
        var bucketCtrl = this;
 
-       BucketService.getBucketItems().success(
-           function(data) {
-               bucketCtrl.items = data;
+       BucketService.getBucketItems().success(function(data) {
+           bucketCtrl.items = data;
+       });
 
-           });
-
-          // console.log(bucketCtrl);
+       bucketCtrl.addNewBucketItem = function (item) {
+           BucketService.addNewBucketItem(item);
+           $location.path('/bucketlistitem');
+       };
 
        bucketCtrl.removeBucketItems = function (item) {
            BucketService.removeBucketItems(item);
@@ -21,20 +22,10 @@
            console.log('userBucket works');
        };
 
-      // bucketCtrl.addItemToUserBucket = function(bucket){
-      //   BucketService.addToUserBucket(bucket);
-
-      //  };
-
-      bucketCtrl.goToBucketDetail = function(id){
-        $location.path('/bucket_list_items/' + id);
-        console.log(id)
+       bucketCtrl.goToBucketDetail = function(id){
+           $location.path('/bucket_list_items/' + id);
+           console.log(id)
        };
-
-
-
-
-
 
     });
 

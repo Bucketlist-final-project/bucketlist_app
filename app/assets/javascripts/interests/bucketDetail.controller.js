@@ -23,7 +23,7 @@
 
        bucketDtl.addBucketDetail = function (item) {
            DetailService.addBucketDetail(item);
-           $location.path('/userBucketDetail');
+           $location.path('/bucketlistitem')
            console.log(bucketDtl);
        };
 
