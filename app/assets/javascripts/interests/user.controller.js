@@ -6,9 +6,14 @@
        var user = this;
 
       Auth.currentUser().then(function(user) {
-        // console.log(user.id);
         $scope.currentUser = user
+
+
       });
+
+      UserService.getUserBucket($routeParams.userId).success(function(data){
+        user.userData = data;
+      })
 
        // UserService.findUserCompletes($routeParams.userId);
 
@@ -43,16 +48,9 @@
         $location.path('/users/' + $scope.currentUser.id);
        }
 
-        user.addItemToUserBucket = function(bucket){
-          // console.log(bucket)
-          UserService.addToUserBucket(bucket);
 
-       };
 
-        user.addUserBucketArray = function (){
-          UserService.addArrayToUserBucket($scope.currentUser);
-          $location.path('/users/' + $scope.currentUser.id);
-       };
+
 
        user.userItemCompleted = function(bucket){
           var itemCompleteHash = {};
