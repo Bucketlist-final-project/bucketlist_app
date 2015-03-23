@@ -50,7 +50,7 @@
             addNewBucketItem: addNewBucketItem,
             getBucketItems: getBucketItems,
             removeBucketItems: removeBucketItems,
-            addBucketItems: addBucketItems,
+            // addBucketItems: addBucketItems,
             addArrayToUserBucket: addArrayToUserBucket,
             addToUserBucket: addToUserBucket
             // addToUserBucket: addToUserBucket

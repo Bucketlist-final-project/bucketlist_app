@@ -12,7 +12,7 @@
        bucketCtrl.addNewBucketItem = function (item) {
            BucketService.addNewBucketItem(item);
            $location.path('/bucketlistitem');
-           });
+           };
 
       Auth.currentUser().then(function(user) {
         $scope.currentUser = user

@@ -32,6 +32,10 @@
             return $http.post('/users/' + currentUser.id + '/item_completes.json', itemCompleteHash);
         };
 
+        var getCompletedItems = function(id) {
+            return $http.get('/users/' + id + '/item_completes.json')
+        }
+
         // var getCompletedItems = function(currentUser){
         //     $http.get('/users/' + currentUser.id + '.json').success(function(serverData){
         //         completedItems.push(serverData);
@@ -54,7 +58,7 @@
             removeBucketItem: removeBucketItem,
             // getSingleItem: getSingleItem,
             itemComplete: itemComplete,
-            // getCompletedItems: getCompletedItems,
+            getCompletedItems: getCompletedItems,
             // findUserCompletes: findUserCompletes
         };
     });

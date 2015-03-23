@@ -15,6 +15,11 @@
         user.userData = data;
       })
 
+      UserService.getCompletedItems($routeParams.userId).success(function(data){
+        user.userCompleted = data;
+      })
+
+
        // UserService.findUserCompletes($routeParams.userId);
 
        // UserService.getUserBucket($routeParams.userId).success(function(data){

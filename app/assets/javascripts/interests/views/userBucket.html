@@ -7,11 +7,6 @@
             <br>
             <p class = "name">{{item.name}}
             </p>
-            <!-- <div ng-if="currentUser.id==item.item_completes[0].user_id"> -->
-<!--             <div ng-if="_.some(item.item_completes, function(x){return x.user_id ==currentUser.id})"> -->
-                <p class = "completed" ng-if="item.item_completes[0].completed">I did it!
-                </p>
-            <!-- </div> -->
             <button ng-click="user.completedBucketItems()">get completed
             </button>
             <button ng-click="user.userItemCompleted(item)">Set complete
@@ -26,7 +21,17 @@
         </div>
         </li>
     </ul>
+
+    <div>Completed Items</div>
+        <ul>
+            <li ng-repeat="completed in user.userCompleted">
+                <p>{{completed.bucket_list_item.name}}
+                </p>
+            </li>
+        </ul>
+
 </div>
+
 
 
 <!-- <li class="list4" ng-repeat="user in user.items track by $index" -->
