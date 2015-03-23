@@ -24,6 +24,7 @@
             removeItemHash.update = false;
             var removedItem = _.findWhere(currentUser.bucket_list_items, {id: parseInt(item.id)});
             currentUser.bucket_list_items = _.without(currentUser.bucket_list_items, removedItem);
+            console.log(currentUser.bucket_list_items)
             $http.patch('/users/' + currentUser.id + '.json', removeItemHash)
         };
 

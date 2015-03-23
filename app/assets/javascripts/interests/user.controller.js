@@ -41,7 +41,7 @@
        };
 
        user.removeBucketItem = function (item) {
-           UserService.removeBucketItem(item, $scope.currentUser);
+           UserService.removeBucketItem(item, user.userData);
        };
        
        user.submitBucket = function (item) {
@@ -52,10 +52,6 @@
        user.goToBucket = function(id){
         $location.path('/users/' + $scope.currentUser.id);
        }
-
-
-
-
 
        user.userItemCompleted = function(bucket){
           var itemCompleteHash = {};
