@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('BucketController', function (BucketService, $location, $routeParams, Auth) {
+    .controller('BucketController', function (BucketService, $location, $routeParams, Auth, $scope) {
 
        var bucketCtrl = this;
 
@@ -11,7 +11,23 @@
 
            });
 
-          // console.log(bucketCtrl);
+      Auth.currentUser().then(function(user) {
+        $scope.currentUser = user
+      });
+
+        bucketCtrl.addItemToUserBucket = function(bucket){
+          // console.log(bucket)
+          BucketService.addToUserBucket(bucket);
+
+       };
+
+        bucketCtrl.addUserBucketArray = function (){
+          console.log($scope.currentUser);
+          BucketService.addArrayToUserBucket($scope.currentUser);
+            $location.path('/users/' + $scope.currentUser.id);  
+          // });
+          
+       };
 
        bucketCtrl.removeBucketItems = function (item) {
            BucketService.removeBucketItems(item);
