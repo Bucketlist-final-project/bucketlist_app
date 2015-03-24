@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   angular.module('interests')
-  .factory('InterestService', function($http) {
+  .factory('InterestService', ['$http', function($http) {
       // var url = 'http://tiy-fee-rest.herokuapp.com/collections/dummytesting';
 
       var interest = [];
@@ -32,4 +32,4 @@
 
     });
 
-})();
+}])();

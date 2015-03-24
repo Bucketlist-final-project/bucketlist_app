@@ -5,7 +5,7 @@
     'ngRoute',
   ])
 
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
     .when('/addInterest', {
       templateUrl: 'assets/interests/views/addInterest.html',
@@ -31,6 +31,6 @@
       templateUrl: 'assets/interests/views/userBucket.html',
       controller: 'UserController as user',
   });
-})
+}])
 
 })();

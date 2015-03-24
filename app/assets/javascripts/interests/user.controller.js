@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('UserController', function (UserService, $location, $routeParams, $scope, Auth) {
+    .controller('UserController', ['UserService', '$location', '$routeParams', '$scope', 'Auth', function (UserService, $location, $routeParams, $scope, Auth) {
 
        var user = this;
 
@@ -75,4 +75,4 @@
 
     });
 
-})();
+}])();

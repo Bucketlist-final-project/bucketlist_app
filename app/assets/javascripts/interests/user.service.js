@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   angular.module('interests')
-    .factory('UserService', function($http) {
+    .factory('UserService', ['$http', function($http) {
 
         var user = [];
         var addBucket = []
@@ -67,9 +67,4 @@
         };
     });
 
-})();
-
-
-// var y = _.some(cars, function(c) {
-//     return c.id == '506';
-// });
+}])();

@@ -1,7 +1,7 @@
 (function () {
    "use strict";
    angular.module('interests')
-   .controller('CommentController', function (CommentService, $location, $routeParams, $scope, Auth) {
+   .controller('CommentController', ['CommentService', '$location', '$routeParams', '$scope', 'Auth', function (CommentService, $location, $routeParams, $scope, Auth) {
 
       var commentCtrl = this;
 
@@ -52,4 +52,4 @@
 
  });
 
-})();
+}])();

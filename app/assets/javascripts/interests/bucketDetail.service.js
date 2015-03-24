@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   angular.module('interests')
-    .factory('DetailService', function($http) {
+    .factory('DetailService', ['$http', function($http) {
 
         var bucketDtl = [];
 
@@ -30,4 +30,4 @@
         };
     });
 
-})();
+}])();
