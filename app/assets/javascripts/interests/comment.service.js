@@ -1,7 +1,7 @@
 (function () {
  "use strict";
  angular.module('interests')
-   .factory('CommentService', function($http) {
+   .factory('CommentService', ['$http', function($http) {
 
        var getOneItem = function (id) {
            return $http.get('/bucket_list_items/' + id  + '.json');
@@ -41,7 +41,7 @@
            deleteComment: deleteComment
        };
 
-   });
+   }]);
 
 
 })();

@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('UserController', function (UserService, $location, $routeParams, $scope, Auth) {
+    .controller('UserController', ['UserService', '$location', '$routeParams', '$scope', 'Auth', function (UserService, $location, $routeParams, $scope, Auth) {
 
        var user = this;
 
@@ -14,6 +14,11 @@
       UserService.getUserBucket($routeParams.userId).success(function(data){
         user.userData = data;
       })
+
+      UserService.getCompletedItems($routeParams.userId).success(function(data){
+        user.userCompleted = data;
+      })
+
 
        // UserService.findUserCompletes($routeParams.userId);
 
@@ -36,7 +41,7 @@
        };
 
        user.removeBucketItem = function (item) {
-           UserService.removeBucketItem(item, $scope.currentUser);
+           UserService.removeBucketItem(item, user.userData);
        };
        
        user.submitBucket = function (item) {
@@ -48,19 +53,15 @@
         $location.path('/users/' + $scope.currentUser.id);
        }
 
-
-
-
-
-       user.userItemCompleted = function(bucket){
+       user.userItemCompleted = function(bucketItem){
           var itemCompleteHash = {};
           var itemComplete = {}
           itemComplete.completed = true
-          itemCompleteHash.bucket_list_item_id = bucket.id;
+          itemCompleteHash.bucket_list_item_id = bucketItem.id;
           itemCompleteHash.item_complete = itemComplete;
-          itemCompleteHash.user_id = $scope.currentUser;
-          console.log('completeHash ' + itemCompleteHash)
-          UserService.itemComplete(itemCompleteHash, $scope.currentUser);
+          itemCompleteHash.user_id = $scope.currentUser.id;
+          console.log('completeHash ' + itemCompleteHash.user_id)
+          UserService.itemComplete(itemCompleteHash, user.userCompleted, bucketItem);
 
        };
 
@@ -72,6 +73,6 @@
 
 
 
-    });
+    }]);
 
 })();
