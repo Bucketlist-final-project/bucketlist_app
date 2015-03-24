@@ -1,6 +1,6 @@
 <div class="add">
     <form ng-controller="BucketController as bucketCtrl">
-        <input type="text" ng-model="item.image_file_name" placeholder="Picture">
+
         <input type="text" ng-model="item.name" placeholder="Title">
         <input type="text" ng-model="item.description" placeholder="Description">
         <input type="text" ng-model="item.street_address" placeholder="streetAdd">
@@ -11,3 +11,9 @@
         </button>
     </form>
 </div>
+
+
+<form action="/bucket_list_items" ng-upload="complete(content)">
+ <input type="file" name="image"></input>
+ <input type="submit" value="Upload" ng-disabled="$isUploading"></input>
+</form>

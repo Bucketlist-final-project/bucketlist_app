@@ -6,6 +6,8 @@
         var user_bucket = [];
 
         var addNewBucketItem= function (newBucketItem) {
+            newBucketItem.image_file_name = '1.jpg'
+            console.log(newBucketItem.image_file_name)
             $http.post('/bucket_list_items.json', newBucketItem).success(function() {
         });
         };

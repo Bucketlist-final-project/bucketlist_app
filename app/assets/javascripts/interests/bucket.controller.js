@@ -10,6 +10,7 @@
        });
 
        bucketCtrl.addNewBucketItem = function (item) {
+           console.log(item)
            BucketService.addNewBucketItem(item);
            $location.path('/bucketlistitem');
            };
