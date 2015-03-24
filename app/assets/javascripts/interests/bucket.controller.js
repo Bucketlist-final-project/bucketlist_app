@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('BucketController', function (BucketService, $location, $routeParams, Auth, $scope) {
+    .controller('BucketController', ['BucketService', '$location', '$routeParams', 'Auth', '$scope', function (BucketService, $location, $routeParams, Auth, $scope) {
 
        var bucketCtrl = this;
 
@@ -12,7 +12,7 @@
        bucketCtrl.addNewBucketItem = function (item) {
            BucketService.addNewBucketItem(item);
            $location.path('/bucketlistitem');
-           });
+           };
 
       Auth.currentUser().then(function(user) {
         $scope.currentUser = user
@@ -44,6 +44,6 @@
            console.log(id)
        };
 
-    });
+    }]);
 
 })();

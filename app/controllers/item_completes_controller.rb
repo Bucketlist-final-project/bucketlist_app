@@ -3,7 +3,7 @@ class ItemCompletesController < ApplicationController
     @user = User.find params[:user_id]
     @item_completes = @user.item_completes.all
     respond_to do |format|
-     format.json {render json: @item_completes }
+     format.json {render :json => @item_completes }
      format.html
    end
   end

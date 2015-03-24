@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('InterestController', function (InterestService, $routeParams, $location, $scope, Auth) {
+    .controller('InterestController', ['InterestService', '$routeParams', '$location', '$scope', 'Auth', function (InterestService, $routeParams, $location, $scope, Auth) {
 
     var interestCtrl = this;
 
@@ -31,6 +31,6 @@
         console.log('bucket list item page works');
     };
 
-});
+}]);
 
 })();

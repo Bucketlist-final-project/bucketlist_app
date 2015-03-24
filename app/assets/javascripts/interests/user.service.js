@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   angular.module('interests')
-    .factory('UserService', function($http) {
+    .factory('UserService', ['$http', function($http) {
 
         var user = [];
         var addBucket = []
@@ -28,9 +28,17 @@
         };
 
 
-        var itemComplete = function(itemCompleteHash, currentUser){
-            return $http.post('/users/' + currentUser.id + '/item_completes.json', itemCompleteHash);
+        var itemComplete = function(itemCompleteHash, completedList, bucketItem){
+            var hash = {}
+            hash.bucket_list_item = bucketItem
+            completedList.push(hash)
+            console.log(completedList)
+            return $http.post('/users/' + itemCompleteHash.user_id + '/item_completes.json', itemCompleteHash);
         };
+
+        var getCompletedItems = function(id) {
+            return $http.get('/users/' + id + '/item_completes.json')
+        }
 
         // var getCompletedItems = function(currentUser){
         //     $http.get('/users/' + currentUser.id + '.json').success(function(serverData){
@@ -54,14 +62,9 @@
             removeBucketItem: removeBucketItem,
             // getSingleItem: getSingleItem,
             itemComplete: itemComplete,
-            // getCompletedItems: getCompletedItems,
+            getCompletedItems: getCompletedItems,
             // findUserCompletes: findUserCompletes
         };
-    });
+    }]);
 
 })();
-
-
-// var y = _.some(cars, function(c) {
-//     return c.id == '506';
-// });

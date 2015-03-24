@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('DetailController', function (DetailService, $location, $routeParams, $scope, uiGmapGoogleMapApi) {
+    .controller('DetailController', ['DetailService', '$location', '$routeParams', '$scope', 'uiGmapGoogleMapApi', function (DetailService, $location, $routeParams, $scope, uiGmapGoogleMapApi) {
 
        var bucketDtl = this;
 
@@ -62,6 +62,6 @@
     };
 
 
-    });
+    }]);
 
 })();
