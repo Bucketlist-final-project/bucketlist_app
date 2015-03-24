@@ -44,7 +44,6 @@
        bucketCtrl.removeBucketItem = function (item, itemArray) {
            BucketService.removeBucketItem(item, itemArray);
            
-
        };
 
        bucketCtrl.goToBucketPage = function () {
