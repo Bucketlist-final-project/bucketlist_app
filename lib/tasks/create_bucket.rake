@@ -1,5 +1,5 @@
 task create_bucket_list_items: :environment do
-  
+
   name_array = ['The Haunted Jail Tour', 'Haunted Ghost Tour on the USS Yorktown', 'Waverunner Safari Adventure', 'Parasailing', 'Capers Wildlife Exploration', "Frankie's Fun Park"]
   description_array = ['Join us for a behind the scenes tour of The Old City Jail, which housed some of Charleston’s most infamous criminals, 19th century pirates and Civil War prisoners. The Old City Jail was in operation from 1802 until 1939 and most of the building’s original structures remain intact including the cells and warden’s quarters. The Haunted Jail Tour takes you through the cells, hallways and into the places where Charleston’s worst criminals lived and died. This is one of our most popular Charleston ghost tours.
 ', 'This approximate 90 minute guided tour will walk you through a haunted, historical journey in which you will hear about the heroic sacrifices and the ghosts that have been reported to haunt the USS Yorktown. You will begin your tour with an immersive multimedia experience introducing you to the USS Yorktown and the many accounts of its paranormal activity. 
@@ -16,7 +16,7 @@ Each parasailing excursion includes up to six passengers and lasts for approxima
   longitude_array = [-79.929277, -79.902006, -79.760464, -79.760464, -79.760341, -80.105006]
 
 
-  x = 0  
+  x = 0
   while x < name_array.length do
   BucketListItem.create!({
     name: name_array[x],

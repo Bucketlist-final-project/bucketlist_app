@@ -10,17 +10,34 @@
         });
         };
 
+        var editNewBucketItem = function(item, Id) {
+            console.log('heres item id' + Id)
+            $http.put('/bucket_list_items/' + Id + '.json', item);
+            console.log('the edit is posting');
+
+        };
+
         var getBucketItems= function () {
             return $http.get('/bucket_list_items.json');
 
         };
-        var removeBucketItems = function (item) {
-            var index = bucket.indexOf(item);
-            bucketCtrl.splice(index,1);
+
+        var getOneItem = function (){
+            return $http.get('/bucket_list_items/' + Id + '.json');
+        };
+
+        var removeBucketItem = function (item, bucketItems) {
+            console.log(bucketItems)
+            var deletedItem= _.findWhere(bucketItems, {id: parseInt(item.id)});
+                bucketItems= _.without(bucketItems, deletedItem);
+                console.log(bucketItems)
+             $http.delete('/bucket_list_items/' + item.id + '.json').success(function(){
+
+             });
         };
 
         var addToUserBucket = function(bucket){
-            console.log('addToUserBucket firing ' + bucket);
+            console.log('addToUserBucket firing' + bucket);
             var alreadyInBucket = _.where(user_bucket, { name: bucket.name });
             if (alreadyInBucket <= 0) {
                 user_bucket.push(bucket)
@@ -36,24 +53,14 @@
             return $http.patch('/users/' + currentUser.id + '.json', added_data)
         };
 
-        // var addToUserBucket = function(bucket){
-        //     console.log('addToUserBucket firing ' + bucket);
-        //     var alreadyInBucket = _.where(user_bucket, { name: bucket.name });
-        //     if (alreadyInBucket <= 0) {
-        //         user_bucket.push(bucket)
-        //     }
-        //   };
-
-
-
         return {
             addNewBucketItem: addNewBucketItem,
             getBucketItems: getBucketItems,
-            removeBucketItems: removeBucketItems,
-            // addBucketItems: addBucketItems,
+            removeBucketItem: removeBucketItem,
             addArrayToUserBucket: addArrayToUserBucket,
-            addToUserBucket: addToUserBucket
-            // addToUserBucket: addToUserBucket
+            addToUserBucket: addToUserBucket,
+            editNewBucketItem: editNewBucketItem,
+            getSingleBucket: getOneItem
         };
     }]);
 
