@@ -53,15 +53,15 @@
         $location.path('/users/' + $scope.currentUser.id);
        }
 
-       user.userItemCompleted = function(bucket){
+       user.userItemCompleted = function(bucketItem){
           var itemCompleteHash = {};
           var itemComplete = {}
           itemComplete.completed = true
-          itemCompleteHash.bucket_list_item_id = bucket.id;
+          itemCompleteHash.bucket_list_item_id = bucketItem.id;
           itemCompleteHash.item_complete = itemComplete;
-          itemCompleteHash.user_id = $scope.currentUser;
-          console.log('completeHash ' + itemCompleteHash)
-          UserService.itemComplete(itemCompleteHash, $scope.currentUser);
+          itemCompleteHash.user_id = $scope.currentUser.id;
+          console.log('completeHash ' + itemCompleteHash.user_id)
+          UserService.itemComplete(itemCompleteHash, user.userCompleted, bucketItem);
 
        };
 

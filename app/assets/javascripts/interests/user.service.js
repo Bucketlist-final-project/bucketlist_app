@@ -24,13 +24,16 @@
             removeItemHash.update = false;
             var removedItem = _.findWhere(currentUser.bucket_list_items, {id: parseInt(item.id)});
             currentUser.bucket_list_items = _.without(currentUser.bucket_list_items, removedItem);
-            console.log(currentUser.bucket_list_items)
             $http.patch('/users/' + currentUser.id + '.json', removeItemHash)
         };
 
 
-        var itemComplete = function(itemCompleteHash, currentUser){
-            return $http.post('/users/' + currentUser.id + '/item_completes.json', itemCompleteHash);
+        var itemComplete = function(itemCompleteHash, completedList, bucketItem){
+            var hash = {}
+            hash.bucket_list_item = bucketItem
+            completedList.push(hash)
+            console.log(completedList)
+            return $http.post('/users/' + itemCompleteHash.user_id + '/item_completes.json', itemCompleteHash);
         };
 
         var getCompletedItems = function(id) {
