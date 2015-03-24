@@ -32,7 +32,7 @@
        //   user.singleItem = data;
        //   });
 
-      
+
 
        user.addUserBucket = function (item) {
            $scope.currentUser.bucket_list_items.push(item);
@@ -43,7 +43,7 @@
        user.removeBucketItem = function (item) {
            UserService.removeBucketItem(item, user.userData);
        };
-       
+
        user.submitBucket = function (item) {
            UserService.addUserBucket($scope.currentUser);
            // console.log('submit button works')

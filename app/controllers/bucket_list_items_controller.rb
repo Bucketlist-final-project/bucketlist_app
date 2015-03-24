@@ -1,6 +1,6 @@
 class BucketListItemsController < ApplicationController
   # User.where(id: [1,2,3]).map(&:projects).flatten
-  before_action :authenticate_user!
+
   before_action :set_bucket_list_item, only:[
     :show,
     :edit,
@@ -54,7 +54,6 @@ class BucketListItemsController < ApplicationController
     @bucket_list_item.update bucket_list_item_params
     respond_to do |format|
       format.json do
-        @bucket_list_item.user = current_user
         render json: @bucket_list_item
       end
       format.html {redirect_to bucket_list_items_path}
@@ -62,7 +61,7 @@ class BucketListItemsController < ApplicationController
   end
 
   def destroy
-    @bucket_list_item.destroy
+    @bucket_list_item.delete
     respond_to do |format|
       format.json { head :no_content }
       format.html {redirect_to bucket_list_items_path}

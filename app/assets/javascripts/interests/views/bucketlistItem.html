@@ -1,3 +1,5 @@
+
+<div id="page-wrap">
 <div class="ItemsWrapper" ng-controller="BucketController as bucketCtrl">
     <div class="interestItemPage">
         <h1 class="bucketItems"> Choose the items you'd like to add to your bucket..</h1>
@@ -9,26 +11,49 @@
       <li class="list3" ng-repeat="bucket in bucketCtrl.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
 
         <div class="second3">
-            <!-- <div ng-controller="DetailController as bucketDtl"> -->
+
             <a href="" ng-click="bucketCtrl.goToBucketDetail(bucket.id)">
                 <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucket.image_file_name}}" class="bucketCard">
             </a>
-            <!-- </div> -->
+
             <br>
             <p class ="name2">{{bucket.name}}</p>
             </div>
 
-            <!-- <div ng-controller="UserController as userCtrl"> -->
+
                 <input type="checkbox" class="checkbox" ng-click="bucketCtrl.addItemToUserBucket(bucket)">
-            <!-- </div> -->
+
+            <a href="#/editItem/{{bucket.id}}"><button>edit
+            </button></a>
+
+            <button ng-click="bucketCtrl.removeBucketItem(bucket, bucketCtrl.items)">Delete
+            </button>
         </div>
       </li>
     </ul>
+</div>
 </div>
 
 <div ng-controller="BucketController as bucketCtrl">
     <div class="submitButton2">
         <a href="" ng-click="bucketCtrl.addUserBucketArray()"><img src="/assets/submitbutton.gif"></a>
     </div>
+</div>
 
-<!-- </div> -->
+<!--
+
+<div id="modal">
+   <a href="#close" title="close" class="close">X</a>
+   <h3> Add your own Basket Item </h3>
+   <form ng-controller="BucketController as bucketCtrl">
+       <input type="text" ng-model="item.image_file_name" placeholder="Picture">
+       <input type="text" ng-model="item.name" placeholder="Title">
+       <input type="text" ng-model="item.description" placeholder="Description">
+       <input type="text" ng-model="item.street_address" placeholder="streetAdd">
+       <input type="text" ng-model="item.city" placeholder="city">
+       <input type="text" ng-model="item.state" placeholder="state">
+       <input type="text" ng-model="item.zip_code" placeholder="zipcode">
+       <button ng-click="bucketCtrl.addNewBucketItem(item)">Add new BucketItem
+       </button>
+   </form>
+</div>  -->

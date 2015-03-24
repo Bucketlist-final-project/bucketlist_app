@@ -9,7 +9,7 @@ class ItemCompletesController < ApplicationController
   end
 
   def show
-  
+
   end
 
   def new
@@ -35,11 +35,11 @@ class ItemCompletesController < ApplicationController
 
 
   def update
-  
+
   end
 
   def destroy
-  
+
   end
 
 private

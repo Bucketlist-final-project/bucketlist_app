@@ -9,16 +9,16 @@
     $routeProvider
     .when('/addInterest', {
       templateUrl: 'assets/interests/views/addInterest.html',
-      controller: 'InterestController as interestCtrl'
+      controller: 'BucketController as bucketCtrl'
+    })
+
+    .when('/editItem/:itemId', {
+      templateUrl: 'assets/interests/views/editItem.html',
+      controller: 'BucketController as bucketCtrl'
     })
 
     .when('/bucketlistitem', {
        templateUrl: 'assets/interests/views/bucketlistItem.html',
-       controller: 'InterestController as interestCtrl'
-    })
-
-    .when('/addInterest', {
-       templateUrl: 'assets/interests/views/addInterest.html',
        controller: 'InterestController as interestCtrl'
     })
 
