@@ -1,3 +1,5 @@
+
+<div id="page-wrap">
 <div class="ItemsWrapper" ng-controller="BucketController as bucketCtrl">
     <div class="interestItemPage">
         <h1 class="bucketItems"> Choose the items you'd like to add to your bucket..</h1>
@@ -25,10 +27,27 @@
       </li>
     </ul>
 </div>
+</div>
 
 <div ng-controller="BucketController as bucketCtrl">
     <div class="submitButton2">
         <a href="" ng-click="bucketCtrl.addUserBucketArray()"><img src="/assets/submitbutton.gif"></a>
     </div>
+</div>
 
-<!-- </div> -->
+
+<div id="modal">
+    <a href="#close" title="close" class="close">X</a>
+    <h3> Add your own Basket Item </h3>
+    <form ng-controller="BucketController as bucketCtrl">
+        <input type="text" ng-model="item.image_file_name" placeholder="Picture">
+        <input type="text" ng-model="item.name" placeholder="Title">
+        <input type="text" ng-model="item.description" placeholder="Description">
+        <input type="text" ng-model="item.street_address" placeholder="streetAdd">
+        <input type="text" ng-model="item.city" placeholder="city">
+        <input type="text" ng-model="item.state" placeholder="state">
+        <input type="text" ng-model="item.zip_code" placeholder="zipcode">
+        <button ng-click="bucketCtrl.addNewBucketItem(item)">Add new BucketItem
+        </button>
+    </form>
+</div>

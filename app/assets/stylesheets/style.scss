@@ -1,3 +1,8 @@
+/* 
+@include transition(all 0.4s ease);
+@include filter(blur(5px) grayscale(50%));
+@include transform(scale(0.9)); */
+
 ///////////////////map//////////////////////
 ///////////////////////////////////////////
 
@@ -54,6 +59,10 @@ body {
 .splashPage {
   border: 2px double black;
   text-align: center;
+}
+
+.alert{
+    -webkit-transition-timing-function: ease-out;
 }
 
 ///////media queries for splash page/////////////////////
@@ -390,7 +399,35 @@ input {
 
 }
 
+/////////////add interest/ modal//////////
+/////////////////////////////////////////
 
+#modal {
+  background: white;
+  position: fixed;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  margin: -25% 0 0 -25%;
+  transform: scale(1.5);
+  opacity: 0;
+  pointer-events: none;
+}
 
+.dialogIsOpen #page-wrap {
+  -webkit-filter: blur(5px) grayscale(50%);
+  -webkit-transform: scale(0.9);
 
-/*# sourceMappingURL=style.css.map */
+}
+
+.dialogIsOpen #modal {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+
+}
+
+#page-wrap, #modal {
+  transition: all 0.4s ease; /* prefix me */
+
+}

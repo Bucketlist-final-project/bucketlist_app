@@ -17,11 +17,6 @@
        controller: 'InterestController as interestCtrl'
     })
 
-    .when('/addInterest', {
-       templateUrl: 'assets/interests/views/addInterest.html',
-       controller: 'InterestController as interestCtrl'
-    })
-
     .when('/bucket_list_items/:bucketId', {
        templateUrl: 'assets/interests/views/bucketDetail.html',
        controller: 'DetailController as bucketDtl',
