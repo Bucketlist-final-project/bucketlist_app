@@ -30,6 +30,6 @@
         deleteInterest: deleteInterest,
       };
 
-    });
+    }]);
 
-}])();
+})();

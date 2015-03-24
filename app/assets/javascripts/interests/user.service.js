@@ -65,6 +65,6 @@
             getCompletedItems: getCompletedItems,
             // findUserCompletes: findUserCompletes
         };
-    });
+    }]);
 
-}])();
+})();

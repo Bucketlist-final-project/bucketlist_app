@@ -9,5 +9,5 @@
         $scope.currentUser = user
       });
 
-    })
-}])();
+    }])
+})();

@@ -31,6 +31,6 @@
         console.log('bucket list item page works');
     };
 
-});
+}]);
 
-}])();
+})();
