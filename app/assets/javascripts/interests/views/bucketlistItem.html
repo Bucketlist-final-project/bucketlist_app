@@ -7,7 +7,7 @@
         <input ng-model="query" type="text" name="searchbox" placeholder="search interests..." height="40">
     </div>
     <ul>
-      <li class="list3" ng-repeat="bucket in bucketCtrl.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
+      <li class="list3" ng-repeat="bucket in bucketCtrl.bucketItems.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
 
         <div class="second3">
 

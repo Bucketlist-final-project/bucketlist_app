@@ -10,7 +10,8 @@
       });
 
       BucketService.getBucketItems().success(function(data) {
-           bucketCtrl.items = data;
+           bucketCtrl.bucketItems = {}
+           bucketCtrl.bucketItems.items = data;
       });
 
     //   BucketService.getSingleBucket(itemId).success(function(data){
@@ -46,7 +47,7 @@
        };
 
        bucketCtrl.removeBucketItem = function (item) {
-           BucketService.removeBucketItem(item, bucketCtrl.items);
+           BucketService.removeBucketItem(item, bucketCtrl.bucketItems);
            
        };
 

@@ -6,6 +6,7 @@
         var user_bucket = [];
 
         var addNewBucketItem= function (newBucketItem) {
+            newBucketItem.image_file_name = 'default.jpg'
             $http.post('/bucket_list_items.json', newBucketItem).success(function() {
         });
         };
@@ -27,10 +28,12 @@
         };
 
         var removeBucketItem = function (item, bucketItems) {
-            var deletedItem = _.findWhere(bucketItems, {id: parseInt(item.id)});
-                bucketItems = _.without(bucketItems, deletedItem);
-                // console.log(bucketItems)
-             $http.delete('/bucket_list_items/' + item.id + '.json');
+            $http.delete('/bucket_list_items/' + item.id + '.json').success(function(){
+                console.log(bucketItems.items)
+            var deletedItem = _.findWhere(bucketItems.items, {id: parseInt(item.id)});
+                bucketItems.items = _.without(bucketItems.items, deletedItem);
+                console.log('test ' + bucketItems.items)
+             })
         };
 
         var addToUserBucket = function(bucket){
@@ -47,6 +50,7 @@
             currentUser.bucket_list_items = user_bucket
             currentUser.update = true;
             var added_data = currentUser
+            user_bucket = []
             return $http.patch('/users/' + currentUser.id + '.json', added_data)
         };
 
