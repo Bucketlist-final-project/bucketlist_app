@@ -5,6 +5,10 @@
 
       var bucketCtrl = this;
 
+      Auth.currentUser().then(function(user) {
+        $scope.currentUser = user
+      });
+
       BucketService.getBucketItems().success(function(data) {
            bucketCtrl.items = data;
       });
@@ -27,13 +31,11 @@
        };
 
        bucketCtrl.addUserBucketArray = function (){
-        Auth.currentUser().then(function(user) {
-        $scope.currentUser = user
-          console.log('************')
+
           console.log($scope.currentUser);
           BucketService.addArrayToUserBucket($scope.currentUser);
             $location.path('/users/' + $scope.currentUser.id);
-        });
+
        };
 
        bucketCtrl.editNewBucketItem= function(item) {
