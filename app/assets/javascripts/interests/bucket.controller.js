@@ -5,17 +5,20 @@
 
       var bucketCtrl = this;
 
+      Auth.currentUser().then(function(user) {
+        $scope.currentUser = user
+      });
+
       BucketService.getBucketItems().success(function(data) {
-           bucketCtrl.items = data;
+           bucketCtrl.bucketItems = {}
+           bucketCtrl.bucketItems.items = data;
       });
 
     //   BucketService.getSingleBucket(itemId).success(function(data){
     //       bucketCtrl.singleBucket = data;
     //   })
 
-      Auth.currentUser().then(function(user) {
-        $scope.currentUser = user
-      });
+
 
       bucketCtrl.addNewBucketItem = function (item) {
           BucketService.addNewBucketItem(item);
@@ -29,9 +32,11 @@
        };
 
        bucketCtrl.addUserBucketArray = function (){
+
           console.log($scope.currentUser);
           BucketService.addArrayToUserBucket($scope.currentUser);
             $location.path('/users/' + $scope.currentUser.id);
+
        };
 
        bucketCtrl.editNewBucketItem= function(item) {
@@ -41,8 +46,8 @@
            $location.path('/bucketlistitem');
        };
 
-       bucketCtrl.removeBucketItem = function (item, itemArray) {
-           BucketService.removeBucketItem(item, itemArray);
+       bucketCtrl.removeBucketItem = function (item) {
+           BucketService.removeBucketItem(item, bucketCtrl.bucketItems);
            
        };
 

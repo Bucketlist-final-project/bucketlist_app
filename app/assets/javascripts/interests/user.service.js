@@ -22,9 +22,9 @@
             removeItemHash.id = currentUser.id;
             removeItemHash.bucket_list_item_id = item.id;
             removeItemHash.update = false;
+            $http.patch('/users/' + currentUser.id + '.json', removeItemHash).success(function(){
             var removedItem = _.findWhere(currentUser.bucket_list_items, {id: parseInt(item.id)});
-            currentUser.bucket_list_items = _.without(currentUser.bucket_list_items, removedItem);
-            $http.patch('/users/' + currentUser.id + '.json', removeItemHash)
+            currentUser.bucket_list_items = _.without(currentUser.bucket_list_items, removedItem); });
         };
 
 

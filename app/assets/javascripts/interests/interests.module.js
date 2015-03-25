@@ -19,7 +19,7 @@
 
     .when('/bucketlistitem', {
        templateUrl: 'assets/interests/views/bucketlistItem.html',
-       controller: 'InterestController as interestCtrl'
+       controller: 'BucketController as bucketCtrl'
     })
 
     .when('/bucket_list_items/:bucketId', {

@@ -1,6 +1,5 @@
 
 <div id="page-wrap">
-<div class="ItemsWrapper" ng-controller="BucketController as bucketCtrl">
     <div class="interestItemPage">
         <h1 class="bucketItems"> Choose the items you'd like to add to your bucket..</h1>
     </div>
@@ -8,7 +7,7 @@
         <input ng-model="query" type="text" name="searchbox" placeholder="search interests..." height="40">
     </div>
     <ul>
-      <li class="list3" ng-repeat="bucket in bucketCtrl.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
+      <li class="list3" ng-repeat="bucket in bucketCtrl.bucketItems.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
 
         <div class="second3">
 
@@ -25,7 +24,7 @@
               <a href="#/editItem/{{bucket.id}}"><button>edit
               </button></a>
 
-              <button ng-click="bucketCtrl.removeBucketItem(bucket, bucketCtrl.items)">Delete
+              <button ng-click="bucketCtrl.removeBucketItem(bucket)">Delete
               </button>
             </div>
         </div>
@@ -34,7 +33,6 @@
 </div>
 </div>
 
-<div ng-controller="BucketController as bucketCtrl">
     <div class="submitButton2">
         <a href="" ng-click="bucketCtrl.addUserBucketArray()"><img src="/assets/submitbutton.gif"></a>
     </div>
