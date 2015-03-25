@@ -20,14 +20,14 @@
             <p class ="name2">{{bucket.name}}</p>
             </div>
 
-
                 <input type="checkbox" class="checkbox" ng-click="bucketCtrl.addItemToUserBucket(bucket)">
+            <div ng-if="currentUser.admin==true">
+              <a href="#/editItem/{{bucket.id}}"><button>edit
+              </button></a>
 
-            <a href="#/editItem/{{bucket.id}}"><button>edit
-            </button></a>
-
-            <button ng-click="bucketCtrl.removeBucketItem(bucket, bucketCtrl.items)">Delete
-            </button>
+              <button ng-click="bucketCtrl.removeBucketItem(bucket, bucketCtrl.items)">Delete
+              </button>
+            </div>
         </div>
       </li>
     </ul>

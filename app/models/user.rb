@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :item_completes
 
   def as_json(options={})
-  super(:only => [:first_name,:last_name, :id],
+  super(:only => [:first_name,:last_name, :id, :admin],
         :include => {
           :bucket_list_items => {:only => [:id, :name, :image_file_name, :latitude, :longitude],
             :include => {
