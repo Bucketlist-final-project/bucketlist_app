@@ -13,7 +13,13 @@
 </div>
 
 
-<form action="/bucket_list_items" ng-upload="complete(content)">
- <input type="file" name="image"></input>
- <input type="submit" value="Upload" ng-disabled="$isUploading"></input>
+<form ng-upload="complete(content)" action="/bucket_list_items" method="post">
+    <input type="file" name="image"></input>
+    <input type="text" placeholder="Title">
+    <input type="text" placeholder="Description">
+    <input type="text" placeholder="streetAdd">
+    <input type="text" placeholder="city">
+    <input type="text" placeholder="state">
+    <input type="text" placeholder="zipcode">
+    <input type="submit" value="Upload" ng-disabled="$isUploading"></input>
 </form>
