@@ -41,29 +41,205 @@ body {
     }
 }
 .navBar {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
     display: table-cell;
     vertical-align: middle;
+    float: right;
+
 
     li {
         list-style-type: none;
+        text-decoration: none;
         display: inline-block;
+
 
 
         a {
             display: block;
+            color: #6f6c67;
+            text-decoration: none;
+            border: 2px solid #6f6c67;
+            line-height: 40px;
+            border-radius: 7px;
+            padding: 3%;
+
+        &:hover {
+            color: #57d1a3;
+            border: 2px solid #57d1a3;
+            border-width: medium;
+            box-shadow: 5px 5px 3px #b2d8d8;
+            -webkit-transform: scale(0.9);
+        }
 
         }
     }
 }
 
-.splashPage {
-  border: 2px double black;
-  text-align: center;
+
+///////////////Log-in page/////////////////////////////
+//////////////////////////////////////////////////////
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    color: #6f6c67;
+    line-height: 3px;
+    font-size: 30px;
 }
 
-.alert{
-    -webkit-transition-timing-function: ease-out;
+.email {
+    font-family: 'Raleway', sans-serif;
+    color: #6f6c67;
+
+    input{
+        background-color: transparent;
+        border: 0 solid;
+        font-family: 'Raleway', sans-serif;
+        color: #6f6c67;
+        width: 30%;
+        height: 60px;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 4px solid #57d1a3;
+            transition: all 0.9s ease;
+        }
+    }
+
 }
+
+.password {
+    color: #6f6c67;
+    font-family: 'Raleway', sans-serif;
+    padding-top: 5px;
+
+    input{
+        background-color: transparent;
+        border: 0 solid;
+        font-family: 'Raleway', sans-serif;
+        color: #6f6c67;
+        width: 30%;
+        height: 60px;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 4px solid #57d1a3;
+            transition: all 0.9s ease;
+        }
+    }
+
+}
+
+.rememberMe {
+    color: #6f6c67;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+
+}
+
+
+////////-SIGN UP-/////////////////////////////////
+//////////////////////////////////////////////////
+
+.firstName {
+    font-family: 'Raleway', sans-serif;
+    color: #6f6c67;
+
+    input{
+        background-color: transparent;
+        border: 0 solid;
+        font-family: 'Raleway', sans-serif;
+        color: #6f6c67;
+        width: 30%;
+        height: 60px;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 4px solid #57d1a3;
+            transition: all 0.9s ease;
+        }
+    }
+
+}
+
+.lastName {
+    font-family: 'Raleway', sans-serif;
+    color: #6f6c67;
+
+    input{
+        background-color: transparent;
+        border: 0 solid;
+        font-family: 'Raleway', sans-serif;
+        color: #6f6c67;
+        width: 30%;
+        height: 60px;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 4px solid #57d1a3;
+            transition: all 0.9s ease;
+        }
+    }
+}
+
+.passwordConfirm {
+    font-family: 'Raleway', sans-serif;
+    color: #6f6c67;
+
+    input{
+        background-color: transparent;
+        border: 0 solid;
+        font-family: 'Raleway', sans-serif;
+        color: #6f6c67;
+        width: 30%;
+        height: 60px;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 4px solid #57d1a3;
+            transition: all 0.9s ease;
+        }
+    }
+}
+
+
+
+//////////////Edit registration form //////////////
+//////////////////////////////////////////////////
+
+.currentPassword {
+    font-family: 'Raleway', sans-serif;
+    color: #6f6c67;
+
+    input{
+        background-color: transparent;
+        border: 0 solid;
+        font-family: 'Raleway', sans-serif;
+        color: #6f6c67;
+        width: 30%;
+        height: 60px;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 4px solid #57d1a3;
+            transition: all 0.9s ease;
+        }
+    }
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+    color: #6f6c67;
+    line-height: 3px;
+    font-size: 30px;
+
+    p {
+        font-family: 'Raleway', sans-serif;
+        color: #6f6c67;
+    }
+}
+
+
 
 ///////media queries for splash page/////////////////////
 ////////////////////////////////////////////////////////
@@ -132,22 +308,23 @@ body {
 ///////////////////////////////////////
 
 .ItemsWrapper {
+    font-family: 'Raleway', sans-serif;
+    line-height: 30px;
     padding: 20px;
     display: table;
     width: 100%;
     min-height: 120px;
-    background-color: #eeeeee;
-    border-top-left-radius: 20px;
 }
 
-input {
+/* input {
     border: 2px solid #FFFF66;
+    font-family: 'Raleway', sans-serif;
     border-radius: 5px;
     width: 200px;
     height: 35px;
     font-size: 15px;
 
-}
+} */
 
 .list3 {
     list-style-type: none;
@@ -155,20 +332,27 @@ input {
     width: 30%;
     text-align: center;
 
-    a{
+    img:hover {
+        -webkit-filter: opacity(.3);
+    }
+
+    a {
         text-decoration: none;
     }
 }
 
 .bucketCard {
-    border-top-left-radius: 10px;
-    box-shadow: 5px 5px 3px #FFFF66;
+    border-radius: 10px;
     height: 200px;
     width: 200px;
 }
 
 .bucketItems {
     text-align: center;
+    font-size: 25px;
+    color: #6f6c67;
+
+
 }
 
 .submitButton2 {
@@ -181,7 +365,7 @@ input {
 
 .name2 {
     margin: 0;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 ///////tablet//////////////////////////
@@ -398,6 +582,7 @@ input {
     }
 
 }
+
 
 /////////////add interest/ modal//////////
 /////////////////////////////////////////

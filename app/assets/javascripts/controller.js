@@ -2,11 +2,11 @@
     "use strict";
     angular.module('testApp')
 
-    .controller('MainController', ['Auth', '$scope', function (Auth, $scope) { //scope is going out, so best not to use//
+    .controller('MainController', ['Auth', '$rootScope', function (Auth, $rootScope) { //scope is going out, so best not to use//
         var mainCtrl = this;
       Auth.currentUser().then(function(user) {
         console.log(user);
-        $scope.currentUser = user
+        $rootScope.currentUser = user
       });
 
     }])

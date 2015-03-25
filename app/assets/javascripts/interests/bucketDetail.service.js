@@ -13,7 +13,7 @@
         };
         var getSingleDetail= function(id) {
           return $http.get('/bucket_list_items/' + id + '.json');
-      };
+        };
         var removeBucketDetail = function (item) {
             var index = bucketDtl.indexOf(item);
             bucketDtl.splice(index,1);
