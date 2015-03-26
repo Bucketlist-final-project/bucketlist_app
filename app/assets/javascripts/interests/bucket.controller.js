@@ -37,7 +37,6 @@
 
           BucketService.addArrayToUserBucket($rootScope.currentUser);
             $location.path('/users/' + $scope.currentUser.id);
-
        };
 
        bucketCtrl.editNewBucketItem= function(item) {
