@@ -18,6 +18,7 @@
 //= require lodash/lodash
 //= require underscore/underscore
 //= require devise
+//= require ngUpload/ng-upload
 //= require app
 //= require controller
 //= require interests/interests.module
@@ -31,3 +32,4 @@
 //= require interests/bucketDetail.service
 //= require interests/comment.controller
 //= require interests/comment.service
+

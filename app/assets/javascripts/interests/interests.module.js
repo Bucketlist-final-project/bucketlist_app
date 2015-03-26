@@ -17,8 +17,8 @@
       controller: 'BucketController as bucketCtrl'
     })
 
-    .when('/bucketlistitem', {
-       templateUrl: 'assets/interests/views/bucketlistItem.html',
+    .when('/addInterest', {
+       templateUrl: 'assets/interests/views/addInterest.html',
        controller: 'BucketController as bucketCtrl'
     })
 
