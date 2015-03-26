@@ -1,23 +1,25 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('BucketController', ['BucketService', '$location', '$routeParams', 'Auth', '$scope', function (BucketService, $location, $routeParams, Auth, $scope) {
+    .controller('BucketController', ['BucketService', '$location', '$routeParams', 'Auth', '$scope', '$rootScope', function (BucketService, $location, $routeParams, Auth, $scope, $rootScope) {
 
       var bucketCtrl = this;
 
       Auth.currentUser().then(function(user) {
-        $scope.currentUser = user
+        $rootScope.currentUser = user
       });
 
       BucketService.getBucketItems().success(function(data) {
-           bucketCtrl.bucketItems = {}
-           bucketCtrl.bucketItems.items = data;
+           $scope.bucketItems = {}
+           $scope.bucketItems.items = data;
       });
 
-    //   BucketService.getSingleBucket(itemId).success(function(data){
-    //       bucketCtrl.singleBucket = data;
-    //   })
-
+      $scope.$on('BasketItem:added', function() {
+          BucketService.getBucketItems().success(function(data) {
+               $scope.bucketItems = {}
+               $scope.bucketItems.items = data;
+          });
+      });
 
 
       bucketCtrl.addNewBucketItem = function (item) {
@@ -33,10 +35,8 @@
 
        bucketCtrl.addUserBucketArray = function (){
 
-          console.log($scope.currentUser);
-          BucketService.addArrayToUserBucket($scope.currentUser);
+          BucketService.addArrayToUserBucket($rootScope.currentUser);
             $location.path('/users/' + $scope.currentUser.id);
-
        };
 
        bucketCtrl.editNewBucketItem= function(item) {
@@ -47,7 +47,7 @@
        };
 
        bucketCtrl.removeBucketItem = function (item) {
-           BucketService.removeBucketItem(item, bucketCtrl.bucketItems);
+           BucketService.removeBucketItem(item, $scope.bucketItems);
 
        };
 

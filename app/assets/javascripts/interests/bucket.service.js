@@ -1,14 +1,16 @@
 (function () {
   "use strict";
   angular.module('interests')
-    .factory('BucketService', ['$http', function($http) {
+    .factory('BucketService', ['$http', '$rootScope', function($http, $rootScope) {
 
         var user_bucket = [];
 
         var addNewBucketItem= function (newBucketItem) {
             newBucketItem.image_file_name = 'default.jpg'
             $http.post('/bucket_list_items.json', newBucketItem).success(function() {
-        });
+                $rootScope.$broadcast('BasketItem:added');
+                console.log('it worked');
+            });
         };
 
         var editNewBucketItem = function(item, Id) {

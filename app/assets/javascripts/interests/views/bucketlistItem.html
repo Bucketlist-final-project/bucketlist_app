@@ -9,7 +9,7 @@
         <input ng-model="query" type="text" name="searchbox" placeholder= "search">
         <label <i class="grid-4 fa fa-plus fa-2x" for="modal-1"></i></label>
     </div>
-    <div class="list3" ng-repeat="bucket in bucketCtrl.bucketItems.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
+    <div class="list3" ng-repeat="bucket in bucketItems.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
     <div class="grid-12 second3">
         <a href="" ng-click="bucketCtrl.goToBucketDetail(bucket.id)">
             <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucket.image_file_name}}" class="bucketCard">
@@ -41,7 +41,7 @@
 
 <!-----modal views------------------------------------>
 
-<input class="modalState" id="modal-1" type="checkbox" />
+<input class="modalState" id="modal-1" type="checkbox"/>
     <div class="modal">
       <label class="modalB" for="modal-1"></label>
     <div class="innerModal">
@@ -56,7 +56,7 @@
         <input type="text" ng-model="item.zip_code" placeholder="zipcode">
         <input type="text" ng-model="item.latitude" placeholder= "Latitude">
         <input type="text" ng-model="item.longitude" placeholder= "Longitude">
-        <button ng-click="bucketCtrl.addNewBucketItem(item)">Add new BucketItem
+        <button  ng-click="bucketCtrl.addNewBucketItem(item)" >Add new BucketItem
         </button>
   </div>
   </div>
