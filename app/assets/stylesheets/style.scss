@@ -318,18 +318,21 @@ h3 {
 
 
     img:hover {
-        background-color: rgba(86, 209, 63, 0.3);
+        transition: opacity .25s ease-in-out;
     }
 
     a {
         text-decoration: none;
+
     }
+
 }
 
 .bucketCard {
     border-radius: 10px;
     height: 250px;
     width: 250px;
+
 }
 
 .bucketItems {
@@ -718,9 +721,6 @@ h3 {
 
 }
 
-.grid-wrapper {
-    background-image: url('/assets/basketbackground.gif');
-}
 ///////////////iphone/samsung//////////
 ///////////////////////////////////////
 
