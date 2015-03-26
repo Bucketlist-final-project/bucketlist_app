@@ -5,12 +5,12 @@ class BucketListItem < ActiveRecord::Base
   has_many :comments
   has_many :item_completes
 
-  validates :name, presence: true
-  validates :description, presence: true
-  validates :street_address, presence: true
-  validates :city, presence: true
-  validates :state, presence: true
-  validates :zip_code, presence: true
+  # validates :name, presence: true
+  # validates :description, presence: true
+  # validates :street_address, presence: true
+  # validates :city, presence: true
+  # validates :state, presence: true
+  # validates :zip_code, presence: true
 
   aws_keys = if ['development', 'test'].include?(Rails.env)
     "#{Rails.root}/config/aws-keys.yml"

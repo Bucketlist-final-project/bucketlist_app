@@ -32,3 +32,4 @@
 //= require interests/bucketDetail.service
 //= require interests/comment.controller
 //= require interests/comment.service
+
