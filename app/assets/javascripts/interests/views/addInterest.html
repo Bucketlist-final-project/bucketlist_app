@@ -1,4 +1,4 @@
-<form ng-upload="complete(content)" action="/bucket_list_items.json" method="post" enctype="multipart/form-data">
+<form ng-upload="uploadComplete(content)" action="/bucket_list_items.json" method="post" enctype="multipart/form-data">
     <input type="file" name="image"></input>
     <input type="text" placeholder="Title" name="name" ng-model="name" />
     <input type="text" placeholder="Description" name="description" ng-model="description" />

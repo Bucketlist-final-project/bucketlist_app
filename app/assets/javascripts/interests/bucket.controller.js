@@ -45,7 +45,7 @@
            console.log(id)
        };
 
-        // $scope.uploadComplete = function (content) {
+        $scope.uploadComplete = function () {
         //   $scope.response = JSON.parse(content); // Presumed content is a json string!
         //   $scope.response.style = {
         //     color: $scope.response.color,
@@ -57,7 +57,9 @@
         //   $scope.gender = '';
         //   $scope.color = '';
         //   // Look for way to clear the input[type=file] element
-        //   };
+        console.log('uploadComplete')
+          $location.path('/bucketlistitem');
+        };
 
     }]);
 

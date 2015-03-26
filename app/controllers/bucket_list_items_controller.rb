@@ -38,7 +38,7 @@ class BucketListItemsController < ApplicationController
     @bucket_list_item = BucketListItem.new bucket_list_item_params
     @bucket_list_item.save
     respond_to do |format|
-      format.json { render :json => @user }
+      format.json { render :json => @bucket_list_item }
       # format.html {redirect_to bucket_list_items_path}
     end
   end
