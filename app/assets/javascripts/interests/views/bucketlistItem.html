@@ -22,7 +22,7 @@
                 <ul>
                     <li>
                         <input type="checkbox" class="grid-4 checkbox" ng-click="bucketCtrl.addItemToUserBucket(bucket)">
-                        <label <i class="fa fa-pencil" for="modal-2"></i>
+                        <a href="#/editItem/{{bucket.id}}"><label <i class="fa fa-pencil" ng-click=""></i></a>
                         </label>
                         <div ng-click="bucketCtrl.removeBucketItem(bucket)" <i class="fa fa-times"></i>
                         </div>
@@ -62,14 +62,13 @@
   </div>
   </div>
 
-<input class="modalState" id="modal-2" type="checkbox" />
+<!-- <input class="modalState" id="modal-2" type="checkbox" />
     <div class="modal">
       <label class="modalB" for="modal-2"></label>
     <div class="innerModal">
       <label class="closeModal" for="modal-2"></label>
     <h3>Edit this Bucket</h3>
     <form ng-submit="bucketCtrl.editNewBucketItem(item)">
-        <input type="text" ng-model="item.image_file_name" placeholder="Picture">
         <input type="text" ng-model="item.name" placeholder="Title">
         <input type="text" ng-model="item.description" placeholder="Description">
         <input type="text" ng-model="item.street_address" placeholder="streetAdd">
@@ -80,5 +79,5 @@
         <input type="text" ng-model="item.longitude" placeholder= "Longitude">
         <button action="submit">Add edited bucket
         </button>
-  </div>
+  </div> -->
 </div>
