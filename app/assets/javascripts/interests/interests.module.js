@@ -22,9 +22,14 @@
        controller: 'BucketController as bucketCtrl'
     })
 
+    .when('/addInterest', {
+       templateUrl: 'assets/interests/views/addInterest.html',
+       controller: 'BucketController as bucketCtrl'
+    })
+
     .when('/bucket_list_items/:bucketId', {
        templateUrl: 'assets/interests/views/bucketDetail.html',
-       controller: 'DetailController as bucketDtl',
+       controller: 'BucketController as bucketCtrl',
    })
 
    .when('/users/:userId', {

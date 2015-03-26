@@ -6,7 +6,7 @@
        var user = this;
 
       Auth.currentUser().then(function(user) {
-        $scope.currentUser = user
+        $rootScope.currentUser = user
 
       });
 
@@ -15,8 +15,10 @@
     });
 
       UserService.getCompletedItems($routeParams.userId).success(function(data){
+
         $scope.userCompleted = data;
-    });
+      });
+
 
       $scope.$on('BasketItem:completed', function(){
       UserService.getCompletedItems($routeParams.userId).success(function(data){
@@ -28,9 +30,9 @@
 });
 
        user.addUserBucket = function (item) {
-           $scope.currentUser.bucket_list_items.push(item);
-           UserService.addUserBucket($scope.currentUser);
-           $location.path('/users/' + $scope.currentUser.id);
+           $rootScope.currentUser.bucket_list_items.push(item);
+           UserService.addUserBucket($rootScope.currentUser);
+           $location.path('/users/' + $rootScope.currentUser.id);
        };
 
        user.removeBucketItem = function (item) {
@@ -38,13 +40,13 @@
        };
 
        user.submitBucket = function (item) {
-           UserService.addUserBucket($scope.currentUser);
+           UserService.addUserBucket($rootScope.currentUser);
            // console.log('submit button works')
        };
 
        user.goToBucket = function(id){
-        $location.path('/users/' + $scope.currentUser.id);
-       };
+        $location.path('/users/' + $rootScope.currentUser.id);
+       }
 
        user.userItemCompleted = function(bucketItem){
           var itemCompleteHash = {};
@@ -52,15 +54,15 @@
           itemComplete.completed = true
           itemCompleteHash.bucket_list_item_id = bucketItem.id;
           itemCompleteHash.item_complete = itemComplete;
-          itemCompleteHash.user_id = $scope.currentUser.id;
+          itemCompleteHash.user_id = $rootScope.currentUser.id;
           console.log('completeHash ' + itemCompleteHash.user_id)
           UserService.itemComplete(itemCompleteHash, $scope.userCompleted, bucketItem);
 
        };
 
        user.completedBucketItems = function(){
-        UserService.getCompletedItems($scope.currentUser);
-        var completes = $scope.currentUser.bucket_list_items.item_completes;
+        UserService.getCompletedItems($rootScope.currentUser);
+        var completes = $rootScope.currentUser.bucket_list_items.item_completes;
         console.log(completes)
        };
 

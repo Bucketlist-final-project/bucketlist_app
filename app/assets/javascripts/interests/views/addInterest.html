@@ -1,21 +1,12 @@
-<!-- 
-
-<input class="modalState" id="modal-1" type="checkbox" />
-<div class="modal">
-  <label class="modalB" for="modal-1"></label>
-  <div class="innerModal">
-    <label class="closeModal" for="modal-1"></label>
-    <h3> Add your own Basket Item </h3>
-        <input type="text" ng-model="item.image_file_name" placeholder="Picture">
-        <input type="text" ng-model="item.name" placeholder="Title">
-        <input type="text" ng-model="item.description" placeholder="Description">
-        <input type="text" ng-model="item.street_address" placeholder="streetAdd">
-        <input type="text" ng-model="item.city" placeholder="city">
-        <input type="text" ng-model="item.state" placeholder="state">
-        <input type="text" ng-model="item.zip_code" placeholder="zipcode">
-        <input type="text" ng-model="item.latitude" placeholder= "Latitude">
-        <input type="text" ng-model="item.longitude" placeholder= "Longitude">
-        <button ng-click="bucketCtrl.addNewBucketItem(item)">Add new BucketItem
-        </button>
-  </div>
-</div> -->
+<form ng-upload="uploadComplete(content)" action="/bucket_list_items.json" method="post" enctype="multipart/form-data">
+    <input type="file" name="image"></input>
+    <input type="text" placeholder="Title" name="name" ng-model="name" />
+    <input type="text" placeholder="Description" name="description" ng-model="description" />
+    <input type="text" placeholder="streetAdd" name="street_addresss" ng-model="street_address" />
+    <input type="text" placeholder="city" name="city" ng-model="city" />
+    <input type="text" placeholder="state" name="state" ng-model="state" />
+    <input type="text" placeholder="zipcode" name="zip_code" ng-model="zip_code" />
+    <input type="text" placeholder="latitude" name="latitude" ng-model="latitude" />
+    <input type="text" placeholder="longitude" name="longitude" ng-model="longitude" />
+    <input type="submit" value="Upload" ng-disabled="$isUploading"></input>
+</form>

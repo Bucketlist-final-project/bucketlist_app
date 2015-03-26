@@ -15,5 +15,6 @@
 /public/system
 issues.md
 presentation.docx
-/lib/.Ds_Store
+/lib/.DS_Store
 .DS_Store
+
