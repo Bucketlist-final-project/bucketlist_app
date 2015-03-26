@@ -17,6 +17,7 @@
             console.log('heres item id' + Id)
             $http.put('/bucket_list_items/' + Id + '.json', item);
             console.log('the edit is posting');
+            $rootScope.$broadcast('BasketItem:edited');
 
         };
 
@@ -47,8 +48,6 @@
         };
 
         var addArrayToUserBucket = function(currentUser){
-            // currentUser.bucket_list_items.push(user_bucket);
-            // currentUser.bucket_list_items = _.flatten(currentUser.bucket_list_items)
             currentUser.bucket_list_items = user_bucket
             currentUser.update = true;
             var added_data = currentUser
