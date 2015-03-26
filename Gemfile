@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # gem 'mysqltopostgres', '~> 0.2.15'
 #aws sdk gem
+gem "font-awesome-rails"
 gem 'aws-sdk', '< 2.0'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
@@ -10,7 +11,7 @@ gem "omniauth-google-oauth2"
 #https://github.com/zquestz/omniauth-google-oauth2
 #allows upload of files
 gem "paperclip", "~> 4.2"
-gem 'faker' 
+gem 'faker'
 #Sass library
 gem 'bourbon'
 #remove unneeded assets
@@ -88,4 +89,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
