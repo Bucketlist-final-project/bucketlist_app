@@ -1,7 +1,7 @@
 require 'csv'
 
 # desc "Import CSV Data."
-task :import_csv_data => :environment do
+task :create_bucket_list_items_csv => :environment do
 
   csv_file_path = File.read("#{Rails.root}/lib/tasks/bucket_list.csv")
   csv = CSV.parse(csv_file_path, :headers => true)
