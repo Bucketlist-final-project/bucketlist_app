@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('BucketController', ['BucketService', '$location', '$routeParams', 'Auth', '$scope', '$rootScope', function (BucketService, $location, $routeParams, Auth, $scope, $rootScope) {
+    .controller('BucketController', ['BucketService', '$location', '$routeParams', 'Auth', '$scope', function (BucketService, $location, $routeParams, Auth, $scope) {
 
       var bucketCtrl = this;
 
@@ -15,6 +15,13 @@
       });
 
       $scope.$on('BasketItem:added', function() {
+          BucketService.getBucketItems().success(function(data) {
+               $scope.bucketItems = {}
+               $scope.bucketItems.items = data;
+          });
+      });
+
+      $scope.$on('BasketItem:edited', function() {
           BucketService.getBucketItems().success(function(data) {
                $scope.bucketItems = {}
                $scope.bucketItems.items = data;

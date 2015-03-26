@@ -1,7 +1,7 @@
 (function () {
   "use strict";
   angular.module('interests')
-    .factory('UserService', ['$http', function($http) {
+    .factory('UserService', ['$http', '$rootScope', function($http, $rootScope) {
 
         var user = [];
         var addBucket = []
@@ -27,43 +27,28 @@
             currentUser.bucket_list_items = _.without(currentUser.bucket_list_items, removedItem); });
         };
 
-
         var itemComplete = function(itemCompleteHash, completedList, bucketItem){
             var hash = {}
             hash.bucket_list_item = bucketItem
             completedList.push(hash)
             console.log(completedList)
-            return $http.post('/users/' + itemCompleteHash.user_id + '/item_completes.json', itemCompleteHash);
+            return $http.post('/users/' + itemCompleteHash.user_id + '/item_completes.json', itemCompleteHash).success(function(){
+            $rootScope.$broadcast('BasketItem:completed');
+        });
         };
 
         var getCompletedItems = function(id) {
-            return $http.get('/users/' + id + '/item_completes.json')
+            return $http.get('/users/' + id + '/item_completes.json');
+
         }
-
-        // var getCompletedItems = function(currentUser){
-        //     $http.get('/users/' + currentUser.id + '.json').success(function(serverData){
-        //         completedItems.push(serverData);
-        //         console.log(completedItems);
-
-        //     });
-        // }
-
-        // var findUserCompletes = function(currentUser){
-        //     $http.get('/users/' + currentUser + '.json').success(function(serverData){
-        //         console.log(serverData.bucket_list_items)
-        //         // var
-        //         // var completeHash = _.some()
-        //     });
-        // }
 
         return {
             getUserBucket: getUserBucket,
             addUserBucket: addUserBucket,
             removeBucketItem: removeBucketItem,
-            // getSingleItem: getSingleItem,
             itemComplete: itemComplete,
             getCompletedItems: getCompletedItems,
-            // findUserCompletes: findUserCompletes
+
         };
     }]);
 
