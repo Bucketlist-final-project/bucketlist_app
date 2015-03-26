@@ -33,8 +33,9 @@
                <textarea cols="50" rows="4" ng-model="commentCtrl.content" placeholder="Add comment here" class="textarea">
                </textarea>
                <br>
-
-                   <div class= "submitComment" ng-click= "commentCtrl.submitComment(bucketDtl.singleItem, commentCtrl)">POST
+                  <div ng-if="commentCtrl.content.length>2">
+                    <div class= "submitComment" ng-click= "commentCtrl.submitComment(bucketDtl.singleItem, commentCtrl)">POST
+                  </div>
                    </div>
     
                </ng-hide
