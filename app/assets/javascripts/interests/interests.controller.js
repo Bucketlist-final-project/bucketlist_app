@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('InterestController', ['InterestService', '$routeParams', '$location', '$scope', 'Auth', function (InterestService, $routeParams, $location, $scope, Auth) {
+    .controller('InterestController', ['InterestService', '$routeParams', '$location', '$rootScope', 'Auth', function (InterestService, $routeParams, $location, $rootScope, Auth) {
 
     var interestCtrl = this;
 

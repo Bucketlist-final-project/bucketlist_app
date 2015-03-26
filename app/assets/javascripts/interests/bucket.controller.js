@@ -1,7 +1,7 @@
 (function () {
     "use strict";
     angular.module('interests')
-    .controller('BucketController', ['BucketService', '$location', '$routeParams', 'Auth', '$scope', function (BucketService, $location, $routeParams, Auth, $scope) {
+    .controller('BucketController', ['BucketService', '$location', '$routeParams', 'Auth', '$rootScope', function (BucketService, $location, $routeParams, Auth, $rootScope) {
 
        var bucketCtrl = this;
 
@@ -16,7 +16,7 @@
            };
 
       Auth.currentUser().then(function(user) {
-        $scope.currentUser = user
+        $rootScope.currentUser = user
       });
 
       BucketService.getBucketItems().success(function(data) {
@@ -43,9 +43,9 @@
 
        bucketCtrl.addUserBucketArray = function (){
 
-          console.log($scope.currentUser);
-          BucketService.addArrayToUserBucket($scope.currentUser);
-            $location.path('/users/' + $scope.currentUser.id);
+          console.log($rootScope.currentUser);
+          BucketService.addArrayToUserBucket($rootScope.currentUser);
+            $location.path('/users/' + $rootScope.currentUser.id);
 
        };
 
@@ -71,17 +71,17 @@
            console.log(id)
        };
 
-        $scope.uploadComplete = function () {
-        //   $scope.response = JSON.parse(content); // Presumed content is a json string!
-        //   $scope.response.style = {
-        //     color: $scope.response.color,
+        $rootScope.uploadComplete = function () {
+        //   $rootScope.response = JSON.parse(content); // Presumed content is a json string!
+        //   $rootScope.response.style = {
+        //     color: $rootScope.response.color,
         //     "font-weight": "bold"
         //   };
 
         //   // Clear form (reason for using the 'ng-model' directive on the input elements)
-        //   $scope.fullname = '';
-        //   $scope.gender = '';
-        //   $scope.color = '';
+        //   $rootScope.fullname = '';
+        //   $rootScope.gender = '';
+        //   $rootScope.color = '';
         //   // Look for way to clear the input[type=file] element
         console.log('uploadComplete')
           $location.path('/bucketlistitem');
