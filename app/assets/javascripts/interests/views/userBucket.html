@@ -1,25 +1,77 @@
-<div class="userWrapper" ng-controller="UserController as user">
-    <h1 class="userTitle">{{currentUser.first_name}}'s bucket </h1>
-    <ul>
-        <li class="userList" ng-repeat='item in user.userData.bucket_list_items'>
-        <div class="second4">
-            <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{item.image_file_name}}" class="bucketCardUser">
-            <br>
-            <p class = "name">{{item.name}}
-            </p>
-            <button ng-click="user.userItemCompleted(item)">Set complete
-            </button>
-            <button ng-click="user.removeBucketItem(item)">remove
-            </button>
+
+<div class+'arrowLeft'>
+     <a href="#/bucketlistitem"><i class="fa fa-angle-double-left fa-4x"></i></a>
+    </div>
+<!--     <div class="userWrapper" ng-controller="UserController as user">
+<h1 class="userTitle">{{currentUser.first_name}}'s bucket </h1>
+<ul>
+    <li class="userList" ng-repeat='item in user.userData.bucket_list_items'>
+    <div class="second4">
+        <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{item.image_file_name}}" class="bucketCardUser">
+        <br>
+        <p class = "name">{{item.name}}
+        </p>
+        <div ng-click="user.userItemCompleted(item)" <i class="fa fa-check"></i>
         </div>
+        <div ng-click="user.removeBucketItem(item)" <i class="fa fa-times"></i>
+        </div>
+    </div>
+    </li>
+</ul>
+<div>Completed Items</div>
+    <ul>
+        <li ng-repeat="completed in user.userCompleted">
+            <p>{{completed.bucket_list_item.name}}
+            </p>
         </li>
     </ul>
-    <div>Completed Items</div>
-        <ul>
-            <li ng-repeat="completed in user.userCompleted">
-                <p>{{completed.bucket_list_item.name}}
-                </p>
-            </li>
-        </ul>
 
+</div> -->
+
+<div class="completedTab">
+    <input checked="checked" id="comTab" type="radio" name="completed" />
+    <input id="bucketTab" type="radio" name="completed" />
+
+    <nav>
+    <ul>
+      <li class="comTab">
+        <label for="comTab">User Bucket</label>
+      </li>
+      <li class="bucketTab">
+        <label for="bucketTab">Completed</label>
+      </li>
+   </ul>
+   </nav>
+
+
+   <section>
+   <div class="comTab">
+   <div class="userWrapper" ng-controller="UserController as user">
+       <h1 class="userTitle">{{currentUser.first_name}}'s bucket </h1>
+       <ul>
+           <li class="userList" ng-repeat='item in user.userData.bucket_list_items'>
+           <div class="second4">
+               <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{item.image_file_name}}" class="bucketCardUser">
+               <br>
+               <p class = "name">{{item.name}}
+               </p>
+               <div ng-click="user.userItemCompleted(item)" <i class="fa fa-check"></i>
+               </div>
+               <div ng-click="user.removeBucketItem(item)" <i class="fa fa-times"></i>
+               </div>
+           </div>
+           </li>
+       </ul>
+   </div>
+   </div>
+
+   <div class="bucketTab">
+           <ul>
+               <li ng-repeat="completed in user.userCompleted">
+                   <p class="completedList">{{completed.bucket_list_item.name}}
+                   </p>
+               </li>
+           </ul>
+   </div>
+</section>
 </div>
