@@ -73,19 +73,9 @@
        };
 
         $rootScope.uploadComplete = function () {
-        //   $rootScope.response = JSON.parse(content); // Presumed content is a json string!
-        //   $rootScope.response.style = {
-        //     color: $rootScope.response.color,
-        //     "font-weight": "bold"
-        //   };
-
-        //   // Clear form (reason for using the 'ng-model' directive on the input elements)
-        //   $rootScope.fullname = '';
-        //   $rootScope.gender = '';
-        //   $rootScope.color = '';
-        //   // Look for way to clear the input[type=file] element
-        console.log('uploadComplete')
-          $location.path('/bucketlistitem');
+          $rootScope.$broadcast('BasketItem:added');
+          // console.log('uploadComplete')
+          // $location.path('/bucketlistitem');
         };
 
     }]);
