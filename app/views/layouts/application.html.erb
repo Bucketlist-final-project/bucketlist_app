@@ -2,7 +2,7 @@
 <html ng-app="testApp">
 <head>
 
-  <link href='http://fonts.googleapis.com/css?family=Raleway|Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
   <title>CHARLESTON BASKETLIST</title>
 
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -12,25 +12,26 @@
 
 <body>
 <div class="main-wrapper">
-  <div class="main-header">
+  <div class="grid-wrapper">
     <div class="header">
 
     </div>
-    <div class="navBar">
+    <div class="grid-12 navBar">
         <ul>
             <% if current_user %>
-            <li><%= link_to image_tag('loginbutton.gif'), destroy_user_session_path, method: :delete, class: "nav-button" =%>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-button" =%>
             </li>
-            <li><%= link_to image_tag('loginbutton.gif'), edit_user_registration_path =%>
+            <li><%= link_to "Edit Info", edit_user_registration_path =%>
             </li>
             <% else %>
-            <li><%= link_to image_tag('loginbutton.gif'), new_user_session_path =%>
+            <li><%= link_to "Sign In", new_user_session_path =%>
             </li>
-            <li><%= link_to image_tag('signin.gif'), new_user_registration_path =%>
+            <li><%= link_to "Sign Up", new_user_registration_path =%>
             </li>
             <% end %>
             <li><a href="#/bucketlistitem">Activities</a>
-            <a href="#/users/{{currentUser.id}}">Basket</a>
+            </li>
+            <li><a href="#/users/{{currentUser.id}}">Basket</a>
             </li>
         </ul>
         {{current_user | json}}

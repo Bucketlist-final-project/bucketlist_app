@@ -1,60 +1,91 @@
+<div class="rightArrow">
+    <a href="#/users/{{currentUser.id}}"><i class="fa fa-angle-double-right fa-4x"></i></a>
+</div>
 
-<div id="page-wrap">
+<div id="grid-wrapper">
     <div class="interestItemPage">
-        <h1 class="bucketItems"> Choose the items you'd like to add to your bucket..</h1>
+        <h1 class="grid-12 bucketItems"> Choose a few you would like...</h1>
     </div>
-    <div class="searchFilter">
-        <input ng-model="query" type="text" name="searchbox" placeholder="search interests..." height="40">
-    </div>
-    <ul>
-      <li class="list3" ng-repeat="bucket in bucketCtrl.bucketItems.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
+    <div class="grid-8 searchFilter">
+        <input ng-model="query" type="text" name="searchbox" placeholder= "search">
 
-        <div class="second3">
+        <label <i class="grid-4 fa fa-plus fa-2x" for="modal-1"></i></label>
+    </div>
+
+      <div class="list3" ng-repeat="bucket in bucketCtrl.bucketItems.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
+
+        <div class="grid-12 second3">
 
             <a href="" ng-click="bucketCtrl.goToBucketDetail(bucket.id)">
                 <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucket.image_file_name}}" class="bucketCard">
             </a>
-
-            <br>
-            <p class ="name2">{{bucket.name}}</p>
-            </div>
-
-
-                <input type="checkbox" class="checkbox" ng-click="bucketCtrl.addItemToUserBucket(bucket)">
-
-
-            <a href="#/editItem/{{bucket.id}}"><button>edit
-            </button></a>
-
-              <button ng-click="bucketCtrl.removeBucketItem(bucket)">Delete
-              </button>
-            </div>
-
         </div>
-      </li>
-    </ul>
+            <br>
+            <p class ="grid-12 name2">{{bucket.name}}
+            </p>
+            <div class="grid-12 bucketItemNav">
+                <ul>
+                    <li>
+                <input type="checkbox" class="grid-4 checkbox" ng-click="bucketCtrl.addItemToUserBucket(bucket)">
+
+                <label <i class="fa fa-pencil" for="modal-2"></i></label>
+
+                <div ng-click="bucketCtrl.removeBucketItem(bucket)" <i class="fa fa-times"></i>
+                </div>
+            </li>
+            <ul>
+        </div>
+
 </div>
 </div>
+
 
     <div class="submitButton2">
-        <a href="" ng-click="bucketCtrl.addUserBucketArray()"><img src="/assets/submitbutton.gif"></a>
+        <a href="" ng-click="bucketCtrl.addUserBucketArray()">SUBMIT</a>
     </div>
 </div>
 
-<!--
 
-<div id="modal">
-   <a href="#close" title="close" class="close">X</a>
-   <h3> Add your own Basket Item </h3>
-   <form ng-controller="BucketController as bucketCtrl">
-       <input type="text" ng-model="item.image_file_name" placeholder="Picture">
-       <input type="text" ng-model="item.name" placeholder="Title">
-       <input type="text" ng-model="item.description" placeholder="Description">
-       <input type="text" ng-model="item.street_address" placeholder="streetAdd">
-       <input type="text" ng-model="item.city" placeholder="city">
-       <input type="text" ng-model="item.state" placeholder="state">
-       <input type="text" ng-model="item.zip_code" placeholder="zipcode">
-       <button ng-click="bucketCtrl.addNewBucketItem(item)">Add new BucketItem
-       </button>
-   </form>
-</div>  -->
+
+<!-----modal views-->
+
+<input class="modalState" id="modal-1" type="checkbox" />
+<div class="modal">
+  <label class="modalB" for="modal-1"></label>
+  <div class="innerModal">
+    <label class="closeModal" for="modal-1"></label>
+    <h3> Add your own Basket Item </h3>
+        <input type="text" ng-model="item.image_file_name" placeholder="Picture">
+        <input type="text" ng-model="item.name" placeholder="Title">
+        <input type="text" ng-model="item.description" placeholder="Description">
+        <input type="text" ng-model="item.street_address" placeholder="streetAdd">
+        <input type="text" ng-model="item.city" placeholder="city">
+        <input type="text" ng-model="item.state" placeholder="state">
+        <input type="text" ng-model="item.zip_code" placeholder="zipcode">
+        <input type="text" ng-model="item.latitude" placeholder= "Latitude">
+        <input type="text" ng-model="item.longitude" placeholder= "Longitude">
+        <button ng-click="bucketCtrl.addNewBucketItem(item)">Add new BucketItem
+        </button>
+  </div>
+</div>
+
+<input class="modalState" id="modal-2" type="checkbox" />
+<div class="modal">
+  <label class="modalB" for="modal-2"></label>
+  <div class="innerModal">
+    <label class="closeModal" for="modal-2"></label>
+    <h3>Edit this Bucket</h3>
+    <form ng-submit="bucketCtrl.editNewBucketItem(item)">
+        <input type="text" ng-model="item.image_file_name" placeholder="Picture">
+        <input type="text" ng-model="item.name" placeholder="Title">
+        <input type="text" ng-model="item.description" placeholder="Description">
+        <input type="text" ng-model="item.street_address" placeholder="streetAdd">
+        <input type="text" ng-model="item.city" placeholder="city">
+        <input type="text" ng-model="item.state" placeholder="state">
+        <input type="text" ng-model="item.zip_code" placeholder="zipcode">
+        <input type="text" ng-model="item.latitude" placeholder= "Latitude">
+        <input type="text" ng-model="item.longitude" placeholder= "Longitude">
+        <button action="submit">Add edited bucket
+        </button>
+  </div>
+</div>

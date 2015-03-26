@@ -14,7 +14,7 @@
 //////////////body/wrapper/splash page//////////////////////////
 ///////////////////////////////////////////
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 * {
@@ -22,8 +22,9 @@ body {
 }
 
 .main-wrapper {
-    width: 90%;
-    margin: auto;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .main-header {
@@ -41,11 +42,10 @@ body {
     }
 }
 .navBar {
-    font-family: 'Raleway', sans-serif;
-    font-size: 20px;
-    display: table-cell;
+    font-size: 15px;
     vertical-align: middle;
-    float: right;
+    text-align: right;
+
 
 
     li {
@@ -59,16 +59,11 @@ body {
             display: block;
             color: #6f6c67;
             text-decoration: none;
-            border: 2px solid #6f6c67;
-            line-height: 40px;
-            border-radius: 7px;
-            padding: 3%;
+
 
         &:hover {
             color: #57d1a3;
-            border: 2px solid #57d1a3;
-            border-width: medium;
-            box-shadow: 5px 5px 3px #b2d8d8;
+            border-top: 2px solid #57d1a3;
             -webkit-transform: scale(0.9);
         }
 
@@ -80,15 +75,17 @@ body {
 ///////////////Log-in page/////////////////////////////
 //////////////////////////////////////////////////////
 
+.loginWrapper {
+    text-align: center;
+}
+
 h2 {
-    font-family: 'Raleway', sans-serif;
     color: #6f6c67;
     line-height: 3px;
     font-size: 30px;
 }
 
 .email {
-    font-family: 'Raleway', sans-serif;
     color: #6f6c67;
 
     input{
@@ -110,13 +107,11 @@ h2 {
 
 .password {
     color: #6f6c67;
-    font-family: 'Raleway', sans-serif;
     padding-top: 5px;
 
     input{
         background-color: transparent;
         border: 0 solid;
-        font-family: 'Raleway', sans-serif;
         color: #6f6c67;
         width: 30%;
         height: 60px;
@@ -132,7 +127,6 @@ h2 {
 
 .rememberMe {
     color: #6f6c67;
-    font-family: 'Raleway', sans-serif;
     font-size: 15px;
 
 }
@@ -142,13 +136,11 @@ h2 {
 //////////////////////////////////////////////////
 
 .firstName {
-    font-family: 'Raleway', sans-serif;
     color: #6f6c67;
 
     input{
         background-color: transparent;
         border: 0 solid;
-        font-family: 'Raleway', sans-serif;
         color: #6f6c67;
         width: 30%;
         height: 60px;
@@ -163,13 +155,11 @@ h2 {
 }
 
 .lastName {
-    font-family: 'Raleway', sans-serif;
     color: #6f6c67;
 
     input{
         background-color: transparent;
         border: 0 solid;
-        font-family: 'Raleway', sans-serif;
         color: #6f6c67;
         width: 30%;
         height: 60px;
@@ -183,13 +173,11 @@ h2 {
 }
 
 .passwordConfirm {
-    font-family: 'Raleway', sans-serif;
     color: #6f6c67;
 
     input{
         background-color: transparent;
         border: 0 solid;
-        font-family: 'Raleway', sans-serif;
         color: #6f6c67;
         width: 30%;
         height: 60px;
@@ -202,13 +190,15 @@ h2 {
     }
 }
 
+.signUpBtn {
+    color: blue;
+}
 
 
 //////////////Edit registration form //////////////
 //////////////////////////////////////////////////
 
 .currentPassword {
-    font-family: 'Raleway', sans-serif;
     color: #6f6c67;
 
     input{
@@ -228,13 +218,11 @@ h2 {
 }
 
 h3 {
-    font-family: 'Raleway', sans-serif;
     color: #6f6c67;
     line-height: 3px;
     font-size: 30px;
 
     p {
-        font-family: 'Raleway', sans-serif;
         color: #6f6c67;
     }
 }
@@ -308,32 +296,29 @@ h3 {
 ///////////////////////////////////////
 
 .ItemsWrapper {
-    font-family: 'Raleway', sans-serif;
-    line-height: 30px;
-    padding: 20px;
     display: table;
     width: 100%;
     min-height: 120px;
 }
 
-/* input {
-    border: 2px solid #FFFF66;
-    font-family: 'Raleway', sans-serif;
+.searchFilter input {
     border-radius: 5px;
-    width: 200px;
-    height: 35px;
-    font-size: 15px;
-
-} */
+    color:#6f6c67;
+    font-size: 20px;
+    height: 40px;
+    width: 20%;
+}
 
 .list3 {
-    list-style-type: none;
     display: inline-block;
     width: 30%;
-    text-align: center;
+    position: relative;
+    left: 5%;
+    top: 20px;
+
 
     img:hover {
-        -webkit-filter: opacity(.3);
+        background-color: rgba(86, 209, 63, 0.3);
     }
 
     a {
@@ -343,30 +328,92 @@ h3 {
 
 .bucketCard {
     border-radius: 10px;
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
 }
 
 .bucketItems {
     text-align: center;
     font-size: 25px;
     color: #6f6c67;
-
-
 }
 
 .submitButton2 {
     float: right;
+    font-size: 20px;
+    color: #6f6c67;
+    text-decoration: none;
 
      a {
         text-decoration: none;
+
+    &:hover {
+        color: #57d1a3;
+    }
+
     }
 }
 
 .name2 {
-    margin: 0;
+    text-align: left;
     font-size: 15px;
 }
+
+.bucketItemNav li{
+    list-style-type: none;
+    text-decoration: none;
+    position: relative;
+    right: 39px;
+}
+
+.fa-search {
+    height: 20px;
+    color: #6f6c67;
+}
+
+.fa-plus {
+    position:relative;
+    left: 120%;
+    color:#6f6c67;
+    cursor: pointer;
+    font-size: 40px;
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+.fa-pencil {
+    color:#6f6c67;
+    cursor: pointer;
+    padding-left: 48%;
+
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+
+.fa-angle-double-right {
+    position: relative;
+    float: right;
+    cursor: pointer;
+    color: #6f6c67;
+    left: 10%;
+    top: 400px;
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+h3 {
+    color: #57d1a3;
+}
+
+
+
 
 ///////tablet//////////////////////////
 //////////////////////////////////////
@@ -423,14 +470,6 @@ h3 {
     display: table;
     width: 100%;
     min-height: 120px;
-}
-
-.wrapperDetail {
-    box-shadow: 5px 5px 3px #E6E600;
-    border: 4px solid #FFFF66;
-    background-color: #FFFFE6;
-    border-top-left-radius: 20px;
-    width: 100%;
 
 }
 .details {
@@ -442,6 +481,7 @@ h3 {
 
 .gmap-container {
     display: inline-block;
+    border-radius: 10px;
     width: 50%;
     float: right;
     padding-right: 5%;
@@ -449,26 +489,102 @@ h3 {
 
 
 .bucketCardDetail {
-    border-top-left-radius: 10px;
-    box-shadow: 5px 5px 3px #FFFF66;
+    border-radius: 10px;
     height: 200px;
     width: 400px;
 }
 
 .itemDetail {
     text-align: center;
+    font-size: 25px;
+    color: #6f6c67;
 }
 
 .name3 {
     font-size: 20px;
+    line-height: 1px;
+    color: #6f6c67;
 }
+
+.comments li {
+    list-style-type: none;
+    text-align: left;
+    line-height: 20px;
+}
+.nameBold {
+    color: #6f6c67;
+}
+
+.textarea {
+    border-radius: 5px;
+}
+
+.commentHead {
+    text-align: left;
+    padding-top: 5%;
+    font-size: 25px;
+    color: #6f6c67;
+}
+
+.editDelete {
+    cursor: pointer;
+    text-align: right;
+    line-height: 10px;
+}
+
+.description {
+    line-height: 25px;
+}
+
+.streetadd {
+    color: #6f6c67;
+}
+
+.addBtn {
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+    color: #6f6c67;
+
+
+    &:hover {
+        color: #57d1a3;
+    }
+
+}
+
+.submitComment {
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+    color: #6f6c67;
+
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+.fa-times {
+    color: #6f6c67;
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+.fa-pencil-square-o {
+    &:hover {
+        color: #57d1a3;
+
+    }
+}
+
 
 /////////////userBucket view/////////////
 ////////////////////////////////////////
 
 .userWrapper {
-    background-color: #eeeeee;
-    border-top-left-radius: 20px;
     padding: 20px;
     display: table;
     width: 100%;
@@ -476,8 +592,7 @@ h3 {
 }
 
 .bucketCardUser {
-    border-top-left-radius: 10px;
-    box-shadow: 5px 5px 3px #FFFF66;
+    border-radius: 10px;
     height: 300px;
     width: 400px;
 }
@@ -486,8 +601,54 @@ h3 {
     list-style-type: none;
     display: inline-block;
     width: 50%;
-
 }
+
+
+.fa-angle-double-left {
+    position: relative;
+    cursor: pointer;
+    color: #6f6c67;
+    right: 10%;
+    top: 400px;
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+.fa-check {
+    cursor: pointer;
+    color: #6f6c67;
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+.userTitle {
+    text-align: center;
+    font-size: 25px;
+    color: #6f6c67;
+}
+
+.completedList {
+    text-align: left;
+    font-size: 40px;
+    color: #57d1a3;
+
+    &:hover {
+        text-decoration: line-through;
+    }
+}
+
+.bucketTab ul {
+    position: relative;
+    top: 80px;
+    left: 4%;
+}
+
+
+
 
 ////////////////media queries /////////////
 ///////////////////////////////////////////
@@ -557,6 +718,9 @@ h3 {
 
 }
 
+.grid-wrapper {
+    background-image: url('/assets/basketbackground.gif');
+}
 ///////////////iphone/samsung//////////
 ///////////////////////////////////////
 
@@ -583,37 +747,153 @@ h3 {
 
 }
 
+///////modal/////////////////////////
+////////////////////////////////////
 
-/////////////add interest/ modal//////////
-/////////////////////////////////////////
-
-/*  #modal {
- background: white;
- position: fixed;
- width: 50%;
- top: 50%;
- left: 50%;
- margin: -25% 0 0 -25%;
- transform: scale(1.5);
- opacity: 0;
- pointer-events: none;
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  background: rgba(111,108, 103,.90);
+  transition: opacity .25s ease;
 }
 
-.dialogIsOpen #page-wrap {
- -webkit-filter: blur(5px) grayscale(50%);
- -webkit-transform: scale(0.9);
-
+.modalB {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
 }
 
-.dialogIsOpen #modal {
- transform: scale(1);
- opacity: 1;
- pointer-events: auto;
-
+.modalState {
+  display: none;
 }
 
-#page-wrap, #modal {
- transition: all 0.4s ease;
-
+.modalState:checked + .modal {
+  opacity: 1;
+  visibility: visible;
 }
-*/
+
+.modalState:checked + .modal .modal__inner {
+  top: 0;
+}
+
+.innerModal {
+  transition: top .25s ease;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em 2em;
+  height: 50%;
+}
+
+.closeModal {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+
+.closeModal:after,
+.closeModal:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 1.5em;
+  background: #ccc;
+  display: block;
+  transform: rotate(45deg);
+  left: 50%;
+  margin: -3px 0 0 -1px;
+  top: 0;
+}
+
+.closeModal:hover:after,
+.closeModal:hover:before {
+  background: #aaa;
+}
+
+.closeModal:before {
+  transform: rotate(-45deg);
+}
+
+.btn {
+  cursor: pointer;
+  background: #27ae60;
+  display: inline-block;
+  padding: .5em 1em;
+  color: #fff;
+  border-radius: 3px;
+}
+
+
+
+////////modal media Query //////////
+
+@media screen and (max-width: 768px) {
+
+  .innermodal {
+    width: 90%;
+    height: 90%;
+    box-sizing: border-box;
+  }
+}
+
+//////////////////// tab feature //////////////
+
+.completedTab > input,
+.completedTab section > div {
+  display: none;
+}
+
+#comTab:checked ~ section .comTab,
+#bucketTab:checked ~ section .bucketTab {
+  display: block;
+}
+
+.completedTab {
+  width: 100%;
+
+  ul {
+    list-style: none;
+
+    li {
+      label {
+        float: right;
+        padding: 15px 25px;
+        border: 1px solid #ddd;
+        border-bottom: 0;
+        background: #eee;
+        color:  #6f6c67;
+        &:hover {
+          background: #57d1a3;
+        }
+      }
+
+    }
+  }
+}
+
+#comTab:checked ~ nav .comTab,
+#bucketTab:checked ~ nav .bucketTab {
+  label {
+    background: white;
+    color: #111;
+  }
+}
