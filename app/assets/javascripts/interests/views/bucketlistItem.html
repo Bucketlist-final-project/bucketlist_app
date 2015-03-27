@@ -17,12 +17,12 @@
         </a>
     </div>
         <br>
+        <div class="bucketItemNav">
             <p class ="grid-12 name2">{{bucket.name}}
             </p>
-            <div class="grid-12 bucketItemNav">
                 <ul>
                     <li>
-                        <input type="checkbox" class="grid-4 checkbox" ng-click="bucketCtrl.addItemToUserBucket(bucket)">
+                        <input type="checkbox" class="checkbox" class="grid-4 checkbox" ng-click="bucketCtrl.addItemToUserBucket(bucket)">
                         <span ng-if="currentUser.admin==true">
                             <a href="#/editItem/{{bucket.id}}"><label <i class="fa fa-pencil" ng-click=""></i></a>
                             </label>
@@ -31,7 +31,6 @@
                         </ng>
                     </li>
                 <ul>
-            </div>
     </div>
 </div>
 
