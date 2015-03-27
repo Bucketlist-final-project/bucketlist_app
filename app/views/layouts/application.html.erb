@@ -3,6 +3,7 @@
 <head>
 
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
   <title>CHARLESTON BASKETLIST</title>
 
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -11,12 +12,12 @@
 </head>
 
 <body>
-<div class="main-wrapper">
+<div class="splashWrapper">
   <div class="grid-wrapper">
-    <div class="header">
+    <div class="grid-8 header"> CHARLESTON <strong>BASKETLIST</strong>
 
     </div>
-    <div class="grid-12 navBar">
+    <div class="grid-4 navBar">
         <ul>
             <% if current_user %>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-button" =%>
@@ -25,7 +26,7 @@
             </li>
             <li><a href="#/bucketlistitem">Activities</a>
             </li>
-            <li><a href="#/users/{{currentUser.id}}">Basket</a>
+            <li><a href="#/users/{{currentUser.id}}">My Basket</a>
             </li>
             <% else %>
             <li><%= link_to "Sign In", new_user_session_path =%>
@@ -41,12 +42,14 @@
 
 
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
     <div class= 'row'>
     <%= yield %>
     </div>
 </div>
+
+
 
 
 

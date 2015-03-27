@@ -1,3 +1,4 @@
+<div class="main-wrapper">
 <div class="detailItemContainer">
     <div class="wrapperDetail" ng-controller="DetailController as bucketDtl">
         <h1 class="itemDetail"> {{bucketDtl.singleItem.name}} Detail Page </h1>
@@ -34,7 +35,7 @@
                </textarea>
                <br>
                   <div ng-if="commentCtrl.content.length>2">
-                    <div class= "submitComment" ng-click= "commentCtrl.submitComment(bucketDtl.singleItem, commentCtrl)">POST
+                    <div class= "submitComment" ng-click= "commentCtrl.submitComment(bucketDtl.singleItem, commentCtrl)">SUBMIT
                   </div>
                    </div>
     
@@ -55,4 +56,5 @@
 
           </div>
         </div>
+</div>
 </div>

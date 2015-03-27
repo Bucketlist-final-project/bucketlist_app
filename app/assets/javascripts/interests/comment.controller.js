@@ -1,11 +1,11 @@
 (function () {
    "use strict";
    angular.module('interests')
-   .controller('CommentController', ['CommentService', '$location', '$routeParams', '$rootScope', 'Auth', function (CommentService, $location, $routeParams, $rootScope, Auth) {
+   .controller('CommentController', ['CommentService', '$location', '$routeParams', '$scope', '$rootScope', 'Auth', function (CommentService, $location, $routeParams, $scope, $rootScope, Auth) {
 
       var commentCtrl = this;
 
-      $rootScope.newComment = true
+      commentCtrl.newComment = true
 
       Auth.currentUser().then(function(user) {
       $rootScope.currentUser = user
@@ -16,7 +16,7 @@
       });
 
       commentCtrl.submitComment = function (bucketListItem, userComment) {
-        if($rootScope.newComment){
+        if(commentCtrl.newComment){
         var commentHash = {};
         commentHash.bucket_list_item_id = bucketListItem;
         commentHash.comment = {};
@@ -27,21 +27,21 @@
       }
         else{
           var commentHash = {};
-          var commentId = $rootScope.currentCommentId
+          var commentId = commentCtrl.currentCommentId
           commentHash.bucket_list_item_id = bucketListItem;
           commentHash.comment = {};
           commentHash.comment.content = userComment.content;
           commentHash.user_id = $rootScope.currentUser.id;
           CommentService.editComment(commentHash, bucketListItem, userComment, commentId);
-          $rootScope.newComment = true
+          commentCtrl.newComment = true
           commentCtrl.content = '';
         }
     };
 
       commentCtrl.editComment = function(comment){
-        $rootScope.commentCtrl.content = comment.content
-        $rootScope.newComment = false
-        $rootScope.currentCommentId = comment.id
+       commentCtrl.content = comment.content
+        commentCtrl.newComment = false
+        commentCtrl.currentCommentId = comment.id
        };
 
        commentCtrl.deleteComment = function(bucketListItem, userComment){
