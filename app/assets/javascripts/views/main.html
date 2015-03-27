@@ -3,4 +3,9 @@
 </div>
 <br>
 <br>
-Hello user: {{ currentUser.first_name }}
+<span ng-if="currentUser">
+Hello: {{ currentUser.first_name }}
+</span>
+<span ng-if="currentUser.id==null">
+  Please Login
+</span>
