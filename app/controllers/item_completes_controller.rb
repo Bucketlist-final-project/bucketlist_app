@@ -21,7 +21,9 @@ class ItemCompletesController < ApplicationController
   end
 
   def create
-    if ItemComplete.exists?(:bucket_list_item_id => params[:bucket_list_item_id]) && ItemComplete.exists?(:user_id => params[:user_id])
+    bli = params[:bucket_list_item_id]
+    uid = params[:user_id]
+    if ItemComplete.where(bucket_list_item_id: bli, user_id: uid).exists?
       respond_to do |format|
       format.json {render json: @item_complete }
       format.html
