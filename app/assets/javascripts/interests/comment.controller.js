@@ -5,7 +5,7 @@
 
       var commentCtrl = this;
 
-      $scope.newComment = true
+      commentCtrl.newComment = true
 
       Auth.currentUser().then(function(user) {
       $rootScope.currentUser = user
