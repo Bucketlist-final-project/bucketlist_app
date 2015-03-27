@@ -21,16 +21,23 @@ class ItemCompletesController < ApplicationController
   end
 
   def create
-    @item_complete = ItemComplete.new item_complete_params
-    @item_complete.bucket_list_item_id = params[:bucket_list_item_id]
-    @item_complete.user_id = params[:user_id]
-    @item_complete.save
-    respond_to do |format|
-     format.json do
-       @item_complete.user = current_user
-       render json: @item_complete
+    if ItemComplete.exists?(:bucket_list_item_id => params[:bucket_list_item_id]) && ItemComplete.exists?(:user_id => params[:user_id])
+      respond_to do |format|
+      format.json {render json: @item_complete }
+      format.html
+      end
+    else
+      @item_complete = ItemComplete.new item_complete_params
+      @item_complete.bucket_list_item_id = params[:bucket_list_item_id]
+      @item_complete.user_id = params[:user_id]
+      @item_complete.save
+      respond_to do |format|
+       format.json do
+         @item_complete.user = current_user
+         render json: @item_complete
+       end
+      end
     end
-   end
   end
 
 
