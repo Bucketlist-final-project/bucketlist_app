@@ -1,6 +1,22 @@
+
+
 <div class="splashPage">
 
 </div>
 <br>
 <br>
-Hello user: {{ currentUser.first_name }}
+<span ng-if="currentUser" class="welcomeUser">
+Hello: {{ currentUser.first_name }}
+</span>
+<span ng-if="currentUser.id==null">
+  Please Login
+</span>
+
+<div class="splashWrapper">
+
+<div class="grid-wrapper">
+<img class="grid-12 splashPic" src="/assets/Charleston-South-Carolina.jpg">
+</div>
+</div>
+
+</div>
