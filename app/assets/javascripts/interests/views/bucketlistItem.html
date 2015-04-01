@@ -23,9 +23,10 @@
                 <ul>
                     <li>
                         <input type="checkbox" class="checkbox" class="grid-4 checkbox" ng-click="bucketCtrl.addItemToUserBucket(bucket)">
+                        <br>
                         <span ng-if="currentUser.admin==true">
-                            <a href="#/editItem/{{bucket.id}}"><label <i class="fa fa-pencil" ng-click=""></i></a>
-                            </label>
+                            <a href="#/editItem/{{bucket.id}}"><label <i class="fa fa-pencil" ng-click=""></i>
+                            </label></a>
                             <div ng-click="bucketCtrl.removeBucketItem(bucket)" <i class="fa fa-times"></i>
                             </span>
                         </ng>
