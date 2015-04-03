@@ -1,0 +1,204 @@
+
+///////////////////map//////////////////////
+///////////////////////////////////////////
+
+.angular-google-map-container {
+    height: 500px;
+    width: 100%;
+}
+
+/////////////////BUCKET DETAIL PAGE //////
+/////////////////////////////////////////
+
+.details {
+    padding-left: 10%;
+    display: inline-block;
+    float: left;
+}
+
+.gmap-container {
+    margin-right: 30px;
+    display: inline-block;
+    border-radius: 10px;
+    float: right;
+}
+
+.bucketCardDetail {
+    border-radius: 10px;
+    height: 200px;
+    width: 450px;
+}
+
+.itemDetail {
+    text-align: center;
+    font-size: 25px;
+    color: #6f6c67;
+    line-height: 70px;
+}
+
+.name3 {
+    font-size: 20px;
+    line-height: 1px;
+    color: #6f6c67;
+}
+
+.comments li {
+    list-style-type: none;
+    text-align: left;
+    line-height: 20px;
+}
+.nameBold {
+    color: #6f6c67;
+}
+
+.textarea {
+    border-radius: 5px;
+    width: 100%;
+}
+
+.commentHead {
+    text-align: left;
+    padding-top: 5%;
+    font-size: 25px;
+    color: #6f6c67;
+}
+
+.editDelete {
+    cursor: pointer;
+    text-align: right;
+    line-height: 10px;
+}
+
+.description {
+    line-height: 25px;
+}
+
+.streetadd {
+    color: #6f6c67;
+}
+
+.addBtn {
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+    color: #57d1a3;
+
+
+    &:hover {
+    color: #6f6c67;
+    }
+
+}
+
+.submitComment {
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+    color: #6f6c67;
+
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+ .fa-times {
+    color: #6f6c67;
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+.fa-pencil-square-o {
+    &:hover {
+        color: #57d1a3;
+
+    }
+}
+
+
+
+
+///////////////////media Queries/////////////
+////////////////////////////////////////////
+
+////////tablet size///////
+@media (max-width: 768px){
+    .bucketCardDetail {
+        height: 250px;
+        width: 250px;
+    }
+
+    .gmap-container {
+        margin-right: 0;
+    }
+}
+
+
+////////iphone/samsung///////
+ @media (max-width: 320px) {
+     .bucketCardDetail {
+         height: 250px;
+         width: 250px;
+     }
+
+     .details {
+         width:100%;
+     }
+
+     .gmap-container {
+         width: 100%;
+     }
+
+     .itemDetail {
+         text-align: left;
+         font-size: 20px;
+         line-height: 25px;
+     }
+}
+
+///////////iphone6+////////
+@media (max-width: 414px) {
+    .bucketCardDetail {
+        height: 250px;
+        width: 250px;
+    }
+
+    .details {
+        width:100%;
+    }
+
+    .gmap-container {
+        width: 100%;
+    }
+
+    .itemDetail {
+        text-align: left;
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+}
+
+//////////iphone6///////////
+@media (max-width: 375px) {
+    .bucketCardDetail {
+        height: 250px;
+        width: 250px;
+    }
+
+    .details {
+        width:100%;
+    }
+
+    .gmap-container {
+        width: 100%;
+    }
+
+    .itemDetail {
+        text-align: left;
+        font-size: 20px;
+        line-height: 25px;
+    }
+}

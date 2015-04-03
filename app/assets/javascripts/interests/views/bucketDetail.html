@@ -1,8 +1,10 @@
-<div class="main-wrapper">
-<div class="detailItemContainer">
-    <div class="wrapperDetail" ng-controller="DetailController as bucketDtl">
-        <h1 class="itemDetail"> {{bucketDtl.singleItem.name}} Detail Page </h1>
-              <div class="details">
+<div class+'arrowLeft'>
+    <a href="#/bucketlistitem"><i class="fa fa-angle-double-left fa-4x"></i></a>
+</div>
+<div class="grid-wrapper">
+    <div class="grid-wrapper wrapperDetail" ng-controller="DetailController as bucketDtl">
+        <h1 class="grid-12 itemDetail"> {{bucketDtl.singleItem.name}} Detail Page </h1>
+              <div class="grid-5 details">
                   <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucketDtl.singleItem.image_file_name}}" class='bucketCardDetail'>
                 <br>
                 <p class="name3">{{bucketDtl.singleItem.name}}
@@ -18,7 +20,7 @@
                 </div>
               </div>
 
-              <div class="gmap-container" ng-controller="DetailController as bucketDtl">
+              <div class="grid-5 gmap-container" ng-controller="DetailController as bucketDtl">
                   <ui-gmap-google-map center= 'map.center' zoom= 'map.zoom'>
 
                      <ui-gmap-marker coords='marker.coords' idkey='marker.id'> </ui-gmap-marker>
@@ -26,8 +28,11 @@
                  </ui-gmap-google-map>
               </div>
 
+
+
+        <div class="commentForms">
              <div class="grid-wrapper">
-              <div class="grid-6 commentforms" ng-controller="CommentController as commentCtrl">
+              <div class="grid-10 commentforms" ng-controller="CommentController as commentCtrl">
                <div class="commentHead">Comments
                </div>
               <form class='commentForm'>
@@ -38,10 +43,10 @@
                     <div class= "submitComment" ng-click= "commentCtrl.submitComment(bucketDtl.singleItem, commentCtrl)">SUBMIT
                   </div>
                    </div>
-    
-               </ng-hide
+
+               </ng-hide>
               </form>
-              <div class="grid-6 comments">
+              <div class="comments">
                  <ul>
                    <li ng-repeat="comment in bucketDtl.singleItem.comments">
                        <p><strong class="nameBold">{{comment.user.first_name}} {{comment.user.last_name}}</strong> {{comment.content}}
@@ -56,5 +61,5 @@
 
           </div>
         </div>
-</div>
+    </div>
 </div>

@@ -1,0 +1,153 @@
+///////////////Log-in page/////////////////////////////
+//////////////////////////////////////////////////////
+
+.loginWrapper {
+    text-align: center;
+}
+
+h2 {
+    color: #6f6c67;
+    line-height: 3px;
+    font-size: 30px;
+}
+
+.email {
+    color: #6f6c67;
+
+    input{
+        background-color: transparent;
+        border: 0 solid;
+        color: #6f6c67;
+        width: 30%;
+        height: 60px;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 4px solid #57d1a3;
+            transition: all 0.9s ease;
+        }
+    }
+
+}
+
+.password {
+    color: #6f6c67;
+    padding-top: 5px;
+
+    input{
+        background-color: transparent;
+        border: 0 solid;
+        color: #6f6c67;
+        width: 30%;
+        height: 60px;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 4px solid #57d1a3;
+            transition: all 0.9s ease;
+        }
+    }
+
+}
+
+.rememberMe {
+    color: #6f6c67;
+    font-size: 15px;
+
+}
+
+
+////////-SIGN UP-/////////////////////////////////
+//////////////////////////////////////////////////
+
+.firstName {
+    color: #6f6c67;
+
+    input{
+        background-color: transparent;
+        border: 0 solid;
+        color: #6f6c67;
+        width: 30%;
+        height: 60px;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 4px solid #57d1a3;
+            transition: all 0.9s ease;
+        }
+    }
+
+}
+
+.lastName {
+    color: #6f6c67;
+
+    input{
+        background-color: transparent;
+        border: 0 solid;
+        color: #6f6c67;
+        width: 30%;
+        height: 60px;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 4px solid #57d1a3;
+            transition: all 0.9s ease;
+        }
+    }
+}
+
+.passwordConfirm {
+    color: #6f6c67;
+
+    input{
+        background-color: transparent;
+        border: 0 solid;
+        color: #6f6c67;
+        width: 30%;
+        height: 60px;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 4px solid #57d1a3;
+            transition: all 0.9s ease;
+        }
+    }
+}
+
+.signUpBtn {
+    color: blue;
+}
+
+
+//////////////Edit registration form //////////////
+//////////////////////////////////////////////////
+
+.currentPassword {
+    color: #6f6c67;
+
+    input{
+        background-color: transparent;
+        border: 0 solid;
+        font-family: 'Raleway', sans-serif;
+        color: #6f6c67;
+        width: 30%;
+        height: 60px;
+        font-size: 30px;
+
+        &:hover {
+            border-bottom: 4px solid #57d1a3;
+            transition: all 0.9s ease;
+        }
+    }
+}
+
+h3 {
+    color: #6f6c67;
+    line-height: 3px;
+    font-size: 30px;
+
+    p {
+        color: #6f6c67;
+    }
+}
