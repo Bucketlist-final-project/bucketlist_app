@@ -9,10 +9,6 @@
         interestCtrl.interests = data;
     });
 
-    // InterestService.getOneInterest($routeParams.interestId).success(function (data) {
-    //     interestCtrl.singleItem=data;
-    // });
-
     interestCtrl.currentIndex= $routeParams.interestId;
 
     interestCtrl.addNewInterest = function(newInterest) {

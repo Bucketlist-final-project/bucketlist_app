@@ -81,8 +81,6 @@
 
         $rootScope.uploadComplete = function () {
           $rootScope.$broadcast('BasketItem:added');
-          // console.log('uploadComplete')
-          // $location.path('/bucketlistitem');
         };
 
     }]);
