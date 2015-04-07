@@ -1,55 +1,48 @@
-<div class="main-wrapper">
-<div class="rightArrow">
+ <div class="rightArrow">
     <a href="#/users/{{currentUser.id}}"><i class="fa fa-angle-double-right fa-4x"></i></a>
 </div>
-<div id="grid-wrapper">
-    <div class="interestItemPage">
-        <h1 class="grid-12 bucketItems"> Choose activities to add to your Charleston Basketlist</h1>
+<div class="grid-wrapper">
+    <h1 class="grid-11 bucketItems"> Choose activities to add to your Charleston Basketlist</h1>
+</div>
+<div class="searchFilter">
+    <div class="grid-wrapper">
+            <input class="grid-4 search" ng-model="query" type="text" name="searchbox" placeholder= "search">
+            <label <i class="grid-6 fa fa-plus fa-2x" for="modal-1"></i></label>
     </div>
-    <div class="grid-8 searchFilter">
-        <input ng-model="query" type="text" name="searchbox" placeholder= "search">
-        <label <i class="grid-4 fa fa-plus fa-2x" for="modal-1"></i></label>
-    </div>
-    <div class="list3" ng-repeat="bucket in bucketItems.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
-    <div class="grid-12 second3">
+</div>
+<div class="grid-wrapper">
+    <div class="grid-3 list3" ng-repeat="bucket in bucketItems.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
         <a href="" ng-click="bucketCtrl.goToBucketDetail(bucket.id)">
             <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucket.image_file_name}}" class="bucketCard">
         </a>
-    </div>
         <br>
-        <div class="bucketItemNav">
-            <p class ="grid-12 name2">{{bucket.name}}
-            </p>
-                <ul>
-                    <li>
-                        <input type="checkbox" class="checkbox" class="grid-4 checkbox" ng-click="bucketCtrl.addItemToUserBucket(bucket)">
-                        <br>
-                        <span ng-if="currentUser.admin==true">
-                            <a href="#/editItem/{{bucket.id}}"><label <i class="fa fa-pencil" ng-click=""></i>
-                            </label></a>
-                            <div ng-click="bucketCtrl.removeBucketItem(bucket)" <i class="fa fa-times"></i>
-                            </span>
-                        </ng>
-                    </li>
-                <ul>
+    <div class="bucketItemNav">
+        <p class ="grid-12 name2">{{bucket.name}} <input type="checkbox" class="checkbox" class="checkbox" ng-click="bucketCtrl.addItemToUserBucket(bucket)">
+            <span ng-if="currentUser.admin==true">
+                <a href="#/editItem/{{bucket.id}}"><label <i class="fa fa-pencil" ng-click=""></i>
+                </label></a>
+            </span>
+            <span ng-click="bucketCtrl.removeBucketItem(bucket)" <i class="fa fa-times"></i>
+            </span>
+        </p>
+    </div>
+    </div>
+    <div class="grid-12 submitButton2">
+        <a href="" ng-click="bucketCtrl.addUserBucketArray()">SUBMIT</a>
     </div>
 </div>
 
-    <div class="submitButton2">
-        <a href="" ng-click="bucketCtrl.addUserBucketArray()">SUBMIT</a>
-    </div>
 
 
+<!--this is the modal view -->
 
-
-<!-----modal views------------------------------------>
 <div class="modalStlye">
 <input class="modalState" id="modal-1" type="checkbox"/>
     <div class="modal">
       <label class="modalB" for="modal-1"></label>
     <div class="innerModal">
       <label class="closeModal" for="modal-1"></label>
-    <h3> Add your own Basket Item </h3>
+    <div class="modalTitle"> Add your own Basket Item </div>
     <form ng-upload="uploadComplete(content)" action="/bucket_list_items.json" method="post" enctype="multipart/form-data">
         <input type="file" name="image"></input>
         <input type="text" placeholder="Title" name="name" ng-model="name" />
@@ -60,7 +53,7 @@
         <input type="text" placeholder="zipcode" name="zip_code" ng-model="zip_code" />
         <input type="text" placeholder="latitude" name="latitude" ng-model="latitude" />
         <input type="text" placeholder="longitude" name="longitude" ng-model="longitude" />
-        <input type="submit" value="Upload" ng-disabled="$isUploading"></input>
+        <input type="submit" value="Upload" ng-disabled="$isUploading" class="uploadBtn"></input>
 </form>
   </div>
   </div>

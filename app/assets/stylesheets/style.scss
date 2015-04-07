@@ -1,249 +1,59 @@
-/*
-@include transition(all 0.4s ease);
-@include filter(blur(5px) grayscale(50%));
-@include transform(scale(0.9)); */
-
-///////////////////map//////////////////////
-///////////////////////////////////////////
-
-.angular-google-map-container {
-    height: 400px;
-    width: 100%;
-}
-
 //////////////body/wrapper/splash page/////
 ///////////////////////////////////////////
 body {
     font-family: 'Lato', sans-serif;
 }
 
-* {
-    box-sizing: border-box;
+header {
+    height: 50px;
+    line-height: 50px;
 }
 
-.splashWrapper {
-    width: 100%;
+.logo {
+    color: #77BFAB;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
 
 }
 
-.main-wrapper {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.main-header {
-    padding: 20px;
-    display: table;
-    width: 100%;
-    min-height: 120px;
-}
-.header {
-    font-family: 'Roboto', sans-serif;
-    color: #57d1a3;
-    font-size: 35px;
-    display: table-cell;
-
-    a {
-        display: inline-block;
-
-    }
-}
 .navBar {
+    margin: 0;
+    padding: 0;
     font-size: 15px;
-    vertical-align: middle;
     text-align: right;
-
 
 
     li {
         list-style-type: none;
-        text-decoration: none;
         display: inline-block;
+        vertical-align: bottom;
         margin-left: 15px;
 
-
-
         a {
-            display: block;
             color: #6f6c67;
             text-decoration: none;
 
-
         &:hover {
             color: #57d1a3;
-            border-top: 2px solid #57d1a3;
             -webkit-transform: scale(0.9);
         }
 
         }
     }
 }
+
 .splashPic {
     opacity: 0.7;
-}
-.welcomeUser {
-    font-size: 20px;
-    float: right;
-    color: #6f6c67;
-    position: relative;
-    bottom: 30px;
-    right: 20px;
+    width: 100%;
 }
 
-///////////////Log-in page/////////////////////////////
-//////////////////////////////////////////////////////
-
-.loginWrapper {
-    text-align: center;
-}
-
-h2 {
-    color: #6f6c67;
-    line-height: 3px;
-    font-size: 30px;
-}
-
-.email {
-    color: #6f6c67;
-
-    input{
-        background-color: transparent;
-        border: 0 solid;
-        font-family: 'Raleway', sans-serif;
-        color: #6f6c67;
-        width: 30%;
-        height: 60px;
-        font-size: 30px;
-
-        &:hover {
-            border-bottom: 4px solid #57d1a3;
-            transition: all 0.9s ease;
-        }
-    }
-
-}
-
-.password {
-    color: #6f6c67;
-    padding-top: 5px;
-
-    input{
-        background-color: transparent;
-        border: 0 solid;
-        color: #6f6c67;
-        width: 30%;
-        height: 60px;
-        font-size: 30px;
-
-        &:hover {
-            border-bottom: 4px solid #57d1a3;
-            transition: all 0.9s ease;
-        }
-    }
-
-}
-
-.rememberMe {
-    color: #6f6c67;
-    font-size: 15px;
-
-}
-
-
-////////-SIGN UP-/////////////////////////////////
-//////////////////////////////////////////////////
-
-.firstName {
-    color: #6f6c67;
-
-    input{
-        background-color: transparent;
-        border: 0 solid;
-        color: #6f6c67;
-        width: 30%;
-        height: 60px;
-        font-size: 30px;
-
-        &:hover {
-            border-bottom: 4px solid #57d1a3;
-            transition: all 0.9s ease;
-        }
-    }
-
-}
-
-.lastName {
-    color: #6f6c67;
-
-    input{
-        background-color: transparent;
-        border: 0 solid;
-        color: #6f6c67;
-        width: 30%;
-        height: 60px;
-        font-size: 30px;
-
-        &:hover {
-            border-bottom: 4px solid #57d1a3;
-            transition: all 0.9s ease;
-        }
-    }
-}
-
-.passwordConfirm {
-    color: #6f6c67;
-
-    input{
-        background-color: transparent;
-        border: 0 solid;
-        color: #6f6c67;
-        width: 30%;
-        height: 60px;
-        font-size: 30px;
-
-        &:hover {
-            border-bottom: 4px solid #57d1a3;
-            transition: all 0.9s ease;
-        }
-    }
-}
-
-.signUpBtn {
-    color: blue;
-}
-
-
-//////////////Edit registration form //////////////
-//////////////////////////////////////////////////
-
-.currentPassword {
-    color: #6f6c67;
-
-    input{
-        background-color: transparent;
-        border: 0 solid;
-        font-family: 'Raleway', sans-serif;
-        color: #6f6c67;
-        width: 30%;
-        height: 60px;
-        font-size: 30px;
-
-        &:hover {
-            border-bottom: 4px solid #57d1a3;
-            transition: all 0.9s ease;
-        }
-    }
-}
-
-h3 {
-    color: #6f6c67;
-    line-height: 3px;
-    font-size: 30px;
-
-    p {
-        color: #6f6c67;
-    }
+  .welcomeUser {
+   font-size: 20px;
+   float: right;
+   color: #6f6c67;
+   position: relative;
+   right: 110px;
 }
 
 
@@ -253,47 +63,50 @@ h3 {
 
 
 ////////tablet size///////
-@media (max-width: 768px){
-    .header,
-    .navBar,
-    .navBar li {
-        display: inline-block;
-        width: initial;
-        margin: initial;
-    }
+@media (min-width: 768px){
 
-    .navBar {
-        padding-left: initial;
+    .logo {
+        font-size: 30px;
     }
 
 }
 
 ////////iphone/samsung///////
-@media (max-width: 320px) {
-    .header,
-    .navBar,
-    .navBar li {
-        display: block;
-        width: initial;
-        margin: initial;
-    }
-    .header img {
-        width: 100%;
-    }
+ @media (max-width: 320px) {
+     .logo {
+         font-size: 40px;
+         text-align: center;
+     }
 
 }
 
+
 ///////////iphone6+////////
 @media (max-width: 414px) {
-    .header,
     .navBar,
     .navBar li {
         display: block;
         width: initial;
         margin: initial;
     }
-    .header img {
-        width: 100%;
+    .navBar {
+        text-align: left;
+        line-height: 30px;
+        text-align: center;
+        position: relative;
+        left: 40px;
+
+    }
+
+    .navBar li {
+        font-size: 15px;
+    }
+
+    .logo {
+        font-size: 60px;
+        line-height: 55px;
+        text-align: left;
+        margin-bottom: 5px;
     }
 }
 
@@ -306,628 +119,4 @@ h3 {
         width: initial;
         margin: initial;
     }
-    .header img {
-        width: 100%;
-    }
-}
-
-///////////BUCKETLIST ITEM PAGE/////////
-///////////////////////////////////////
-
-.ItemsWrapper {
-    display: table;
-    width: 100%;
-    min-height: 120px;
-}
-
-.searchFilter input {
-    border-radius: 5px;
-    color:#6f6c67;
-    font-size: 20px;
-    height: 40px;
-    width: 20%;
-}
-
-.list3 {
-    display: inline-block;
-    width: 30%;
-    position: relative;
-    left: 5%;
-    top: 20px;
-
-
-    img:hover {
-        transition: opacity .25s ease-in-out;
-    }
-
-    a {
-        text-decoration: none;
-
-    }
-
-}
-
-.bucketCard {
-    border-radius: 10px;
-    height: 250px;
-    width: 250px;
-
-}
-
-.bucketItems {
-    text-align: center;
-    font-size: 25px;
-    color: #6f6c67;
-}
-
-.submitButton2 {
-    float: right;
-    font-size: 20px;
-    color: #6f6c67;
-    text-decoration: none;
-
-     a {
-        text-decoration: none;
-
-    &:hover {
-        color: #57d1a3;
-    }
-
-    }
-}
-
-.name2 {
-    text-align: left;
-    font-size: 15px;
-}
-
-.bucketItemNav li{
-    list-style-type: none;
-    text-decoration: none;
-    position: relative;
-    right: 39px;
-}
-
-.fa-search {
-    height: 20px;
-    color: #6f6c67;
-}
-
-.fa-plus {
-    position:relative;
-    left: 120%;
-    color:#6f6c67;
-    cursor: pointer;
-    font-size: 40px;
-
-    &:hover {
-        color: #57d1a3;
-    }
-}
-
-.fa-pencil {
-    color:#6f6c67;
-    cursor: pointer;
-    padding-left: 48%;
-
-
-    &:hover {
-        color: #57d1a3;
-    }
-}
-
-
-.fa-angle-double-right {
-    position: relative;
-    float: right;
-    cursor: pointer;
-    color: #6f6c67;
-    left: 10%;
-    top: 400px;
-
-    &:hover {
-        color: #57d1a3;
-    }
-}
-
-h3 {
-    color: #57d1a3;
-}
-
-
-
-
-///////tablet//////////////////////////
-//////////////////////////////////////
-@media (max-width: 768px) {
-    .list3 {
-        display: inline-block;
-        padding: 5%;
-        width: initial;
-        margin: initial;
-    }
-}
-
-//////////iphone 6+///////////////////////
-/////////////////////////////////////////
-@media (max-width: 414px) {
-    .list3 {
-        display: block;
-        width: initial;
-        margin: initial;
-    }
-}
-
-//////////////iphone6///////////////////
-///////////////////////////////////////
-@media (max-width: 375px) {
-    .list3 {
-        display: block;
-        width: initial;
-        margin: initial;
-    }
-}
-
-//////////////iphone/samsung///////////
-//////////////////////////////////////
-@media (max-width: 320px) {
-    .list3 {
-        display: block;
-        width: initial;
-        margin: initial;
-    }
-
-    .bucketItems {
-        text-align: left;
-        width: initial;
-        margin: initial;
-    }
-}
-
-/////////////////BUCKET DETAIL PAGE //////
-/////////////////////////////////////////
-
-.detailItemContainer {
-    padding: 20px;
-    display: table;
-    width: 100%;
-    min-height: 120px;
-
-}
-.details {
-    padding-left: 5%;
-    display: inline-block;
-    width: 40%;
-    float: left;
-}
-
-.gmap-container {
-    display: inline-block;
-    border-radius: 10px;
-    width: 50%;
-    float: right;
-    padding-right: 5%;
-}
-
-
-.bucketCardDetail {
-    border-radius: 10px;
-    height: 200px;
-    width: 400px;
-}
-
-.itemDetail {
-    text-align: center;
-    font-size: 25px;
-    color: #6f6c67;
-}
-
-.name3 {
-    font-size: 20px;
-    line-height: 1px;
-    color: #6f6c67;
-}
-
-.comments li {
-    list-style-type: none;
-    text-align: left;
-    line-height: 20px;
-}
-.nameBold {
-    color: #6f6c67;
-}
-
-.textarea {
-    border-radius: 5px;
-}
-
-.commentHead {
-    text-align: left;
-    padding-top: 5%;
-    font-size: 25px;
-    color: #6f6c67;
-}
-
-.editDelete {
-    cursor: pointer;
-    text-align: right;
-    line-height: 10px;
-}
-
-.description {
-    line-height: 25px;
-}
-
-.streetadd {
-    color: #6f6c67;
-}
-
-.addBtn {
-    font-size: 15px;
-    text-align: left;
-    cursor: pointer;
-    color: #6f6c67;
-
-
-    &:hover {
-        color: #57d1a3;
-    }
-
-}
-
-.submitComment {
-    font-size: 15px;
-    text-align: left;
-    cursor: pointer;
-    color: #6f6c67;
-
-
-    &:hover {
-        color: #57d1a3;
-    }
-}
-
-.fa-times {
-    color: #6f6c67;
-
-    &:hover {
-        color: #57d1a3;
-    }
-}
-
-.fa-pencil-square-o {
-    &:hover {
-        color: #57d1a3;
-
-    }
-}
-
-.checkbox {
-    position: relative;
-    left: 30px;
-}
-
-
-/////////////userBucket view/////////////
-////////////////////////////////////////
-
-.userWrapper {
-    padding: 20px;
-    display: table;
-    width: 100%;
-    min-height: 120px;
-}
-
-.bucketCardUser {
-    border-radius: 10px;
-    height: 300px;
-    width: 400px;
-}
-
-.userList {
-    list-style-type: none;
-    display: inline-block;
-    width: 50%;
-}
-
-
-.fa-angle-double-left {
-    position: relative;
-    cursor: pointer;
-    color: #6f6c67;
-    right: 10%;
-    top: 400px;
-
-    &:hover {
-        color: #57d1a3;
-    }
-}
-
-.fa-check {
-    cursor: pointer;
-    color: #6f6c67;
-
-    &:hover {
-        color: #57d1a3;
-    }
-}
-
-.userTitle {
-    text-align: center;
-    font-size: 25px;
-    color: #6f6c67;
-}
-
-.completedList {
-    text-align: left;
-    font-size: 40px;
-    color: #57d1a3;
-
-    &:hover {
-        text-decoration: line-through;
-    }
-}
-
-.bucketTab ul {
-    position: relative;
-    top: 80px;
-    left: 4%;
-}
-
-
-
-
-////////////////media queries /////////////
-///////////////////////////////////////////
-
-////////////tablet////////////////////////
-
-@media (max-width: 768px) {
-
-    .bucketCardUser {
-        border-top-left-radius: 10px;
-        box-shadow: 5px 5px 3px #FFFF66;
-        width: 100%;
-    }
-
-    .userList {
-        display: block;
-        width: initial;
-
-    }
-}
-
-//////////////iphone 6+ /////////////////////
-////////////////////////////////////////////
-
-@media (max-width: 414px) {
-    .bucketCardUser {
-        border-top-left-radius: 10px;
-        box-shadow: 5px 5px 3px #FFFF66;
-        width: 100%;
-    }
-
-    .userList {
-        display: block;
-        width: initial;
-
-    }
-
-    .userTitle {
-        font-size: 40px;
-        text-align: center;
-    }
-}
-
-///////////////iphone 6//////////////////////
-////////////////////////////////////////////
-
-@media (max-width: 375px) {
-    .bucketCardUser {
-        border-top-left-radius: 10px;
-        box-shadow: 5px 5px 3px #FFFF66;
-        width: 100%;
-        height: 200px;
-    }
-
-    .userList {
-        display: block;
-        width: initial;
-        padding-right: 15%;
-        padding-top: 10%;
-
-    }
-
-    .userTitle {
-        font-size: 40px;
-        text-align: center;
-    }
-
-}
-
-///////////////iphone/samsung//////////
-///////////////////////////////////////
-
-@media (max-width: 320px) {
-    .bucketCardUser {
-        border-top-left-radius: 10px;
-        box-shadow: 5px 5px 3px #FFFF66;
-        width: 100%;
-        height: 100px;
-    }
-
-    .userList {
-        display: block;
-        width: initial;
-        padding-right: 15%;
-        padding-top: 10%;
-
-    }
-
-    .userTitle {
-        font-size: 30px;
-        text-align: center;
-    }
-
-}
-
-///////modal/////////////////////////
-////////////////////////////////////
-
-
-
-.modal {
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  background: rgba(111,108, 103,.90);
-  transition: opacity .25s ease;
-    
-    input {
-        display: inline-block;
-        width: 50%;
-        height: 30px;
-        margin: 10px;
-    }
-
-}
-
-.modalB {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  cursor: pointer;
-}
-
-.modalState {
-  display: none;
-}
-
-.modalState:checked + .modal {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modalState:checked + .modal .modal__inner {
-  top: 0;
-}
-
-.innerModal {
-  transition: top .25s ease;
-  position: absolute;
-  top: -20%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 50%;
-  margin: auto;
-  overflow: auto;
-  background: #fff;
-  border-radius: 5px;
-  padding: 1em 2em;
-  height: 50%;
-}
-
-.closeModal {
-  position: absolute;
-  right: 1em;
-  top: 1em;
-  width: 1.1em;
-  height: 1.1em;
-  cursor: pointer;
-}
-
-.closeModal:after,
-.closeModal:before {
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 1.5em;
-  background: #ccc;
-  display: block;
-  transform: rotate(45deg);
-  left: 50%;
-  margin: -3px 0 0 -1px;
-  top: 0;
-}
-
-.closeModal:hover:after,
-.closeModal:hover:before {
-  background: #aaa;
-}
-
-.closeModal:before {
-  transform: rotate(-45deg);
-}
-
-.btn {
-  cursor: pointer;
-  background: #27ae60;
-  display: inline-block;
-  padding: .5em 1em;
-  color: #fff;
-  border-radius: 3px;
-}
-
-
-
-////////modal media Query //////////
-
-@media screen and (max-width: 768px) {
-
-  .innermodal {
-    width: 90%;
-    height: 90%;
-    box-sizing: border-box;
-  }
-}
-
-//////////////////// tab feature //////////////
-
-.completedTab > input,
-.completedTab section > div {
-  display: none;
-}
-
-#comTab:checked ~ section .comTab,
-#bucketTab:checked ~ section .bucketTab {
-  display: block;
-}
-
-.completedTab {
-  width: 100%;
-
-  ul {
-    list-style: none;
-
-    li {
-      label {
-        float: right;
-        padding: 15px 25px;
-        border: 1px solid #ddd;
-        border-bottom: 0;
-        background: #eee;
-        color:  #6f6c67;
-        &:hover {
-          background: #57d1a3;
-        }
-      }
-
-    }
-  }
-}
-
-#comTab:checked ~ nav .comTab,
-#bucketTab:checked ~ nav .bucketTab {
-  label {
-    background: white;
-    color: #111;
-  }
 }

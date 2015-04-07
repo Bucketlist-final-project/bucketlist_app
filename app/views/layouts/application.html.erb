@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html ng-app="testApp">
+
+
 <head>
-
-  <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   <title>CHARLESTON BASKETLIST</title>
-
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 
-<body>
-<div class="splashWrapper">
-  <div class="grid-wrapper">
-    <div class="grid-8 header"> CHARLESTON <strong>BASKETLIST</strong>
 
-    </div>
-    <div class="grid-4 navBar">
-        <ul>
+<body>
+
+<header>
+    <div class="header">
+        <div class="grid-wrapper">
+        <h1 class="grid-4 logo">Charleston Basketlist</h1>
+        <ul class="grid-6 navBar">
             <% if current_user %>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-button" =%>
             </li>
@@ -36,24 +35,12 @@
             <% end %>
         </ul>
         {{current_user | json}}
-
-    </div>
-  </div>
-
-
-
-    <!-- <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> -->
     <div class= 'row'>
     <%= yield %>
     </div>
 </div>
-
-
-
-
-
-
+</div>
+</header>
 
 </body>
 </html>

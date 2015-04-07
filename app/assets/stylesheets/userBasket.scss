@@ -1,0 +1,200 @@
+/////////////userBucket view/////////////
+////////////////////////////////////////
+
+
+.bucketCardUser {
+    border-radius: 10px;
+    height: 300px;
+    width: 400px;
+}
+
+.userList {
+    padding-left: 10%;
+    list-style-type: none;
+    display: inline-block;
+    line-height: 20px;
+
+    img {
+        border: 4px solid #57d1a3;
+    }
+
+}
+
+
+.fa-angle-double-left {
+    position: fixed;
+    cursor: pointer;
+    color: #6f6c67;
+    right: 92%;
+    top: 69%;
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+.fa-check {
+    cursor: pointer;
+    color: #6f6c67;
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+.userTitle {
+    text-align: center;
+    font-size: 25px;
+    color: #6f6c67;
+    line-height: 70px;
+}
+
+.completedList {
+    text-align: left;
+    font-size: 40px;
+    color: #6f6c67;
+
+    &:hover {
+        text-decoration: line-through;
+        color: #57d1a3;
+
+    }
+}
+
+
+//////////////////// tab feature //////////////
+
+.completedTab > input,
+.completedTab section > div {
+  display: none;
+}
+
+#comTab:checked ~ section .comTab,
+#bucketTab:checked ~ section .bucketTab {
+  display: block;
+}
+
+.completedTab {
+    position:relative;
+    top: 20px;
+
+    ul {
+      list-style: none;
+
+    li {
+      label {
+        float: right;
+        padding: 5px 10px;
+        border: 1px solid #ddd;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-bottom: 0;
+        background: white;
+        color:  #6f6c67;
+
+        &:hover {
+          background: #57d1a3;
+        }
+      }
+
+    }
+  }
+}
+
+#comTab:checked ~ nav .comTab,
+#bucketTab:checked ~ nav .bucketTab {
+  label {
+    background: white;
+  }
+}
+
+
+
+
+////////////////media queries /////////////
+///////////////////////////////////////////
+
+////////////tablet////////////////////////
+
+@media (max-width: 768px) {
+
+    .bucketCardUser {
+        width: 100%;
+    }
+
+    .userList {
+        display: block;
+        width: initial;
+        margin: initial;
+    }
+
+    .userTitle {
+        font-size: initial;
+        text-align: left;
+        line-height: 40px;
+    }
+}
+
+//////////////iphone 6+ /////////////////////
+////////////////////////////////////////////
+
+@media (max-width: 414px) {
+    .bucketCardUser {
+        width: 100%;
+        height: 50%;
+    }
+
+    .userList {
+        display: block;
+        width: initial;
+        margin:initial;
+    }
+
+    .userTitle {
+        display: none;
+    }
+
+}
+
+///////////////iphone 6//////////////////////
+////////////////////////////////////////////
+
+@media (max-width: 375px) {
+    .bucketCardUser {
+        width: 100%;
+        height: 50%;
+    }
+
+    .userList {
+        display: block;
+        width: initial;
+        margin: initial;
+    }
+
+    .userTitle {
+        display: none;
+    }
+
+}
+
+///////////////iphone/samsung//////////
+///////////////////////////////////////
+
+@media (max-width: 320px) {
+    .bucketCardUser {
+        width: 100%;
+        height: 50%;
+    }
+
+    .userList {
+        display: block;
+        width: initial;
+        margin: initial;
+
+    }
+
+    .userTitle {
+        display: none;
+    }
+
+}

@@ -1,0 +1,337 @@
+///////////BUCKETLIST ITEM PAGE/////////
+///////////////////////////////////////
+
+.searchFilter input {
+    border-radius: 5px;
+    color:#6f6c67;
+    font-size: 15px;
+    height: 20px;
+    width: 32%;
+    margin-bottom: 20px;
+}
+
+.list3  {
+    display: inline-block;
+
+    img:hover {
+        opacity: 0.4;
+    }
+
+    a {
+        text-decoration: none;
+
+    }
+
+}
+
+.bucketCard {
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+
+}
+
+.bucketItems {
+    text-align: center;
+    font-size: 25px;
+    color: #6f6c67;
+}
+
+.submitButton2 {
+    text-align: center;
+    font-size: 40px;
+    color: #6f6c67;
+    text-decoration: none;
+
+     a {
+        text-decoration: none;
+
+    &:hover {
+        color: #57d1a3;
+    }
+
+    }
+}
+
+.name2 {
+    text-align: left;
+    font-size: 15px;
+}
+
+.bucketItemNav li{
+    list-style-type: none;
+    text-decoration: none;
+
+}
+
+.fa-plus {
+    text-align: right;
+    color:#6f6c67;
+    cursor: pointer;
+    font-size: 30px;
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+ .fa-pencil {
+    color:#6f6c67;
+    cursor: pointer;
+
+
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+
+.fa-angle-double-right {
+    position: fixed;
+    left: 90%;
+    top: 69%;
+    cursor: pointer;
+    color: #6f6c67;
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+///////tablet//////////////////////////
+//////////////////////////////////////
+
+@media (max-width: 1020px) {
+    .bucketCard {
+        width: 250px;
+        height:250px;
+    }
+}
+
+@media (max-width: 931px) {
+    .bucketCard {
+        width: 200px;
+        height:200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .list3 {
+        display: inline-block;
+        padding: 5%;
+        width: initial;
+        margin: initial;
+    }
+
+    .bucketItems {
+        text-align: left;
+    }
+}
+
+//////////iphone 6+///////////////////////
+/////////////////////////////////////////
+@media (max-width: 414px) {
+    .list3 {
+        display: block;
+        width: initial;
+        margin: initial;
+    }
+
+    .searchFilter input {
+        width: 90%;
+    }
+}
+
+//////////////iphone6///////////////////
+///////////////////////////////////////
+@media (max-width: 375px) {
+    .list3 {
+        display: block;
+        width: initial;
+        margin: initial;
+    }
+
+    .bucketItems {
+        font-size: 20px;
+    }
+}
+
+//////////////iphone/samsung///////////
+//////////////////////////////////////
+@media (max-width: 320px) {
+    .list3 {
+        display: block;
+        width: initial;
+        margin: initial;
+    }
+
+    .bucketItems {
+        text-align: left;
+        width: initial;
+        margin: initial;
+    }
+
+    .bucketItems {
+        display: none;
+    }
+
+    .fa-angle-double-right {
+        font-size: 40px;
+    }
+}
+
+///////modal/////////////////////////
+////////////////////////////////////
+
+
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background: rgba(71, 204, 167, .60);
+  transition: opacity .25s ease;
+
+    input {
+        display: inline-block;
+        width: 50%;
+        height: 30px;
+        margin: 10px;
+    }
+
+}
+
+.modalB {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.modalState {
+  display: none;
+}
+
+.modalState:checked + .modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modalState:checked + .modal .modal__inner {
+  top: 0;
+}
+
+.innerModal {
+  transition: top .25s ease;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em 2em;
+  height: 50%;
+}
+
+.closeModal {
+  color: #6f6c67;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+
+.closeModal:after,
+.closeModal:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 1.5em;
+  background: #6f6c67;
+  display: block;
+  transform: rotate(45deg);
+  left: 50%;
+  margin: -3px 0 0 -1px;
+
+}
+
+.closeModal:before {
+  transform: rotate(-45deg);
+}
+
+.modalTitle {
+    font-size: 30px;
+    color: #57d1a3;
+}
+
+.uploadBtn {
+    color: #6f6c67;
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+
+
+////////modal media Query //////////
+
+///////Tablet///////////////////////
+///////////////////////////////////
+
+@media screen and (max-width: 768px) {
+
+    .modalTitle {
+        font-size: initial;
+    }
+
+}
+
+/////////////iPhone6+///////////
+////////////////////////////////////
+
+@media screen and (max-width: 414px) {
+
+    .modalTitle {
+        font-size: initial;
+    }
+
+}
+
+/////////////////iphone6//////////////
+//////////////////////////////////////
+
+@media screen and (max-width: 375px) {
+
+    .modalTitle {
+        font-size: initial;
+        line-height: 20px;
+    }
+
+}
+
+/////////////////iphone/samsung//////////////
+//////////////////////////////////////
+
+@media screen and (max-width: 320px) {
+
+    .modalTitle {
+        font-size: initial;
+        line-height: 20px;
+    }
+
+}
