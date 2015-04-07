@@ -3,49 +3,47 @@
 </div>
 <div class="grid-wrapper">
     <div class="grid-wrapper wrapperDetail" ng-controller="DetailController as bucketDtl">
-        <h1 class="grid-12 itemDetail"> {{bucketDtl.singleItem.name}} Detail Page </h1>
+        <h1 class="grid-11 itemDetail"> {{bucketDtl.singleItem.name}} Detail Page </h1>
               <div class="grid-5 details">
-                  <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucketDtl.singleItem.image_file_name}}" class='bucketCardDetail'>
-                <br>
-                <p class="name3">{{bucketDtl.singleItem.name}}
-                </p>
-                <p class = "description">{{bucketDtl.singleItem.description}}
-                </p>
-                <p class = "streetadd"><strong>{{bucketDtl.singleItem.street_address}} {{bucketDtl.singleItem.city}} {{bucketDtl.singleItem.state}} , {{bucketDtl.singleItem.zip_code}}</strong>
-                </p>
-
-                <div ng-controller="UserController as user">
+                      <img src="http://bucket-list-tiy-final.s3.amazonaws.com/items/{{bucketDtl.singleItem.image_file_name}}" class='bucketCardDetail'>
+                    <br>
+                    <p class="name3">{{bucketDtl.singleItem.name}}
+                    </p>
+                    <p class = "description">{{bucketDtl.singleItem.description}}
+                    </p>
+                    <p class = "streetadd"><strong>{{bucketDtl.singleItem.street_address}} {{bucketDtl.singleItem.city}} {{bucketDtl.singleItem.state}} , {{bucketDtl.singleItem.zip_code}}</strong>
+                    </p>
+              <div ng-controller="UserController as user">
                     <div ng-click="user.addUserBucket(bucketDtl.singleItem)" class="addBtn">ADD
                     </div>
-                </div>
+              </div>
               </div>
 
-              <div class="grid-5 gmap-container" ng-controller="DetailController as bucketDtl">
-                  <ui-gmap-google-map center= 'map.center' zoom= 'map.zoom'>
+<!--angular google maps -->
 
-                     <ui-gmap-marker coords='marker.coords' idkey='marker.id'> </ui-gmap-marker>
+          <div class="grid-5 gmap-container" ng-controller="DetailController as bucketDtl">
+              <ui-gmap-google-map center= 'map.center' zoom= 'map.zoom'>
+                 <ui-gmap-marker coords='marker.coords' idkey='marker.id'> </ui-gmap-marker>
+              </ui-gmap-google-map>
+          </div>
 
-                 </ui-gmap-google-map>
-              </div>
+<!--Comments section -->
 
-
-
-        <div class="commentForms">
-             <div class="grid-wrapper">
-              <div class="grid-10 commentforms" ng-controller="CommentController as commentCtrl">
-               <div class="commentHead">Comments
-               </div>
-              <form class='commentForm'>
+<div class="commentForms">
+     <div class="grid-wrapper">
+     <div class="grid-10 commentforms" ng-controller="CommentController as commentCtrl">
+     <div class="commentHead">Comments
+     </div>
+          <form class='commentForm'>
                <textarea cols="50" rows="4" ng-model="commentCtrl.content" placeholder="Add comment here" class="textarea">
                </textarea>
-               <br>
-                  <div ng-if="commentCtrl.content.length>2">
-                    <div class= "submitComment" ng-click= "commentCtrl.submitComment(bucketDtl.singleItem, commentCtrl)">SUBMIT
-                  </div>
-                   </div>
-
+                   <br>
+                      <div ng-if="commentCtrl.content.length>2">
+                        <div class= "submitComment" ng-click= "commentCtrl.submitComment(bucketDtl.singleItem, commentCtrl)">SUBMIT
+                        </div>
+                      </div>
                </ng-hide>
-              </form>
+          </form>
               <div class="comments">
                  <ul>
                    <li ng-repeat="comment in bucketDtl.singleItem.comments">
@@ -57,9 +55,8 @@
                        </div>
                   </li>
               </div>
-              </div>
-
-          </div>
-        </div>
-    </div>
+     </div>
+     </div>
+</div>
+</div>
 </div>

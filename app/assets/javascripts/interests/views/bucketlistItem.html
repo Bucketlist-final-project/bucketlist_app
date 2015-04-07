@@ -2,7 +2,7 @@
     <a href="#/users/{{currentUser.id}}"><i class="fa fa-angle-double-right fa-4x"></i></a>
 </div>
 <div class="grid-wrapper">
-    <h1 class="grid-12 bucketItems"> Choose activities to add to your Charleston Basketlist</h1>
+    <h1 class="grid-11 bucketItems"> Choose activities to add to your Charleston Basketlist</h1>
 </div>
 <div class="searchFilter">
     <div class="grid-wrapper">
@@ -10,7 +10,6 @@
             <label <i class="grid-6 fa fa-plus fa-2x" for="modal-1"></i></label>
     </div>
 </div>
-
 <div class="grid-wrapper">
     <div class="grid-3 list3" ng-repeat="bucket in bucketItems.items | filter:query as results" ng-class="'odd'" ng-class"'even'">
         <a href="" ng-click="bucketCtrl.goToBucketDetail(bucket.id)">
@@ -28,8 +27,6 @@
         </p>
     </div>
     </div>
-
-
     <div class="grid-12 submitButton2">
         <a href="" ng-click="bucketCtrl.addUserBucketArray()">SUBMIT</a>
     </div>
@@ -37,7 +34,8 @@
 
 
 
-<!-----modal views------------------------------------>
+<!--this is the modal view -->
+
 <div class="modalStlye">
 <input class="modalState" id="modal-1" type="checkbox"/>
     <div class="modal">

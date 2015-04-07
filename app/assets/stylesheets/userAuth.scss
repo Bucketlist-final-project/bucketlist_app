@@ -2,23 +2,29 @@
 //////////////////////////////////////////////////////
 
 .loginWrapper {
-    text-align: center;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 40%;
+    position: relative;
+    left: 30%;
 }
 
 h2 {
     color: #6f6c67;
     line-height: 3px;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .email {
     color: #6f6c67;
 
-    input{
+    input {
         background-color: transparent;
-        border: 0 solid;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: 0;
         color: #6f6c67;
-        width: 30%;
         height: 60px;
         font-size: 30px;
 
@@ -36,11 +42,14 @@ h2 {
 
     input{
         background-color: transparent;
-        border: 0 solid;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: 0;
         color: #6f6c67;
-        width: 30%;
         height: 60px;
         font-size: 30px;
+
+
 
         &:hover {
             border-bottom: 4px solid #57d1a3;
@@ -53,21 +62,40 @@ h2 {
 .rememberMe {
     color: #6f6c67;
     font-size: 15px;
+}
+
+.logInBtn {
+    color: #6f6c67;
+
+    &:hover {
+        color: #57d1a3;
+    }
 
 }
 
-
 ////////-SIGN UP-/////////////////////////////////
 //////////////////////////////////////////////////
+
+.signUpWrapper {
+    padding-left: 20px;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 40%;
+    position: relative;
+    left: 30%;
+    top: 60px;
+}
 
 .firstName {
     color: #6f6c67;
 
     input{
         background-color: transparent;
-        border: 0 solid;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: 0;
         color: #6f6c67;
-        width: 30%;
         height: 60px;
         font-size: 30px;
 
@@ -84,9 +112,10 @@ h2 {
 
     input{
         background-color: transparent;
-        border: 0 solid;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: 0;
         color: #6f6c67;
-        width: 30%;
         height: 60px;
         font-size: 30px;
 
@@ -102,9 +131,10 @@ h2 {
 
     input{
         background-color: transparent;
-        border: 0 solid;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: 0;
         color: #6f6c67;
-        width: 30%;
         height: 60px;
         font-size: 30px;
 
@@ -116,22 +146,35 @@ h2 {
 }
 
 .signUpBtn {
-    color: blue;
+    color: #6f6c67;
+
+    &:hover {
+        color: #57d1a3;
+    }
 }
 
 
 //////////////Edit registration form //////////////
 //////////////////////////////////////////////////
 
+.editWrapper {
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 40%;
+    position: relative;
+    left: 30%;
+}
+
 .currentPassword {
     color: #6f6c67;
 
     input{
         background-color: transparent;
-        border: 0 solid;
-        font-family: 'Raleway', sans-serif;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        outline: 0;
         color: #6f6c67;
-        width: 30%;
         height: 60px;
         font-size: 30px;
 
@@ -145,9 +188,75 @@ h2 {
 h3 {
     color: #6f6c67;
     line-height: 3px;
-    font-size: 30px;
+    font-size: 20px;
 
     p {
         color: #6f6c67;
+    }
+}
+
+
+/////////////Media Queries///////////////////////
+////////////////////////////////////////////////
+
+///////tablet//////////////////////////
+//////////////////////////////////////
+
+@media (max-width: 768px) {
+    .loginWrapper,
+    .editWrapper,
+    .signUpWrapper {
+        width: initial;
+        height: initial;
+        left: 0;
+    }
+
+}
+
+//////////iphone 6+///////////////////////
+/////////////////////////////////////////
+@media (max-width: 414px) {
+    .loginWrapper,
+    .editWrapper,
+    .signUpWrapper {
+        width: initial;
+        height: initial;
+        left: 0;
+    }
+}
+
+//////////////iphone6///////////////////
+///////////////////////////////////////
+@media (max-width: 375px) {
+    .loginWrapper,
+    .editWrapper,
+    .signUpWrapper {
+        width: initial;
+        height: initial;
+        left: 0;
+
+        input {
+            font-size: 20px;
+            width: initial;
+            height: initial;
+        }
+    }
+}
+
+//////////////iphone/samsung///////////
+//////////////////////////////////////
+@media (max-width: 320px) {
+    .loginWrapper,
+    .editWrapper,
+    .signUpWrapper {
+        width: initial;
+        height: initial;
+        left: 0;
+
+        input {
+            font-size: 20px;
+            width: initial;
+            height: initial;
+        }
     }
 }
