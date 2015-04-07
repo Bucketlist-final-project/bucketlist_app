@@ -129,7 +129,7 @@
     }
 
     .userTitle {
-        font-size: initial;
+        font-size: 25px;
         text-align: left;
         line-height: 40px;
     }
@@ -151,7 +151,9 @@
     }
 
     .userTitle {
-        display: none;
+        text-align: left;
+        font-size: 20px;
+        line-height: 30px;
     }
 
 }
@@ -171,10 +173,21 @@
         margin: initial;
     }
 
-    .userTitle {
-        display: none;
+     .userTitle {
+         text-align: left;
+         font-size: 20px;
+         line-height: 30px;
     }
 
+    .completedList {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+
+    .fa-angle-double-left {
+        font-size: 40px;
+    }
 }
 
 ///////////////iphone/samsung//////////
@@ -194,7 +207,14 @@
     }
 
     .userTitle {
-        display: none;
+        text-align: left;
+        font-size: 20px;
+        line-height: 70px;
+    }
+
+    .completedList {
+        font-size: 20px;
+        line-height: 30px;
     }
 
 }
