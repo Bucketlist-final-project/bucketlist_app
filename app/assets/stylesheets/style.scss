@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    height: 100px;
+    height: 50px;
     line-height: 50px;
 }
 
@@ -53,8 +53,7 @@ header {
    float: right;
    color: #6f6c67;
    position: relative;
-   bottom: 30px;
-   right: 20px;
+   right: 110px;
 }
 
 
@@ -120,123 +119,4 @@ header {
         width: initial;
         margin: initial;
     }
-}
-
-
-///////modal/////////////////////////
-////////////////////////////////////
-
-
-
-.modal {
-  opacity: 0;
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  background: rgba(71, 204, 167, .60);
-  transition: opacity .25s ease;
-
-    input {
-        display: inline-block;
-        width: 50%;
-        height: 30px;
-        margin: 10px;
-    }
-
-}
-
-.modalB {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  cursor: pointer;
-}
-
-.modalState {
-  display: none;
-}
-
-.modalState:checked + .modal {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modalState:checked + .modal .modal__inner {
-  top: 0;
-}
-
-.innerModal {
-  transition: top .25s ease;
-  position: absolute;
-  top: -20%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 50%;
-  margin: auto;
-  overflow: auto;
-  background: #fff;
-  border-radius: 5px;
-  padding: 1em 2em;
-  height: 50%;
-}
-
-.closeModal {
-  position: absolute;
-  right: 1em;
-  top: 1em;
-  width: 1.1em;
-  height: 1.1em;
-  cursor: pointer;
-}
-
-.closeModal:after,
-.closeModal:before {
-  content: '';
-  position: absolute;
-  width: 2px;
-  height: 1.5em;
-  background: #ccc;
-  display: block;
-  transform: rotate(45deg);
-  left: 50%;
-  margin: -3px 0 0 -1px;
-  top: 0;
-}
-
-.closeModal:hover:after,
-.closeModal:hover:before {
-  background: #aaa;
-}
-
-.closeModal:before {
-  transform: rotate(-45deg);
-}
-
-.btn {
-  cursor: pointer;
-  background: #27ae60;
-  display: inline-block;
-  padding: .5em 1em;
-  color: #fff;
-  border-radius: 3px;
-}
-
-
-
-////////modal media Query //////////
-
-@media screen and (max-width: 768px) {
-
-  .innermodal {
-    width: 90%;
-    height: 90%;
-    box-sizing: border-box;
-  }
 }

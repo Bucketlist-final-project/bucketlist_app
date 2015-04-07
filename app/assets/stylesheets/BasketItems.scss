@@ -99,13 +99,6 @@
     }
 }
 
-h3 {
-    color: #57d1a3;
-}
-
-
-
-
 ///////tablet//////////////////////////
 //////////////////////////////////////
 
@@ -186,4 +179,159 @@ h3 {
     .fa-angle-double-right {
         font-size: 40px;
     }
+}
+
+///////modal/////////////////////////
+////////////////////////////////////
+
+
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  background: rgba(71, 204, 167, .60);
+  transition: opacity .25s ease;
+
+    input {
+        display: inline-block;
+        width: 50%;
+        height: 30px;
+        margin: 10px;
+    }
+
+}
+
+.modalB {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.modalState {
+  display: none;
+}
+
+.modalState:checked + .modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modalState:checked + .modal .modal__inner {
+  top: 0;
+}
+
+.innerModal {
+  transition: top .25s ease;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em 2em;
+  height: 50%;
+}
+
+.closeModal {
+  color: #6f6c67;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+
+.closeModal:after,
+.closeModal:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 1.5em;
+  background: #6f6c67;
+  display: block;
+  transform: rotate(45deg);
+  left: 50%;
+  margin: -3px 0 0 -1px;
+
+}
+
+.closeModal:before {
+  transform: rotate(-45deg);
+}
+
+.modalTitle {
+    font-size: 30px;
+    color: #57d1a3;
+}
+
+.uploadBtn {
+    color: #6f6c67;
+
+    &:hover {
+        color: #57d1a3;
+    }
+}
+
+
+
+////////modal media Query //////////
+
+///////Tablet///////////////////////
+///////////////////////////////////
+
+@media screen and (max-width: 768px) {
+
+    .modalTitle {
+        font-size: initial;
+    }
+
+}
+
+/////////////iPhone6+///////////
+////////////////////////////////////
+
+@media screen and (max-width: 414px) {
+
+    .modalTitle {
+        font-size: initial;
+    }
+
+}
+
+/////////////////iphone6//////////////
+//////////////////////////////////////
+
+@media screen and (max-width: 375px) {
+
+    .modalTitle {
+        font-size: initial;
+        line-height: 20px;
+    }
+
+}
+
+/////////////////iphone/samsung//////////////
+//////////////////////////////////////
+
+@media screen and (max-width: 320px) {
+
+    .modalTitle {
+        font-size: initial;
+        line-height: 20px;
+    }
+
 }

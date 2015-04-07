@@ -12,6 +12,7 @@
     padding-left: 10%;
     list-style-type: none;
     display: inline-block;
+    line-height: 20px;
 
     img {
         border: 4px solid #57d1a3;
@@ -83,13 +84,14 @@
     li {
       label {
         float: right;
-        padding: 10px 20px;
+        padding: 5px 10px;
         border: 1px solid #ddd;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
         border-bottom: 0;
-        background: #eee;
+        background: white;
         color:  #6f6c67;
+
         &:hover {
           background: #57d1a3;
         }
@@ -103,7 +105,6 @@
 #bucketTab:checked ~ nav .bucketTab {
   label {
     background: white;
-    color: #111;
   }
 }
 
@@ -128,8 +129,8 @@
     }
 
     .userTitle {
-        font-size: 40px;
-        text-align: center;
+        font-size: initial;
+        text-align: left;
         line-height: 40px;
     }
 }
@@ -147,13 +148,10 @@
         display: block;
         width: initial;
         margin:initial;
-
-
     }
 
     .userTitle {
-        font-size: 40px;
-        text-align: center;
+        display: none;
     }
 
 }
@@ -171,12 +169,10 @@
         display: block;
         width: initial;
         margin: initial;
-
     }
 
     .userTitle {
-        font-size: 40px;
-        text-align: center;
+        display: none;
     }
 
 }
@@ -198,9 +194,7 @@
     }
 
     .userTitle {
-        font-size: 20px;
-        text-align: left;
-        line-height: 30px;
+        display: none;
     }
 
 }
