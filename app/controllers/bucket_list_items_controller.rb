@@ -23,15 +23,6 @@ class BucketListItemsController < ApplicationController
     end
   end
 
-  def new
-    @bucket_list_item = BucketListItem.new
-    @users = User.all
-    respond_to do |format|
-      format.json {render json: @bucket_list_item }
-      format.html
-    end
-  end
-
   def create
     params[:bucket_list_item] = { image: params[:image], name: params[:name], description: params[:description], street_address: params[:street_address], city: params[:city], state: params[:state], zip_code: params[:zip_code], latitude: params[:latitude], longitude: params[:longitude]}
 
@@ -39,15 +30,6 @@ class BucketListItemsController < ApplicationController
     @bucket_list_item.save
     respond_to do |format|
       format.json { render :json => @bucket_list_item }
-      # format.html {redirect_to bucket_list_items_path}
-    end
-  end
-
-  def edit
-    @users = User.all
-    respond_to do |format|
-      format.json {render json: @bucket_list_item }
-      format.html
     end
   end
 

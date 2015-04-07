@@ -66,7 +66,6 @@
 
        bucketCtrl.removeBucketItem = function (item) {
            BucketService.removeBucketItem(item, $scope.bucketItems);
-
        };
 
        bucketCtrl.goToBucketPage = function () {

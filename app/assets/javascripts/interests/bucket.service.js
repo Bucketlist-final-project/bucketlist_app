@@ -18,7 +18,6 @@
             $http.put('/bucket_list_items/' + Id + '.json', item);
             console.log('the edit is posting');
             $rootScope.$broadcast('BasketItem:edited');
-
         };
 
         var getBucketItems= function () {
