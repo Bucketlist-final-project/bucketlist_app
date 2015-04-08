@@ -2,39 +2,24 @@ require 'rails_helper'
 
 RSpec.describe ItemCompletesController, type: :controller do
 
+  let!(:bucket_list_item) { FactoryGirl.create(:bucket_list_item) }
+  let!(:user) { FactoryGirl.create(:user) }
+
   describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
+    it "should return all item_completes" do
+      p user.item_completes
+      xhr :get, :index, user_id: user.id
+      expect(assigns(:item_completes).class).to eq(ItemComplete::ActiveRecord_AssociationRelation)
     end
   end
 
-  describe "GET #show" do
-    it "returns http success" do
-      get :show
-      expect(response).to have_http_status(:success)
-    end
+    #Need to figure out how to run this SPEC
+    describe "POST #create" do
+    # it "should return create an item_complete" do
+    #   xhr :post, :create, user_id: user.id, item_complete: { completed: true, user_id: user.id, bucket_list_item_id: bucket_list_item.id }
+    #   expect(assigns(:item_complete).class).to eq('')
+    # end
   end
 
-  describe "GET #create" do
-    it "returns http success" do
-      get :create
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET #update" do
-    it "returns http success" do
-      get :update
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET #destroy" do
-    it "returns http success" do
-      get :destroy
-      expect(response).to have_http_status(:success)
-    end
-  end
 
 end

@@ -41,15 +41,6 @@ class UsersController < ApplicationController
       end
   end
 
-  def destroy
-    @bucket_list_item = @user.bucket_list_items.find params[:bucket_list_item_id]
-    @bucket_list_item.delete
-    respond_to do |format|
-      format.json {render head :no_content }
-      format.html
-    end
-  end
-
 private
 
   def user_params
