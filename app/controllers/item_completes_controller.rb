@@ -8,18 +8,6 @@ class ItemCompletesController < ApplicationController
    end
   end
 
-  def show
-
-  end
-
-  def new
-    @item_complete = ItemComplete.new
-    respond_to do |format|
-     format.json {render json: @item_complete }
-     format.html
-   end
-  end
-
   def create
     bli = params[:bucket_list_item_id]
     uid = params[:user_id]
@@ -42,14 +30,6 @@ class ItemCompletesController < ApplicationController
     end
   end
 
-
-  def update
-
-  end
-
-  def destroy
-
-  end
 
 private
   def item_complete_params

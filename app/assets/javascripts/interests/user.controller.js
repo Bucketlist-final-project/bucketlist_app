@@ -66,8 +66,6 @@
         console.log(completes)
        };
 
-
-
     }]);
 
 })();

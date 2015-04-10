@@ -22,30 +22,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # def new
-  #   @user = User.new
-  #   respond_to do |format|
-  #     format.json {render json: @user }
-  #     format.html
-  #   end
-  # end
-
-  # def create
-  #   @user = User.new user_params
-  #   @user.save
-  #   respond_to do |format|
-  #     format.json {render json: @user }
-  #     format.html
-  #   end
-  # end
-
-  def edit
-    respond_to do |format|
-      format.json {render json: @user }
-      format.html
-    end
-  end
-
   def update
     if params[:update] == true
       params[:bucket_list_items].each do |item|
@@ -56,31 +32,13 @@ class UsersController < ApplicationController
       end
     else
       @user = User.find params[:id]
-      # @bucket_list_item = @user.bucket_list_items.find params[:bucket_list_item_id]
-      # @bucket_list_item.delete
       @user.bucket_list_items.delete(BucketListItem.find(params[:bucket_list_item_id]))
-
-
-
-
-
-      # sc.tasks.delete(Task.find(x))
     end
       @user.update_attributes user_params
       respond_to do |format|
         format.json {render json: @user }
         format.html
       end
-    # Patch {user: { bucket_list_item_ids: [1,2,3,4] }}
-  end
-
-  def destroy
-    @bucket_list_item = @user.bucket_list_items.find params[:bucket_list_item_id]
-    @bucket_list_item.delete
-    respond_to do |format|
-      format.json {render head :no_content }
-      format.html
-    end
   end
 
 private
